@@ -12,6 +12,8 @@ import { MainSidebarComponent } from './main-sidebar/main-sidebar.component';
 import { SidebarComponent } from './main-sidebar/sidebar/sidebar.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
 import { ControlSidebarComponent } from './control-sidebar/control-sidebar.component';
+import { LocationListComponent } from './add-location/location-list/location-list.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -22,14 +24,19 @@ import { ControlSidebarComponent } from './control-sidebar/control-sidebar.compo
     MainSidebarComponent,
     SidebarComponent,
     MainFooterComponent,
-    ControlSidebarComponent
+    ControlSidebarComponent,
+    LocationListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      { path: 'NewLocation', component: NewLocationComponent },
+  { path: 'LocationList', component: LocationListComponent }
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
