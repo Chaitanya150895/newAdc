@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json',
+    'Content-Type': 'application/json',
     'Accept': 'application/json'
   })
 };
@@ -51,10 +51,10 @@ export class NewLocationComponent implements OnInit {
     console.warn(this.locationForm.value);
 
     this.http.post("http://localhost/logistic_v1/api/locations.json", this.locationForm.value, httpOptions)
-    .pipe(
-    ).subscribe(data => {
-      console.log(data);
-    });
+      .pipe(
+      ).subscribe(data => {
+        console.log(data);
+      });
   }
 
 
