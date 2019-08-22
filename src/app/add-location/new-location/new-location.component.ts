@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { FormArray } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const httpOptions = {
@@ -25,7 +24,8 @@ export class NewLocationComponent implements OnInit {
     address: new FormControl(''),
     city: new FormControl(''),
     state: new FormControl(''),
-    zipcode: new FormControl(''),
+    zipcode: new FormControl('',
+     [Validators.required, Validators.minLength(6)]),
     location_number: new FormControl(''),
     region_id: new FormControl(''),
     location_type_id: new FormControl('')
@@ -57,5 +57,5 @@ export class NewLocationComponent implements OnInit {
       });
   }
 
-
+  get zipcode() {return this.locationForm.get('zipcode') as FormControl; }
 }
