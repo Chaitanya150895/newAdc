@@ -1,8 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LocationListComponent } from '../location-list/location-list.component';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+  })
+};
 
 @Component({
   selector: 'app-edit-location',
@@ -59,7 +66,18 @@ locationForm = new FormGroup({
 
   }
   get zipcode() {return this.locationForm.get('zipcode') as FormControl; }
+
+  onSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.warn(this.locationForm.value);
+
+    this.http.post("http://localhost/logistic_v1/api/locations/"+this.location.id+".json", this.locationForm.value, httpOptions)
+      .pipe(
+      ).subscribe(data => {
+        console.log(data);
+      });
+
 }
 
 
-
+}
