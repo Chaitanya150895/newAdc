@@ -15,6 +15,9 @@ import { ControlSidebarComponent } from './control-sidebar/control-sidebar.compo
 import { LocationListComponent } from './add-location/location-list/location-list.component';
 import { RouterModule } from '@angular/router';
 import { EditLocationComponent } from './add-location/edit-location/edit-location.component';
+import { ViewLocationComponent } from './add-location/view-location/view-location.component';
+import { PipeTransformPipe } from './pipe-transform.pipe';
+import { ReplaceUnderscorePipe } from './replace-underscore.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { EditLocationComponent } from './add-location/edit-location/edit-locatio
     MainFooterComponent,
     ControlSidebarComponent,
     LocationListComponent,
-    EditLocationComponent
+    EditLocationComponent,
+    ViewLocationComponent,
+    PipeTransformPipe,
+    ReplaceUnderscorePipe
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,8 @@ import { EditLocationComponent } from './add-location/edit-location/edit-locatio
     RouterModule.forRoot([
       { path: 'NewLocation', component: NewLocationComponent },
       { path: 'LocationList', component: LocationListComponent },
-      { path: 'LocationList/:locationId', component: EditLocationComponent }
+      { path: 'LocationList/edit/:locationId', component: EditLocationComponent },
+      { path: 'LocationList/view/:locationId', component: ViewLocationComponent }
     ]),
   ],
   providers: [],

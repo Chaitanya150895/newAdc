@@ -1,0 +1,9 @@
+ <div class="content-wrapper">
+        <section class="content-header">
+                <li *ngFor="let l of location | keyvalue">
+                       <b>{{l.key|replaceUnderscore| titlecase}}: </b> <b> {{l.value}}</b>
+                      </li>
+</section></div> 
+
+ 
+

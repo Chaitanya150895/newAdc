@@ -9,29 +9,29 @@
     <form method="post" [formGroup]="locationForm" (ngSubmit)="onSubmit()">
 
       <div class="form-group">
-        <label> Name <input type="text"  class= "form-control" value ={{location.name}} formControlName="name" required>
+        <label> Name <input type="text"  class= "form-control"  formControlName="name" required>
         </label>
         </div>
 
         <div>
           <label>
-            Address: <input type="text" class= "form-control" value ={{location.address}} formControlName="address" required>
+            Address: <input type="text" class= "form-control"  formControlName="address" required>
           </label>
         </div>
 
         <div>
           <label>
-            City: <input type="text" class= "form-control" value ={{location.city}} formControlName="city" required>
+            City: <input type="text" class= "form-control"  formControlName="city" required>
           </label>
           <br></div>
 
         <div><label>
-            State: <input type="text" class= "form-control" value ={{location.state}} formControlName="state" required>
+            State: <input type="text" class= "form-control" formControlName="state" required>
           </label>
           <br></div>
 
         <div><label>
-            Zipcode: <input type="text" class= "form-control" value ={{location.zipcode}} formControlName="zipcode" required>
+            Zipcode: <input type="text" class= "form-control"  formControlName="zipcode" required>
           </label>
           <div *ngIf="zipcode.invalid && (zipcode.dirty || zipcode.touched)" class="alert alert-danger">
 
@@ -47,7 +47,7 @@
         </div>
 
         <div><label>
-            Location Number: <input type="text" class= "form-control" value ={{location.location_number}} formControlName="location_number" required>
+            Location Number: <input type="text" class= "form-control"  formControlName="location_number" required>
           </label>
           <br></div>
 
@@ -69,7 +69,7 @@
     </div>
 
         <div class="input number">
-          <label  for="trailer-bays">Trailer Bays: </label><input type="number" class= "form-control" name="trailer_bays" id="trailer-bays">
+          <label  for="trailer-bays">Trailer Bays: </label><input type="number" formControlName="trailer_bays" class= "form-control" name="trailer_bays" id="trailer-bays">
         </div>
 
         <!-- <div><label>Location Type:

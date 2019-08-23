@@ -62,8 +62,8 @@
                 <td>{{location.location_type_id}}</td>
                 <td>{{location.created}}</td>
                 <td>{{location.modified}}</td>
-                <td><a [routerLink]="['/LocationList', location.id]">View </a>
-                  <a [routerLink]="['/LocationList', location.id]">Edit </a>
+                <td><a [routerLink]="['/LocationList/view/', location.id]">View </a>
+                  <a [routerLink]="['/LocationList/edit/', location.id]">Edit </a>
                   <a [routerLink]="['/LocationList', location.id]">Delete</a></td>
               </tr>
             </tbody>
