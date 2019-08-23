@@ -15,6 +15,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MainFooterComponent,
     UserListComponent,
     AddUserComponent,
-    DashboardComponent
+    DashboardComponent,
+    EditUserComponent
   ],  
   imports: [
     BrowserModule,
