@@ -9,8 +9,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./location-list.component.css']
 })
 
-
-
 export class LocationListComponent implements OnInit {
 
   locations = [];
@@ -19,6 +17,16 @@ export class LocationListComponent implements OnInit {
 
   ngOnInit() {
     this.http.get("http://localhost/logistic_v1/api/locations.json").subscribe(data => {
+
+      console.log(data);
+
+      this.locations = data['data'];
+
+    });
+  }
+
+  deleteLocation(id) {
+    this.http.delete("http://localhost/logistic_v1/api/locations/"+id+".json").subscribe(data => {
 
       console.log(data);
 

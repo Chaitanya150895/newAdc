@@ -64,7 +64,7 @@
                 <td>{{location.modified}}</td>
                 <td><a [routerLink]="['/LocationList/view/', location.id]">View </a>
                   <a [routerLink]="['/LocationList/edit/', location.id]">Edit </a>
-                  <a [routerLink]="['/LocationList', location.id]">Delete</a></td>
+                  <a (click)="deleteLocation(location.id)">Delete</a></td>
               </tr>
             </tbody>
           </table>

@@ -1,16 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { LocationListComponent } from '../location-list/location-list.component';
-// import { Pipe, PipeTransform } from '@angular/core';
 
-// @Pipe({name: 'replaceUnderscore'})
-// export class ReplaceUnderscorePipe implements PipeTransform {
-//   transform(value: string): string {
-//     return value? value.replace(/_/g, " ") : value;
-//   }
-// }
 
 @Component({
   selector: 'app-view-location',

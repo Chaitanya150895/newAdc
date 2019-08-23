@@ -28,9 +28,10 @@ export class NewLocationComponent implements OnInit {
      [Validators.required, Validators.minLength(6)]),
     location_number: new FormControl(''),
     region_id: new FormControl(''),
-    location_type_id: new FormControl('')
+    location_type_id: new FormControl(''),
+   
   });
-
+ 
   constructor(private http: HttpClient) {
     this.http.get("http://localhost/logistic_v1/api/regions.json").subscribe(data => {
       console.log(data);
