@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NewLocationComponent } from './add-location/new-location/new-location.component';
 import { AddLocationComponent } from './add-location/add-location.component';
-import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MainHeaderComponent } from './main-header/main-header.component';
 import { MainSidebarComponent } from './main-sidebar/main-sidebar.component';
@@ -14,6 +14,7 @@ import { MainFooterComponent } from './main-footer/main-footer.component';
 import { ControlSidebarComponent } from './control-sidebar/control-sidebar.component';
 import { LocationListComponent } from './add-location/location-list/location-list.component';
 import { RouterModule } from '@angular/router';
+import { EditLocationComponent } from './add-location/edit-location/edit-location.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RouterModule } from '@angular/router';
     SidebarComponent,
     MainFooterComponent,
     ControlSidebarComponent,
-    LocationListComponent
+    LocationListComponent,
+    EditLocationComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     RouterModule.forRoot([
       { path: 'NewLocation', component: NewLocationComponent },
-  { path: 'LocationList', component: LocationListComponent }
+      { path: 'LocationList', component: LocationListComponent },
+      { path: 'LocationList/:locationId', component: EditLocationComponent }
     ]),
   ],
   providers: [],

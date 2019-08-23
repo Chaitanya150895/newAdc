@@ -24,4 +24,5 @@ export class LocationListComponent implements OnInit {
     });
   }
 
+  
 }
