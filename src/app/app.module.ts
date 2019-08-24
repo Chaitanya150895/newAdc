@@ -9,13 +9,15 @@ import { MainHeaderComponent } from './main-header/main-header.component';
 import { MainSidebarComponent } from './main-sidebar/main-sidebar.component';
 import { ContentWrapperComponent } from './content-wrapper/content-wrapper.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
-import { UserListComponent } from './user-list/user-list.component';
+import { UserListComponent } from './user/user-list/user-list.component';
 
 import { HttpClientModule }    from '@angular/common/http';
-import { AddUserComponent } from './add-user/add-user.component';
+import { AddUserComponent } from './user/add-user/add-user.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { EditUserComponent } from './edit-user/edit-user.component';
+import { EditUserComponent } from './user/edit-user/edit-user.component';
+import { ViewUserComponent } from './user/view-user/view-user.component';
+import { DeleteUserComponent } from './user/delete-user/delete-user.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     UserListComponent,
     AddUserComponent,
     DashboardComponent,
-    EditUserComponent
+    EditUserComponent,
+    ViewUserComponent,
+    DeleteUserComponent
   ],  
   imports: [
     BrowserModule,
