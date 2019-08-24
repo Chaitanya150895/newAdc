@@ -5,8 +5,10 @@ import { LocationListComponent } from './add-location/location-list/location-lis
 import { NewLocationComponent } from './add-location/new-location/new-location.component';
 import { EditLocationComponent } from './add-location/edit-location/edit-location.component';
 import { ViewLocationComponent } from './add-location/view-location/view-location.component';
+import { ContentHeaderComponent } from './content-header/content-header.component';
 
 const routes: Routes = [
+  { path: '', component: ContentHeaderComponent },
   { path: 'AddLocation', component: AddLocationComponent },
   { path: 'LocationList', component: LocationListComponent },
   { path: 'LocationList/edit/:locationId', component: EditLocationComponent },

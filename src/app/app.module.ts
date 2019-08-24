@@ -18,6 +18,8 @@ import { EditLocationComponent } from './add-location/edit-location/edit-locatio
 import { ViewLocationComponent } from './add-location/view-location/view-location.component';
 import { PipeTransformPipe } from './pipe-transform.pipe';
 import { ReplaceUnderscorePipe } from './replace-underscore.pipe';
+import { ContentWrapperComponent } from './content-wrapper/content-wrapper.component';
+import { ContentHeaderComponent } from './content-header/content-header.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ReplaceUnderscorePipe } from './replace-underscore.pipe';
     EditLocationComponent,
     ViewLocationComponent,
     PipeTransformPipe,
-    ReplaceUnderscorePipe
+    ReplaceUnderscorePipe,
+    ContentWrapperComponent,
+    ContentHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +46,7 @@ import { ReplaceUnderscorePipe } from './replace-underscore.pipe';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
+      { path: '', component: ContentHeaderComponent },
       { path: 'NewLocation', component: NewLocationComponent },
       { path: 'LocationList', component: LocationListComponent },
       { path: 'LocationList/edit/:locationId', component: EditLocationComponent },
