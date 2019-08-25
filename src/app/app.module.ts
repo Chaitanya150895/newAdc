@@ -18,6 +18,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { ViewUserComponent } from './user/view-user/view-user.component';
 import { DeleteUserComponent } from './user/delete-user/delete-user.component';
+import { ReplaceUnderscorePipe } from './replace-underscore.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DeleteUserComponent } from './user/delete-user/delete-user.component';
     DashboardComponent,
     EditUserComponent,
     ViewUserComponent,
-    DeleteUserComponent
+    DeleteUserComponent,
+    ReplaceUnderscorePipe
   ],  
   imports: [
     BrowserModule,
