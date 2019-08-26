@@ -12,12 +12,15 @@ import { HttpClient } from '@angular/common/http';
 export class LocationListComponent implements OnInit {
 
   locations = [];
+  loading = false;
 
   constructor(private http: HttpClient) {  }
 
   ngOnInit() {
-    this.http.get("http://localhost/logistic_v1/api/locations.json").subscribe(data => {
+this.loading = true;
 
+    this.http.get("http://localhost/logistic_v1/api/locations.json").subscribe(data => {
+      this.loading = false;
       console.log(data);
 
       this.locations = data['data'];
