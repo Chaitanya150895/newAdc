@@ -18,6 +18,7 @@ export class NewLocationComponent implements OnInit {
 
   regions = [];
   location_types = [];
+  showMsg: boolean = false;
 
   locationForm = new FormGroup({
     name: new FormControl(''),
@@ -29,9 +30,8 @@ export class NewLocationComponent implements OnInit {
     location_number: new FormControl(''),
     region_id: new FormControl(''),
     location_type_id: new FormControl(''),
-   
   });
- 
+
   constructor(private http: HttpClient) {
     this.http.get("http://localhost/logistic_v1/api/regions.json").subscribe(data => {
       console.log(data);
@@ -55,7 +55,10 @@ export class NewLocationComponent implements OnInit {
       .pipe(
       ).subscribe(data => {
         console.log(data);
+        this.locationForm.reset();
+        this.showMsg = true;
       });
+     // alert("Added Successfully!");
   }
 
   get zipcode() {return this.locationForm.get('zipcode') as FormControl; }

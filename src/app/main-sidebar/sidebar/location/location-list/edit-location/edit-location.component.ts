@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { LocationListComponent } from '../location-list/location-list.component';
+import { LocationListComponent } from '../location-list.component';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -22,6 +22,7 @@ export class EditLocationComponent implements OnInit {
   location;
   regions = [];
   location_types = [];
+  showMsg: boolean;
 
   locationForm = new FormGroup({
     id: new FormControl(''),
@@ -34,8 +35,11 @@ export class EditLocationComponent implements OnInit {
     location_number: new FormControl(''),
     region_id: new FormControl(''),
     trailer_bays: new FormControl(''),
-    location_type_id: new FormControl('')
+    location_type_id: new FormControl(''),
+    created: new FormControl(''),
+    modified: new FormControl('')
   });
+  
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {
     this.http.get("http://localhost/logistic_v1/api/regions.json").subscribe(data => {
@@ -75,10 +79,12 @@ export class EditLocationComponent implements OnInit {
   onSubmit() {
     console.warn(this.locationForm.value);
 
-    this.http.post("http://localhost/logistic_v1/api/locations/" + this.location.id + ".json", this.locationForm.value, httpOptions)
+    this.http.put("http://localhost/logistic_v1/api/locations/" + this.location.id + ".json", this.locationForm.value, httpOptions)
       .pipe(
       ).subscribe(data => {
         console.log(data);
+        this.locationForm.reset();
+        this.showMsg = true;
       });
   }
 }
