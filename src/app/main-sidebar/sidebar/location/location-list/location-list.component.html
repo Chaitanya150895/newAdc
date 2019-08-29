@@ -74,9 +74,9 @@
                 </td> -->
                 <td>
                     <div class="row">
-                    <div class="col-sm-4 col-xs-4 col-md-4"> <a [routerLink]="['/LocationList/view/', location.id]"><button class="btn-xs btn-success">View</button></a></div>
-                    <div class="col-sm-4 col-xs-4 col-md-4"> <a [routerLink]="['/LocationList/edit/', location.id]"><button class="btn-xs btn-success">Edit</button></a></div>
-                    <div class="col-sm-4 col-xs-4 col-md-4"> <a (click)="deleteLocation(location.id, locationId)"><button class="btn-xs btn-danger">Delete</button></a></div>
+                    <div class="col-sm-4 col-xs-4 col-md-4"> <a [routerLink]="['/LocationList/view/', location.id]"><i class="fa fa-eye fa-2x"></i></a></div>
+                    <div class="col-sm-4 col-xs-4 col-md-4"> <a [routerLink]="['/LocationList/edit/', location.id]"><i class="fa fa-edit fa-2x"></i></a></div>
+                    <div class="col-sm-4 col-xs-4 col-md-4"> <a (click)="deleteLocation(location.id, locationId)"><i class="fa fa-trash fa-2x"></i></a></div>
                      </div>
                   </td>
                 <!-- <td>
