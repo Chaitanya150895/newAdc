@@ -16,6 +16,9 @@ const httpOptions = {
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
+  successMsg = false;
+  validationSuccess = false;
+  loading = false;
   userForm = new FormGroup({
     id: new FormControl(''),
     active: new FormControl(''),
@@ -45,11 +48,8 @@ export class EditUserComponent implements OnInit {
     this.route.params.subscribe(params => {
       let id = params['userId'];
       console.log(`${id}`);
-
       this.http.get("http://localhost/logistic_v1/api/users/" + id + ".json").subscribe(data => {
-
         console.log(data);
-
         this.user = data['data'];
         this.user.password = "";
         delete this.user['created'];
@@ -63,10 +63,16 @@ export class EditUserComponent implements OnInit {
     });
   }
   save() {
+
+    this.validationSuccess = true;
+    this.loading = true;
     console.warn(this.userForm.value);
-    this.http.put("http://localhost/logistic_v1/api/users/"+this.user.id+".json", this.userForm.value, httpOptions)
+    this.http.put("http://localhost/logistic_v1/api/users/" + this.user.id + ".json", this.userForm.value, httpOptions)
       .pipe().subscribe(data => {
         console.log(data);
+        this.successMsg = true;
+        this.validationSuccess = false;
+        this.loading = false;
       });
   }
 }

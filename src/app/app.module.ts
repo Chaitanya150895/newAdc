@@ -19,6 +19,7 @@ import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { ViewUserComponent } from './user/view-user/view-user.component';
 import { DeleteUserComponent } from './user/delete-user/delete-user.component';
 import { ReplaceUnderscorePipe } from './replace-underscore.pipe';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ReplaceUnderscorePipe } from './replace-underscore.pipe';
     EditUserComponent,
     ViewUserComponent,
     DeleteUserComponent,
-    ReplaceUnderscorePipe
+    ReplaceUnderscorePipe,
+    ConfirmationDialogComponent
   ],  
   imports: [
     BrowserModule,
