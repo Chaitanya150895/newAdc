@@ -1,0 +1,41 @@
+<aside class="main-sidebar">
+  <section class="sidebar">
+
+    <ul class="sidebar-menu" data-widget="tree">
+  
+      <li *ngFor="let menu of menus" class="treeview menu-open">
+        <a href="#">
+          <i class="fa fa-dashboard"></i> <span>{{menu.name}}</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <ng-container *ngFor="let menu1 of menu.children">
+            <!-- {{menu.children.length}} -->
+            <li *ngIf="menu1.children.length==0; else hasChild"><a [routerLink]="[menu1.url]"><i
+                  class="fa fa-circle-o"></i> {{menu1.name}}</a></li>
+            <ng-template #hasChild>
+              <li  class="treeview menu-open">
+                <a href="#">
+                  <i class="fa fa-dashboard"></i> <span>{{menu1.name}}</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li *ngFor="let menu2 of menu1.children"><a ><i
+                      class="fa fa-circle-o"></i> {{menu2.name}}</a>
+                    </li>
+                </ul>
+              </li>
+              
+            </ng-template>
+          </ng-container>
+  
+        </ul>
+      </li>
+    </ul>
+  
+  </section>
+</aside>
