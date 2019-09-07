@@ -39,8 +39,6 @@ export class AddUserComponent implements OnInit {
         this.validationSuccess = false;
         this.loading = false;
       });
-
-    window.location.reload;
   }
   get first_name() { return this.userForm.get('first_name'); }
   get last_name() { return this.userForm.get('last_name'); }
