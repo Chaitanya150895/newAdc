@@ -1,0 +1,95 @@
+<div class="box">
+  <div class="box-header">
+    <h3 class="box-title">Location List</h3>
+  </div>
+  <!-- /.box-header -->
+  <div class="box-body">
+    <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+      <div *ngIf="loading ">
+        <div class="overlay">
+          <i class="fa fa-refresh fa-spin"></i>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <table text-align="center" *ngIf="!loading" id="example2" class="table table-bordered table-hover dataTable"
+            role="grid" aria-describedby="example2_info">
+            <thead>
+              <tr role="row">
+                <!-- <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                  aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
+                  Id</th> -->
+                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                  aria-label="Browser: activate to sort column ascending">Name</th>
+                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                  aria-label="Platform(s): activate to sort column ascending">Address</th>
+                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                  aria-label="Engine version: activate to sort column ascending">City</th>
+                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                  aria-label="CSS grade: activate to sort column ascending">State</th>
+                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                  aria-label="CSS grade: activate to sort column ascending">Zipcode</th>
+                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                  aria-label="CSS grade: activate to sort column ascending">Location Number</th>
+                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                  aria-label="CSS grade: activate to sort column ascending">Region</th>
+                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                  aria-label="CSS grade: activate to sort column ascending">Trailor Bays</th>
+                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                  aria-label="CSS grade: activate to sort column ascending">Location Type</th>
+                <!-- <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                  aria-label="CSS grade: activate to sort column ascending">Created</th>
+                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                  aria-label="CSS grade: activate to sort column ascending">Modified</th> -->
+
+                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                  aria-label="CSS grade: activate to sort column ascending">Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+
+
+              <tr role="row" class="odd" *ngFor="let location of locations; let locationId = index">
+                <!-- <td class="sorting_1">{{location.id}}</td> -->
+                <td>{{location.name}}</td>
+                <td>{{location.address}}</td>
+                <td>{{location.city}}</td>
+                <td>{{location.state}}</td>
+                <td>{{location.zipcode}}</td>
+                <td>{{location.location_number}}</td>
+                <td>{{location.region_id}}</td>
+                <td>{{location.trailer_bays | json}}</td>
+                <td>{{location.location_type_id}}</td>
+                <!-- <td>{{location.created}}</td>
+                <td>{{location.modified}}</td> -->
+                 <td>
+                  <a [routerLink]="['/LocationList/view/', location.id]"><i class="fa fa-eye" ></i></a> |
+                  <a [routerLink]="['/LocationList/edit/', location.id]"><i class="fa fa-edit"></i></a> |
+                  <a (click)="deleteLocation(location.id, locationId)"><i class="fa fa-trash" ></i></a>
+                  
+                </td> 
+                <!-- <td>
+                    <div class="row">
+                    <div class="col-sm-4 col-xs-4 col-md-4"> <a [routerLink]="['/LocationList/view/', location.id]"><i class="fa fa-eye fa-2x"></i></a></div>
+                    <div class="col-sm-4 col-xs-4 col-md-4"> <a [routerLink]="['/LocationList/edit/', location.id]"><i class="fa fa-edit fa-2x"></i></a></div>
+                    <div class="col-sm-4 col-xs-4 col-md-4"> <a (click)="deleteLocation(location.id, locationId)"><i class="fa fa-trash fa-2x"></i></a></div>
+                     </div>
+                  </td> -->
+              </tr>
+            </tbody>
+          </table>
+          <div class="row" *ngIf="showMsg">
+            <div class="col-xs-12">
+              <p class="alert alert-success">
+                <strong>Edit Success!</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

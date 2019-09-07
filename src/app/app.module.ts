@@ -25,6 +25,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { InventoryListComponent } from './inventory/inventory-list/inventory-list.component';
 import { SchedulesComponent } from './locations/new-location/schedules/schedules.component';
 import { LoginComponent } from './users/login/login.component';
+import { MainComponent } from './home/main/main.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +49,7 @@ import { LoginComponent } from './users/login/login.component';
     InventoryListComponent,
     SchedulesComponent,
     LoginComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
