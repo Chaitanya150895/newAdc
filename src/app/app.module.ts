@@ -23,6 +23,7 @@ import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { ViewUserComponent } from './user/view-user/view-user.component';
 import { DeleteUserComponent } from './user/delete-user/delete-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SchedulesComponent } from './location/new-location/schedules/schedules.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ViewUserComponent,
     DeleteUserComponent,
     ReplaceUnderscorePipe,
+    SchedulesComponent,
   ],
   imports: [
     BrowserModule,
