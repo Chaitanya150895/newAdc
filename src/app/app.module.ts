@@ -21,10 +21,9 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { AddUserComponent } from './user/add-user/add-user.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { ViewUserComponent } from './user/view-user/view-user.component';
-import { DeleteUserComponent } from './user/delete-user/delete-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { InventoryListComponent } from './inventory/inventory-list/inventory-list.component';
 import { SchedulesComponent } from './location/new-location/schedules/schedules.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,14 +37,14 @@ import { SchedulesComponent } from './location/new-location/schedules/schedules.
     PipeTransformPipe,
     ReplaceUnderscorePipe,
     ContentWrapperComponent,
-    LocationComponent,    
+    LocationComponent,
     UserListComponent,
     AddUserComponent,
     DashboardComponent,
     EditUserComponent,
     ViewUserComponent,
-    DeleteUserComponent,
     ReplaceUnderscorePipe,
+    InventoryListComponent,
     SchedulesComponent,
   ],
   imports: [

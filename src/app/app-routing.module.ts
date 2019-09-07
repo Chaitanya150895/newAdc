@@ -9,22 +9,23 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { AddUserComponent } from './user/add-user/add-user.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { ViewUserComponent } from './user/view-user/view-user.component';
-import { DeleteUserComponent } from './user/delete-user/delete-user.component';
+import { InventoryListComponent } from './inventory/inventory-list/inventory-list.component';
 
 const routes: Routes = [
 
   // { path: "", component: DashboardComponent },
 
   { path: '', component: DashboardComponent },
-  { path: 'userlist', component: UserListComponent },
-  { path: 'adduser', component: AddUserComponent },
-  { path: 'userlist/:userId', component: EditUserComponent },
-  { path: 'userlist/view/:userId', component: ViewUserComponent },
-  { path: 'userlist/delete/:userId', component: DeleteUserComponent },
-  { path: 'NewLocation', component: NewLocationComponent },
-  { path: 'LocationList', component: LocationListComponent },
-  { path: 'LocationList/edit/:locationId', component: EditLocationComponent },
-  { path: 'LocationList/view/:locationId', component: ViewLocationComponent }
+  { path: 'users', component: UserListComponent },
+  { path: 'users/add', component: AddUserComponent },
+  { path: 'users/edit/:userId', component: EditUserComponent },
+  { path: 'users/view/:userId', component: ViewUserComponent },
+  { path: 'locations/add', component: NewLocationComponent },
+  { path: 'locations', component: LocationListComponent },
+  { path: 'locations/edit/:locationId', component: EditLocationComponent },
+  { path: 'locations/view/:locationId', component: ViewLocationComponent },
+  { path: 'inventories', component: InventoryListComponent },
+
 ];
 
 @NgModule({
