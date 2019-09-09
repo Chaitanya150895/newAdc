@@ -26,6 +26,8 @@ import { InventoryListComponent } from './inventory/inventory-list/inventory-lis
 import { SchedulesComponent } from './locations/new-location/schedules/schedules.component';
 import { LoginComponent } from './users/login/login.component';
 import { MainComponent } from './home/main/main.component';
+import { LoginPageComponent } from './users/login-page/login-page.component';
+import { NeedAuthGuard } from './auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +52,7 @@ import { MainComponent } from './home/main/main.component';
     SchedulesComponent,
     LoginComponent,
     MainComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,15 +60,9 @@ import { MainComponent } from './home/main/main.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: DashboardComponent },
-      { path: 'NewLocation', component: NewLocationComponent },
-      { path: 'LocationList', component: LocationListComponent },
-      { path: 'LocationList/edit/:locationId', component: EditLocationComponent },
-      { path: 'LocationList/view/:locationId', component: ViewLocationComponent }
-    ]),
+    
   ],
-  providers: [],
+  providers: [NeedAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

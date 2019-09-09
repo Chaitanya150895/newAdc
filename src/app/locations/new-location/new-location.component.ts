@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const httpOptions = {
@@ -30,6 +30,14 @@ export class NewLocationComponent implements OnInit {
     location_number: new FormControl(''),
     region_id: new FormControl(''),
     location_type_id: new FormControl(''),
+    schedules : new FormArray(
+      [new FormGroup
+        (
+          {
+      username: new FormControl(''),
+      password: new FormControl('')
+    }
+    )])
   });
 
   constructor(private http: HttpClient) {
