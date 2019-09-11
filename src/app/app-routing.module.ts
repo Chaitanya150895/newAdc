@@ -17,18 +17,22 @@ import { NeedAuthGuard } from './auth.guard';
 const routes: Routes = [
 
   // { path: "", component: DashboardComponent },
-
-  { path: 'dashboard', component: DashboardComponent , canActivate:[NeedAuthGuard] },
-  { path: 'users/login', component: LoginComponent , canActivate:[NeedAuthGuard] },
-  { path: 'users', component: UserListComponent , canActivate:[NeedAuthGuard] },
-  { path: 'users/add', component: AddUserComponent , canActivate:[NeedAuthGuard] },
-  { path: 'users/edit/:userId', component: EditUserComponent , canActivate:[NeedAuthGuard] },
-  { path: 'users/view/:userId', component: ViewUserComponent , canActivate:[NeedAuthGuard] },
-  { path: 'locations/add', component: NewLocationComponent , canActivate:[NeedAuthGuard] },
-  { path: 'locations', component: LocationListComponent, canActivate:[NeedAuthGuard] },
-  { path: 'locations/edit/:locationId', component: EditLocationComponent , canActivate:[NeedAuthGuard] },
-  { path: 'locations/view/:locationId', component: ViewLocationComponent , canActivate:[NeedAuthGuard] },
-  { path: 'inventories', component: InventoryListComponent , canActivate:[NeedAuthGuard] },
+{ path:'',component:DashboardComponent,
+  children: [
+   
+    
+    { path: 'users', component: UserListComponent , canActivate:[NeedAuthGuard] },
+    { path: 'users/add', component: AddUserComponent , canActivate:[NeedAuthGuard] },
+    { path: 'users/edit/:userId', component: EditUserComponent , canActivate:[NeedAuthGuard] },
+    { path: 'users/view/:userId', component: ViewUserComponent , canActivate:[NeedAuthGuard] },
+    { path: 'locations/add', component: NewLocationComponent , canActivate:[NeedAuthGuard] },
+    { path: 'locations', component: LocationListComponent, canActivate:[NeedAuthGuard] },
+    { path: 'locations/edit/:locationId', component: EditLocationComponent , canActivate:[NeedAuthGuard] },
+    { path: 'locations/view/:locationId', component: ViewLocationComponent , canActivate:[NeedAuthGuard] },
+    { path: 'inventories', component: InventoryListComponent , canActivate:[NeedAuthGuard] },
+  ]
+},
+ 
   {
     path: 'login',
     component: LoginPageComponent

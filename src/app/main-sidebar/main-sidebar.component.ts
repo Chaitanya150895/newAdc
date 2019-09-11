@@ -1,5 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpService } from '../http.service';
+
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    'Authorization': "Bearer "+localStorage.getItem("TOKEN")
+  })
+};
+
 @Component({
   selector: 'app-main-sidebar',
   templateUrl: './main-sidebar.component.html',
@@ -9,14 +20,15 @@ export class MainSidebarComponent implements OnInit {
 
  
   menus = [];
-  constructor(private http:HttpClient) { 
+  constructor(private httpService:HttpService) { 
 
-    this.http.get("http://localhost/logistic_v1/api/menus.json").subscribe(data => {
+    this.httpService.getHttp("http://localhost/logistic_v1/api/menus.json").subscribe(data => {
 
-    console.log(data['data']);
-    this.menus = data['data'];
-
-    })
+      console.log(data['data']);
+      this.menus = data['data'];
+  
+      });
+ 
   }
 
   ngOnInit() {
