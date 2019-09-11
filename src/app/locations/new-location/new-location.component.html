@@ -5,7 +5,7 @@
       <h3 class="box-title">New Location</h3>
     </div>
     <div class="box-body">
-
+{{locationForm.value | json }}
       <form method="post" [formGroup]="locationForm" (ngSubmit)="onSubmit()">
 
         <div class="row" *ngIf="showMsg">

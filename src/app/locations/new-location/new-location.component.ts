@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpService } from 'src/app/http.service';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -34,19 +35,21 @@ export class NewLocationComponent implements OnInit {
       [new FormGroup
         (
           {
-      username: new FormControl(''),
-      password: new FormControl('')
+            name:new FormControl("test"),
+      day: new FormControl('Sunday'),
+      am: new FormControl('1'),
+      pm: new FormControl('1')
     }
     )])
   });
 
-  constructor(private http: HttpClient) {
-    this.http.get("http://localhost/logistic_v1/api/regions.json").subscribe(data => {
+  constructor(private httpService: HttpService) {
+    this.httpService.getHttp("http://localhost/logistic_v1/api/regions.json").subscribe(data => {
       console.log(data);
       this.regions = data['data'];
     });
 
-    this.http.get("http://localhost/logistic_v1/api/location_types.json").subscribe(data => {
+    this.httpService.getHttp("http://localhost/logistic_v1/api/location_types.json").subscribe(data => {
       console.log(data);
       this.location_types = data['data'];
     });
@@ -59,7 +62,7 @@ export class NewLocationComponent implements OnInit {
     // TODO: Use EventEmitter with form value
     console.warn(this.locationForm.value);
 
-    this.http.post("http://localhost/logistic_v1/api/locations.json", this.locationForm.value, httpOptions)
+    this.httpService.postHttp("http://localhost/logistic_v1/api/locations.json", this.locationForm.value)
       .pipe(
       ).subscribe(data => {
         console.log(data);
