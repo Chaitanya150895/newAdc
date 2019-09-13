@@ -6,7 +6,7 @@ const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
     'Accept': 'application/json',
-    'Authorization': "Bearer "+localStorage.getItem("TOKEN")
+    'Authorization': "Bearer " + localStorage.getItem("TOKEN")
   })
 };
 

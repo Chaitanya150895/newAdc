@@ -65,8 +65,8 @@
                 <!-- <td>{{location.created}}</td>
                 <td>{{location.modified}}</td> -->
                  <td>
-                  <a [routerLink]="['/LocationList/view/', location.id]"><i class="fa fa-eye" ></i></a> |
-                  <a [routerLink]="['/LocationList/edit/', location.id]"><i class="fa fa-edit"></i></a> |
+                  <a [routerLink]="['/locations/view/', location.id]"><i class="fa fa-eye" ></i></a> |
+                  <a [routerLink]="['/locations/edit/', location.id]"><i class="fa fa-edit"></i></a> |
                   <a (click)="deleteLocation(location.id, locationId)"><i class="fa fa-trash" ></i></a>
                   
                 </td> 

@@ -13,6 +13,7 @@ import { InventoryListComponent } from './inventory/inventory-list/inventory-lis
 import { LoginComponent } from './users/login/login.component';
 import { LoginPageComponent } from './users/login-page/login-page.component';
 import { NeedAuthGuard } from './auth.guard';
+import { AddLocationComponent } from './locations/add-location/add-location.component';
 
 const routes: Routes = [
 
@@ -25,12 +26,12 @@ const routes: Routes = [
     { path: 'users/add', component: AddUserComponent , canActivate:[NeedAuthGuard] },
     { path: 'users/edit/:userId', component: EditUserComponent , canActivate:[NeedAuthGuard] },
     { path: 'users/view/:userId', component: ViewUserComponent , canActivate:[NeedAuthGuard] },
-    { path: 'locations/add', component: NewLocationComponent , canActivate:[NeedAuthGuard] },
+    { path: 'locations/add', component: AddLocationComponent , canActivate:[NeedAuthGuard] },
     { path: 'locations', component: LocationListComponent, canActivate:[NeedAuthGuard] },
     { path: 'locations/edit/:locationId', component: EditLocationComponent , canActivate:[NeedAuthGuard] },
     { path: 'locations/view/:locationId', component: ViewLocationComponent , canActivate:[NeedAuthGuard] },
     { path: 'inventories', component: InventoryListComponent , canActivate:[NeedAuthGuard] },
-  ]
+  ],canActivate:[NeedAuthGuard]
 },
  
   {

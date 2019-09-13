@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { HttpService } from 'src/app/http.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class ViewLocationComponent implements OnInit {
   locationForm: any;
   loading = false;
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {
+  constructor(private http: HttpService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -21,7 +22,7 @@ export class ViewLocationComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       let id = params.get('locationId');
 
-      this.http.get("http://localhost/logistic_v1/api/locations/" + id + ".json").subscribe(data => {
+      this.http.getHttp("http://localhost/logistic_v1/api/locations/" + id + ".json").subscribe(data => {
         this.loading = false;
         console.log(`${id}`);
 

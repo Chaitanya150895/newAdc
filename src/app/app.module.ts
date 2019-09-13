@@ -28,6 +28,7 @@ import { LoginComponent } from './users/login/login.component';
 import { MainComponent } from './home/main/main.component';
 import { LoginPageComponent } from './users/login-page/login-page.component';
 import { NeedAuthGuard } from './auth.guard';
+import { AddLocationComponent } from './locations/add-location/add-location.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +54,7 @@ import { NeedAuthGuard } from './auth.guard';
     LoginComponent,
     MainComponent,
     LoginPageComponent,
+    AddLocationComponent,
   ],
   imports: [
     BrowserModule,
