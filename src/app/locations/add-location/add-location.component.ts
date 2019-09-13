@@ -70,6 +70,14 @@ formData = [
 
   }
 
+  onUpdate(){
+    this.httpService.getHttp("http://localhost/logistic_v1/api/locations/34.json").subscribe(data => {
+      console.log(data);
+     let location = data['data'];
+     this.locationForm.patchValue(location)
+    });
+  }
+
   onSubmit(){
      // TODO: Use EventEmitter with form value
      console.warn(this.locationForm.value);

@@ -11,7 +11,7 @@ import { MainSidebarComponent } from './main-sidebar/main-sidebar.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
 import { LocationListComponent } from './locations/location-list/location-list.component';
 import { RouterModule } from '@angular/router';
-import { EditLocationComponent } from './locations/location-list/edit-location/edit-location.component';
+import { EditLocationComponent } from './locations/edit-location/edit-location.component';
 import { ViewLocationComponent } from './locations/location-list/view-location/view-location.component';
 import { PipeTransformPipe } from './pipe-transform.pipe';
 import { ReplaceUnderscorePipe } from './replace-underscore.pipe';

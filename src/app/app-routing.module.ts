@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LocationListComponent } from './locations/location-list/location-list.component';
 import { NewLocationComponent } from './locations/new-location/new-location.component';
-import { EditLocationComponent } from './locations/location-list/edit-location/edit-location.component';
+import { EditLocationComponent } from './locations/edit-location/edit-location.component';
 import { ViewLocationComponent } from './locations/location-list/view-location/view-location.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserListComponent } from './users/user-list/user-list.component';

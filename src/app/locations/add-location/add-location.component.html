@@ -38,9 +38,7 @@
                         </div>
                         <div formArrayName="schedules">
                                
-                                <label></label>
-                                <label>AM</label>
-                                <label>PM</label>
+                               
                                 <div *ngFor="let schedule of schedules.controls; let i=index" style="width: 100px; float:left">
                                   <!-- The repeated alias template -->
                                     <div [formGroupName]="i" style="width: 50px">
@@ -62,6 +60,8 @@
                     <!-- /.box-body -->
                     <div class="box-footer">
                         <button type="submit">Submit</button>
+
+                        <button type="button" (click)="onUpdate()">update</button>
                     </div>
                     {{locationForm.value | json}}
                 </form>
