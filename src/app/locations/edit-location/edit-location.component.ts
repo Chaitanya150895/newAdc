@@ -24,7 +24,7 @@ export class EditLocationComponent implements OnInit {
   ]
 
 formData = [
-  {for : "id",control:"input" , type:"text",label:"ID",placeholder:"Enter Name", id:"id",control_name:"id"},
+ // {for : "id",control:"input" , type:"text",label:"ID",placeholder:"Enter Name", id:"id",control_name:"id"},
   {for : "name",control:"input" , type:"text",label:"Name",placeholder:"Enter Name", id:"name",control_name:"name"},
   {for : "address", control:"input" ,type:"text",label:"Address",placeholder:"Enter Address",id:"address",control_name:"address"},
   {for : "city", control:"input" ,type:"text",label:"City",placeholder:"Enter City",id:"city",control_name:"city"},
@@ -92,6 +92,7 @@ formData = [
 
   newSchedules(day:string){
     return this.fb.group({
+      id:[''],
       day:[day],
       am:false,
       pm:false
