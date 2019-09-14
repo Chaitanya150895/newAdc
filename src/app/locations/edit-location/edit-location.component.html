@@ -23,7 +23,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form [formGroup]="locationForm" (ngSubmit)="onSubmit()">
+                    <form [formGroup]="customForm" (ngSubmit)="onSubmit()">
                         <div class="box-body">
     
                             <div class="form-group" *ngFor="let data of formData">
@@ -43,7 +43,7 @@
                                       <!-- The repeated alias template -->
                                         <div [formGroupName]="i" style="width: 50px">
                                             <div class="form-group">
-                                               <label>{{locationForm.value.schedules[i].day}}</label>
+                                               <label>{{customForm.value.schedules[i].day}}</label>
     
                                                 <input type="checkbox" formControlName="am" ><br>
                                                 <input type="checkbox" formControlName="pm">
@@ -63,7 +63,7 @@
     
                             <button type="button" (click)="onUpdate()">update</button>
                         </div>
-                        {{locationForm.value | json}}
+                        {{customForm.value | json}}
                     </form>
                 </div>
     

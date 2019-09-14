@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/http.service';
 import { FormBuilder, FormArray, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-location',
@@ -36,7 +37,7 @@ formData = [
 
   
 
-  locationForm = this.fb.group({
+  customForm = this.fb.group({
     id:[''],
     name: [''],
     address: [''],
@@ -51,15 +52,16 @@ formData = [
 
   });
 
-  constructor(private fb:FormBuilder, private httpService: HttpService) { }
+  constructor(private fb:FormBuilder, private httpService: HttpService, 
+    private route:ActivatedRoute) { }
 
   ngOnInit() {
-    this.httpService.getHttp("http://localhost/logistic_v1/api/regions.json").subscribe(data => {
+    this.httpService.getHttp("regions.json").subscribe(data => {
       console.log(data);
      this.formData[this.REGION_INDEX].array = ( data['data']);
     });
 
-    this.httpService.getHttp("http://localhost/logistic_v1/api/location_types.json").subscribe(data => {
+    this.httpService.getHttp("location_types.json").subscribe(data => {
       console.log(data);
      this.formData[this.LOCATION_TYPE_INDEX].array = ( data['data']);
     });
@@ -69,11 +71,19 @@ formData = [
       this.schedules.push(this.newSchedules(element.day))
     });
 
-    this.httpService.getHttp("http://localhost/logistic_v1/api/locations/34.json").subscribe(data => {
-      console.log(data);
-     let location = data['data'];
-     this.locationForm.patchValue(location)
+ 
+    this.route.params.subscribe(params => {
+      let id = params['locationId']
+      this.httpService.getHttp("locations/"+id+".json").subscribe(data => {
+        console.log(data);
+       let location = data['data'];
+      
+       this.customForm.patchValue(location)
+      
+      });
     });
+ 
+   
 
 
   }
@@ -83,11 +93,35 @@ formData = [
   }
 
   onSubmit(){
-  
+   // TODO: Use EventEmitter with form value
+   console.warn(this.customForm.value);
+
+   this.customForm.value.schedules.forEach(element => {
+
+    if(element.am == false){
+      element.am = 0;
+    }else{
+      element.am = 1;
+    }
+    if(element.pm == false){
+      element.pm = 0;
+    }else{
+      element.pm = 1;
+    }
+     
+   });
+
+   this.httpService.putHttp("http://localhost/logistic_v1/api/locations/"+ this.customForm.value.id +".json", this.customForm.value)
+     .pipe(
+     ).subscribe(data => {
+       console.log(data);
+      // this.customForm.reset();
+     
+     });
   }
 
   get schedules(){
-    return this.locationForm.get("schedules") as FormArray;
+    return this.customForm.get("schedules") as FormArray;
   }
 
   newSchedules(day:string){

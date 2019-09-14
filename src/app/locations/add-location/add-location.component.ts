@@ -9,8 +9,8 @@ import { HttpService } from 'src/app/http.service';
 })
 export class AddLocationComponent implements OnInit {
 
-  REGION_INDEX = 5;
-  LOCATION_TYPE_INDEX = 6;
+  REGION_INDEX = 6;
+  LOCATION_TYPE_INDEX = 7;
   regions=[];
 
   defaultSchdeuls = [
@@ -29,35 +29,38 @@ formData = [
   {for : "city", control:"input" ,type:"text",label:"City",placeholder:"Enter City",id:"city",control_name:"city"},
   {for : "state", control:"input" ,type:"text",label:"State",placeholder:"Enter State",id:"state",control_name:"state"},
   {for : "location_number", control:"input" ,type:"text",label:"Location Number",placeholder:"Enter Location Number",id:"location_number",control_name:"location_number"},
+  {for : "trailer_bays", control:"input" ,type:"number",label:"Trailer Bays",placeholder:"Enter Trailer Bays",id:"trailer_bays",control_name:"trailer_bays"},
   {for : "region", control:"select" ,type:null,label:"Region",placeholder:"Select Region",id:"region_id",control_name:"region_id",array:null},
   {for : "location_type", control:"select" ,type:null,label:"Location Type",placeholder:"Select Location Type",id:"location_type_id",control_name:"location_type_id",array:null}
 ]
 
   
 
-  locationForm = this.fb.group({
+  customForm = this.fb.group({
     name: [''],
     address: [''],
     city: [''],
     state: [''],
     location_number:[''],
+    trailer_bays:[''],
     region_id:[''],
     location_type_id:[''],
     schedules:this.fb.array([
     ])
-
-
   });
 
   constructor(private fb:FormBuilder, private httpService: HttpService) { }
 
   ngOnInit() {
-    this.httpService.getHttp("http://localhost/logistic_v1/api/regions.json").subscribe(data => {
+  
+    //load region in combo
+    this.httpService.getHttp("regions.json").subscribe(data => {
       console.log(data);
      this.formData[this.REGION_INDEX].array = ( data['data']);
     });
 
-    this.httpService.getHttp("http://localhost/logistic_v1/api/location_types.json").subscribe(data => {
+    //load location types in combo
+    this.httpService.getHttp("location_types.json").subscribe(data => {
       console.log(data);
      this.formData[this.LOCATION_TYPE_INDEX].array = ( data['data']);
     });
@@ -71,18 +74,14 @@ formData = [
   }
 
   onUpdate(){
-    this.httpService.getHttp("http://localhost/logistic_v1/api/locations/34.json").subscribe(data => {
-      console.log(data);
-     let location = data['data'];
-     this.locationForm.patchValue(location)
-    });
+    
   }
 
   onSubmit(){
      // TODO: Use EventEmitter with form value
-     console.warn(this.locationForm.value);
+     console.warn(this.customForm.value);
 
-     this.locationForm.value.schedules.forEach(element => {
+     this.customForm.value.schedules.forEach(element => {
 
       if(element.am == false){
         element.am = 0;
@@ -97,18 +96,18 @@ formData = [
        
      });
 
-     this.httpService.postHttp("http://localhost/logistic_v1/api/locations.json", this.locationForm.value)
+     this.httpService.postHttp("locations.json", this.customForm.value)
        .pipe(
        ).subscribe(data => {
          console.log(data);
-         this.locationForm.reset();
+         this.customForm.reset();
        
        });
       // alert("Added Successfully!");
   }
 
   get schedules(){
-    return this.locationForm.get("schedules") as FormArray;
+    return this.customForm.get("schedules") as FormArray;
   }
 
   newSchedules(day:string){

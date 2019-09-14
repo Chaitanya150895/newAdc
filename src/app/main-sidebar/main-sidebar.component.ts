@@ -22,16 +22,17 @@ export class MainSidebarComponent implements OnInit {
   menus = [];
   constructor(private httpService:HttpService) { 
 
-    this.httpService.getHttp("http://localhost/logistic_v1/api/menus.json").subscribe(data => {
+   
+ 
+  }
+
+  ngOnInit() {
+    this.httpService.getHttp("menus.json").subscribe(data => {
 
       console.log(data['data']);
       this.menus = data['data'];
   
       });
- 
-  }
-
-  ngOnInit() {
   }
 
 }

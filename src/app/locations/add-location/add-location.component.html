@@ -6,7 +6,6 @@
     <ol class="breadcrumb">
         <li>
             <a href="#">Back</a>
-
         </li>
     </ol>
 </section>
@@ -23,7 +22,7 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form [formGroup]="locationForm" (ngSubmit)="onSubmit()">
+                <form [formGroup]="customForm" (ngSubmit)="onSubmit()">
                     <div class="box-body">
 
                         <div class="form-group" *ngFor="let data of formData">
@@ -37,22 +36,23 @@
                             </select>
                         </div>
                         <div formArrayName="schedules">
-                               
-                               
-                                <div *ngFor="let schedule of schedules.controls; let i=index" style="width: 100px; float:left">
-                                  <!-- The repeated alias template -->
-                                    <div [formGroupName]="i" style="width: 50px">
-                                        <div class="form-group">
-                                           <label>{{locationForm.value.schedules[i].day}}</label>
 
-                                            <input type="checkbox" formControlName="am" ><br>
-                                            <input type="checkbox" formControlName="pm">
-                                        </div>
+
+                            <div *ngFor="let schedule of schedules.controls; let i=index"
+                                style="width: 100px; float:left">
+                                <!-- The repeated alias template -->
+                                <div [formGroupName]="i" style="width: 50px">
+                                    <div class="form-group">
+                                        <label>{{customForm.value.schedules[i].day}}</label>
+
+                                        <input type="checkbox" formControlName="am"><br>
+                                        <input type="checkbox" formControlName="pm">
                                     </div>
                                 </div>
-                              </div>
+                            </div>
+                        </div>
 
-                        
+
 
 
 
@@ -63,7 +63,7 @@
 
                         <button type="button" (click)="onUpdate()">update</button>
                     </div>
-                    {{locationForm.value | json}}
+                    {{customForm.value | json}}
                 </form>
             </div>
 
