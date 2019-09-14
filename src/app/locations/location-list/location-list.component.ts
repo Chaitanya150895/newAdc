@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpService } from 'src/app/http.service';
 
 
 const httpOptions = {
@@ -18,16 +19,31 @@ const httpOptions = {
 
 export class LocationListComponent implements OnInit {
 
+  tableHeaders = [
+    "Id",
+    "Name",
+    "Address",
+    "City",
+    "State",
+    "ZipCode",
+    "Location Number",
+    "Region",
+    "Trailer Bays",
+    "Location Type",
+    "Action"
+  ]
+
+
   locations = [];
   loading = false;
   showMsg: boolean;
 
-  constructor(private http: HttpClient) {  }
+  constructor(private http: HttpService) {  }
 
   ngOnInit() {
 this.loading = true;
 
-    this.http.get("http://localhost/logistic_v1/api/locations.json",httpOptions).subscribe(data => {
+    this.http.getHttp("locations.json").subscribe(data => {
       this.loading = false;
       console.log(data);
       this.locations = data['data'];
@@ -36,7 +52,7 @@ this.loading = true;
   }
 
   deleteLocation(id, locationId) {
-    this.http.delete("http://localhost/logistic_v1/api/locations/"+id+".json").subscribe(data => {
+    this.http.deleteHttp("locations/"+id+".json").subscribe(data => {
 
       console.log(data);
 

@@ -14,6 +14,9 @@ import { LoginComponent } from './users/login/login.component';
 import { LoginPageComponent } from './users/login-page/login-page.component';
 import { NeedAuthGuard } from './auth.guard';
 import { AddLocationComponent } from './locations/add-location/add-location.component';
+import { TrailerListComponent } from './trailers/trailer-list/trailer-list.component';
+import { AddTrailerComponent } from './trailers/add-trailer/add-trailer.component';
+import { EditTrailerComponent } from './trailers/edit-trailer/edit-trailer.component';
 
 const routes: Routes = [
 
@@ -31,6 +34,9 @@ const routes: Routes = [
     { path: 'locations/edit/:locationId', component: EditLocationComponent , canActivate:[NeedAuthGuard] },
     { path: 'locations/view/:locationId', component: ViewLocationComponent , canActivate:[NeedAuthGuard] },
     { path: 'inventories', component: InventoryListComponent , canActivate:[NeedAuthGuard] },
+    { path: 'trailers', component: TrailerListComponent, canActivate:[NeedAuthGuard] },
+    { path: 'trailers/add', component: AddTrailerComponent, canActivate:[NeedAuthGuard] },
+    { path: 'trailers/edit:trailerId', component: EditTrailerComponent, canActivate:[NeedAuthGuard] },
   ],canActivate:[NeedAuthGuard]
 },
  

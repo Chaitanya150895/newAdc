@@ -29,6 +29,9 @@ import { MainComponent } from './home/main/main.component';
 import { LoginPageComponent } from './users/login-page/login-page.component';
 import { NeedAuthGuard } from './auth.guard';
 import { AddLocationComponent } from './locations/add-location/add-location.component';
+import { AddTrailerComponent } from './trailers/add-trailer/add-trailer.component';
+import { EditTrailerComponent } from './trailers/edit-trailer/edit-trailer.component';
+import { TrailerListComponent } from './trailers/trailer-list/trailer-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +58,9 @@ import { AddLocationComponent } from './locations/add-location/add-location.comp
     MainComponent,
     LoginPageComponent,
     AddLocationComponent,
+    AddTrailerComponent,
+    EditTrailerComponent,
+    TrailerListComponent,
   ],
   imports: [
     BrowserModule,
