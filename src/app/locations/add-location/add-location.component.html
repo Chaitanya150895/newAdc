@@ -29,12 +29,28 @@
                             <label for="{{data.for}}">{{data.label}}</label>
                             <input *ngIf="data.control=='input'" type="{{data.type}}" class="form-control"
                                 id="{{data.id}}" placeholder="{{data.placeholder}}"
-                                formControlName="{{data.control_name}}">
+                                formControlName="{{data.control_name}}" >
                             <select *ngIf="data.control=='select'" class="form-control" id="{{data.id}}"
-                                formControlName="{{data.control_name}}">
+                                formControlName="{{data.control_name}}" >
                                 <option *ngFor="let item of data.array" [value]="item.id">{{item.name}}</option>
                             </select>
+
+                           
+                            <div style="margin-top: 8px;" *ngIf="customForm.controls[data.control_name].invalid && (customForm.controls[data.control_name].dirty || customForm.controls[data.control_name].touched)" class="alert alert-danger">
+
+                                <div *ngIf="customForm.controls[data.control_name].errors.required">
+                                    {{data.label}} is required.
+                                </div>
+                                <div *ngIf="customForm.controls[data.control_name].errors.minlength">
+                                    {{data.label}} must be at least 4 characters long.
+                                </div>
+                                <div *ngIf="customForm.controls[data.control_name].errors.forbiddenName">
+                                    {{data.label}} cannot be Bob.
+                                </div>
+
+                            </div>
                         </div>
+
                         <div formArrayName="schedules">
 
 

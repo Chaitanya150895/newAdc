@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormArray, FormGroup } from '@angular/forms';
+import { FormBuilder, FormArray, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from 'src/app/http.service';
 
 @Component({
@@ -37,8 +37,8 @@ formData = [
   
 
   customForm = this.fb.group({
-    name: [''],
-    address: [''],
+    name: ['',[Validators.required, Validators.minLength(4)]],
+    address: ['',[Validators.required, Validators.minLength(4)]],
     city: [''],
     state: [''],
     location_number:[''],
