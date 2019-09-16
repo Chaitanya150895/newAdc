@@ -23,6 +23,7 @@ export class AddLocationComponent implements OnInit {
     { day:"Sunday",am:false,pm:false}
   ]
 
+//all required input fields need to be declare here.
 formData = [
   {for : "name",control:"input" , type:"text",label:"Name",placeholder:"Enter Name", id:"name",control_name:"name"},
   {for : "address", control:"input" ,type:"text",label:"Address",placeholder:"Enter Address",id:"address",control_name:"address"},

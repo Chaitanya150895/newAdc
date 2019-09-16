@@ -72,12 +72,15 @@ formData = [
     });
 
  
+    //fetch the params from the url
     this.route.params.subscribe(params => {
       let id = params['locationId']
+      //now get the data from locations api for based on id param
       this.httpService.getHttp("locations/"+id+".json").subscribe(data => {
         console.log(data);
        let location = data['data'];
       
+       //now load the data inside the form
        this.customForm.patchValue(location)
       
       });
