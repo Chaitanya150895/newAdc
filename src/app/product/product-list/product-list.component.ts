@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/http.service';
 
 @Component({
   selector: 'app-product-list',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-
-  constructor() { }
+  products = [];
+  loading= false;
+tableHeaders = [
+  "Id",
+  "Name",
+  "Price"
+]
+  constructor(private httpService: HttpService ) { }
 
   ngOnInit() {
+    this.loading = true;
+
+    this.httpService.getHttp("products.json").subscribe(data => {
+      this.loading = false;
+      console.log(data);
+      this.products = data['data'];
+
+    });
   }
 
 }
