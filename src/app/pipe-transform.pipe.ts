@@ -1,12 +1,14 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe } from '@angular/core';
+import {DatePipe } from '@angular/common';
 
 @Pipe({
   name: 'pipeTransform'
 })
-export class PipeTransformPipe implements PipeTransform {
+export class PipeTransformPipe  {
+  constructor(private datePipe: DatePipe) {}
 
-  transform(value: string): string {
-    return value? value.replace(/_/g, " ") : value;
+  transformDate(date) {
+    return this.datePipe.transform(date, 'm/dd/yyyy hh:mm:ss');
   }
 
 }

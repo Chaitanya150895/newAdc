@@ -46,6 +46,10 @@ import { ViewProductComponent } from './product/product-list/view-product/view-p
 import { NewTrailerComponent } from './trailer/new-trailer/new-trailer.component';
 import { TrailerlistComponent } from './trailer/trailerlist/trailerlist.component';
 import { ViewTrailerComponent } from './trailer/trailerlist/view-trailer/view-trailer.component';
+import { CommonModule, DatePipe } from '@angular/common';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+
+import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,13 +96,15 @@ import { ViewTrailerComponent } from './trailer/trailerlist/view-trailer/view-tr
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    
+    DateTimePickerModule,
+    DropDownListModule
   ],
-  providers: [NeedAuthGuard],
+  providers: [DatePipe,NeedAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
