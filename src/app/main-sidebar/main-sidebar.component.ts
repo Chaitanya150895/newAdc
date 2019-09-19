@@ -1,15 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HttpService } from '../http.service';
 
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-    'Authorization': "Bearer "+localStorage.getItem("TOKEN")
-  })
-};
 
 @Component({
   selector: 'app-main-sidebar',
@@ -18,7 +9,6 @@ const httpOptions = {
 })
 export class MainSidebarComponent implements OnInit {
 
- 
   menus = [];
   constructor(private httpService:HttpService) { 
 
@@ -34,5 +24,4 @@ export class MainSidebarComponent implements OnInit {
   
       });
   }
-
 }

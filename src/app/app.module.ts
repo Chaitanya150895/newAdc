@@ -35,6 +35,17 @@ import { TrailerListComponent } from './trailers/trailer-list/trailer-list.compo
 import { AddInventoryComponent } from './inventory/add-inventory/add-inventory.component';
 import { EditInventoryComponent } from './inventory/edit-inventory/edit-inventory.component';
 import { ViewInventoryComponent } from './inventory/view-inventory/view-inventory.component';
+import { EditOrderComponent } from './order/edit-order/edit-order.component';
+import { NewOrderComponent } from './order/new-order/new-order.component';
+import { OrderListComponent } from './order/order-list/order-list.component';
+import { ViewOrderComponent } from './order/order-list/view-order/view-order.component';
+import { AddProductComponent } from './product/add-product/add-product.component';
+import { EditProductComponent } from './product/edit-product/edit-product.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { ViewProductComponent } from './product/product-list/view-product/view-product.component';
+import { NewTrailerComponent } from './trailer/new-trailer/new-trailer.component';
+import { TrailerlistComponent } from './trailer/trailerlist/trailerlist.component';
+import { ViewTrailerComponent } from './trailer/trailerlist/view-trailer/view-trailer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,6 +78,17 @@ import { ViewInventoryComponent } from './inventory/view-inventory/view-inventor
     AddInventoryComponent,
     EditInventoryComponent,
     ViewInventoryComponent,
+    EditOrderComponent,
+    NewOrderComponent,
+    OrderListComponent,
+    ViewOrderComponent,
+    AddProductComponent,
+    EditProductComponent,
+    ProductListComponent,
+    ViewProductComponent,
+    NewTrailerComponent,
+    TrailerlistComponent,
+    ViewTrailerComponent,
   ],
   imports: [
     BrowserModule,
