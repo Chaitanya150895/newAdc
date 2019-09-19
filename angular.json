@@ -30,6 +30,7 @@
               "node_modules/admin-lte/bower_components/jvectormap/jquery-jvectormap.css",
               "node_modules/admin-lte/dist/css/AdminLTE.min.css",
               "node_modules/admin-lte/dist/css/skins/_all-skins.min.css",
+              "src/jquery-checktree.css",
               "src/styles.css"
             ],
             "scripts": [
@@ -51,7 +52,8 @@
              "node_modules/admin-lte/bower_components/fastclick/lib/fastclick.js",
              "node_modules/admin-lte/dist/js/adminlte.min.js",
              "node_modules/admin-lte/dist/js/pages/dashboard.js",
-             "node_modules/admin-lte/dist/js/demo.js"
+             "node_modules/admin-lte/dist/js/demo.js",
+             "src/jquery-checktree.js"
             ]
           },
           "configurations": {

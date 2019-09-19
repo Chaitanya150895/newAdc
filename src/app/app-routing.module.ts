@@ -17,6 +17,9 @@ import { AddLocationComponent } from './locations/add-location/add-location.comp
 import { TrailerListComponent } from './trailers/trailer-list/trailer-list.component';
 import { AddTrailerComponent } from './trailers/add-trailer/add-trailer.component';
 import { EditTrailerComponent } from './trailers/edit-trailer/edit-trailer.component';
+import { AddInventoryComponent } from './inventory/add-inventory/add-inventory.component';
+import { EditInventoryComponent } from './inventory/edit-inventory/edit-inventory.component';
+import { ViewInventoryComponent } from './inventory/view-inventory/view-inventory.component';
 
 const routes: Routes = [
 
@@ -34,6 +37,9 @@ const routes: Routes = [
     { path: 'locations/edit/:locationId', component: EditLocationComponent , canActivate:[NeedAuthGuard] },
     { path: 'locations/view/:locationId', component: ViewLocationComponent , canActivate:[NeedAuthGuard] },
     { path: 'inventories', component: InventoryListComponent , canActivate:[NeedAuthGuard] },
+    { path: 'inventories/add', component: AddInventoryComponent , canActivate:[NeedAuthGuard] },
+    { path: 'inventories/edit/:inventoryId', component: EditInventoryComponent , canActivate:[NeedAuthGuard] },
+    { path: 'inventories/view/:inventoryId', component: ViewInventoryComponent , canActivate:[NeedAuthGuard] },
     { path: 'trailers', component: TrailerListComponent, canActivate:[NeedAuthGuard] },
     { path: 'trailers/add', component: AddTrailerComponent, canActivate:[NeedAuthGuard] },
     { path: 'trailers/edit:trailerId', component: EditTrailerComponent, canActivate:[NeedAuthGuard] },

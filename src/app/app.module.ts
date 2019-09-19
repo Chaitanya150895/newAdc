@@ -32,6 +32,9 @@ import { AddLocationComponent } from './locations/add-location/add-location.comp
 import { AddTrailerComponent } from './trailers/add-trailer/add-trailer.component';
 import { EditTrailerComponent } from './trailers/edit-trailer/edit-trailer.component';
 import { TrailerListComponent } from './trailers/trailer-list/trailer-list.component';
+import { AddInventoryComponent } from './inventory/add-inventory/add-inventory.component';
+import { EditInventoryComponent } from './inventory/edit-inventory/edit-inventory.component';
+import { ViewInventoryComponent } from './inventory/view-inventory/view-inventory.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +64,9 @@ import { TrailerListComponent } from './trailers/trailer-list/trailer-list.compo
     AddTrailerComponent,
     EditTrailerComponent,
     TrailerListComponent,
+    AddInventoryComponent,
+    EditInventoryComponent,
+    ViewInventoryComponent,
   ],
   imports: [
     BrowserModule,

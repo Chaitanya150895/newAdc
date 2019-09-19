@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Accept': 'application/json'
-  })
-};
+import { HttpService } from 'src/app/http.service';
 
 @Component({
   selector: 'app-view-user',
@@ -18,18 +11,13 @@ export class ViewUserComponent implements OnInit {
   user;
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient) { }
+    private http: HttpService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       let id = params['userId'];
-      console.log(`${id}`);
-
-      this.http.get("http://localhost/logistic_v1/api/users/" + id + ".json").subscribe(data => {
-
-        console.log(data);
-
-        this.user = data['data'];
+      this.http.getHttp("users/" + id + ".json").subscribe(data => {
+        console.log(data);this.user = data['data'];
         this.user.password = "";
         delete this.user['created'];
         delete this.user['updated'];
