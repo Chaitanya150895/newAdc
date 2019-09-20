@@ -4,6 +4,9 @@ import { HttpService } from 'src/app/http.service';
 import { DatePipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
+import * as moment from 'moment'
+
+
 
 
 @Component({
@@ -83,6 +86,12 @@ export class NewOrderComponent implements OnInit {
 
    onSubmit() {
     console.warn(this.customForm.value.pickup_time);
+    let dt:Date = this.customForm.value.pickup_time;
+    this.customForm.value.pickup_time = moment(this.customForm.value.pickup_time).format("YYYY-MM-DD HH:mm:ss");
+    this.customForm.value.drop_off_time = moment(this.customForm.value.drop_off_time).format("YYYY-MM-DD HH:mm:ss");
+    
+    
+
     // TODO: Use EventEmitter with form value
     this.route.paramMap.subscribe(params => {
       let id = params.get('orderId.pickup_time');
