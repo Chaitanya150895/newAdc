@@ -28,8 +28,6 @@ export class ViewLocationComponent implements OnInit {
 
         this.location = data['data'];
 
-        
-
         console.log(this.location);
         // this.locationForm.setValue(this.location);
 
