@@ -48,8 +48,6 @@ formData = [
     location_type_id:[''],
     schedules:this.fb.array([
     ])
-
-
   });
 
   constructor(private fb:FormBuilder, private httpService: HttpService, 
