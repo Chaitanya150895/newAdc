@@ -24,8 +24,6 @@ export class AddInventoryComponent implements OnInit {
     { for: "inventory_status_id", control: "select", type: null, label: "Status", placeholder: "Select Inventory Status", id: "inventory_status_id", control_name: "inventory_status_id", array: null },
   ]
 
-
-
   customForm = this.fb.group({
     location_id: [''],
     product_id: [''],

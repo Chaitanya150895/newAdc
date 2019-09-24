@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from 'src/app/http.service';
-
+  
 @Component({
   selector: 'app-add-location',
   templateUrl: './add-location.component.html',
@@ -35,8 +35,6 @@ formData = [
   {for : "location_type", control:"select" ,type:null,label:"Location Type",placeholder:"Select Location Type",id:"location_type_id",control_name:"location_type_id",array:null},
   {for : "zipcode", control:"input" ,type:"text",label:"Zipcode",placeholder:"Enter Zipcode",id:"zipcode",control_name:"zipcode"}
 ]
-
-  
 
   customForm = this.fb.group({
     name: ['',[Validators.required, Validators.minLength(4)]],

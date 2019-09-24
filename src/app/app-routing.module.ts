@@ -31,6 +31,7 @@ import { AddProductComponent } from './product/add-product/add-product.component
 import { EditProductComponent } from './product/edit-product/edit-product.component';
 import { ViewProductComponent } from './product/product-list/view-product/view-product.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
+import { BackroomInventoryComponent } from './backroom-inventory/backroom-inventory.component';
 
 const routes: Routes = [
 
@@ -38,10 +39,6 @@ const routes: Routes = [
   {
     path: '', component: DashboardComponent,
     children: [
-      { path: 'trailers', component: TrailerlistComponent, canActivate: [NeedAuthGuard] },
-      { path: 'trailers/add', component: NewTrailerComponent, canActivate: [NeedAuthGuard] },
-      { path: 'trailers/view/:trailerId', component: ViewTrailerComponent, canActivate: [NeedAuthGuard] },
-      { path: 'trailers/edit/:trailerId', component: EditTrailerComponent, canActivate: [NeedAuthGuard] },
       { path: 'orders/add', component: NewOrderComponent, canActivate: [NeedAuthGuard] },
       { path: 'orders/view/:orderId', component: ViewOrderComponent, canActivate: [NeedAuthGuard] },
       { path: 'orders/edit/:orderId', component: EditOrderComponent, canActivate: [NeedAuthGuard] },
@@ -62,8 +59,12 @@ const routes: Routes = [
       { path: 'inventories', component: InventoryListComponent, canActivate: [NeedAuthGuard] },
       { path: 'inventories/add', component: AddInventoryComponent, canActivate: [NeedAuthGuard] },
       { path: 'inventories/edit/:inventoryId', component: EditInventoryComponent, canActivate: [NeedAuthGuard] },
-      { path: 'inventories/view/:inventoryId', component: ViewInventoryComponent, canActivate: [NeedAuthGuard] }
-    ], canActivate: [NeedAuthGuard]
+      { path: 'inventories/view/:inventoryId', component: ViewInventoryComponent, canActivate: [NeedAuthGuard] },
+      { path: 'trailers', component: TrailerListComponent, canActivate: [NeedAuthGuard] },
+      { path: 'trailers/add', component: AddTrailerComponent, canActivate: [NeedAuthGuard] },
+      { path: 'trailers/edit:trailerId', component: EditTrailerComponent, canActivate: [NeedAuthGuard] },
+      { path: 'dashboard', component: BackroomInventoryComponent, canActivate: [NeedAuthGuard] },
+], canActivate: [NeedAuthGuard]
   },
 
   {

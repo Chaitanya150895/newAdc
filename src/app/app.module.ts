@@ -50,6 +50,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
 import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { BackroomInventoryComponent } from './backroom-inventory/backroom-inventory.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,6 +94,7 @@ import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
     NewTrailerComponent,
     TrailerlistComponent,
     ViewTrailerComponent,
+    BackroomInventoryComponent,
   ],
   imports: [
     BrowserModule,
