@@ -39,9 +39,11 @@ export class LoginPageComponent implements OnInit {
     ).subscribe(data => {
       console.log(data);
       let token = data['data']['token'];
-
+      let location_id = data['data']['location_id'];
       console.log("=============>" + token)
       this.customer.setToken(token);
+      this.customer.setLocationId(location_id);
+
       this.router.navigateByUrl('/locations');
      
     });
