@@ -1,22 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from 'src/app/http.service'; 
+import { HttpService } from 'src/app/http.service';
 
 @Component({
-  selector: 'app-inventory-list',
-  templateUrl: './inventory-list.component.html',
-  styleUrls: ['./inventory-list.component.css']
+  selector: 'app-my-backroom-inventory',
+  templateUrl: './my-backroom-inventory.component.html',
+  styleUrls: ['./my-backroom-inventory.component.css']
 })
-export class InventoryListComponent implements OnInit {
-
+export class MyBackroomInventoryComponent implements OnInit {
   inventories = [];
   products = [];
   loading = false;
   tableHeaders = [
-    "Id",
-    "Location",
+    
     "Product",
     "Quantity",
-    "Status",
+    
     "Action"
   ]
   constructor(private http: HttpService) { }

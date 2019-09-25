@@ -51,6 +51,7 @@ import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
 import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { BackroomInventoryComponent } from './backroom-inventory/backroom-inventory.component';
+import { MyBackroomInventoryComponent } from './my-backroom-inventory/my-backroom-inventory.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -95,6 +96,7 @@ import { BackroomInventoryComponent } from './backroom-inventory/backroom-invent
     TrailerlistComponent,
     ViewTrailerComponent,
     BackroomInventoryComponent,
+    MyBackroomInventoryComponent,
   ],
   imports: [
     BrowserModule,

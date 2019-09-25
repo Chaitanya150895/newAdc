@@ -13,22 +13,20 @@ export class BackroomInventoryComponent implements OnInit {
   INVENTORY_STATUSES_INDEX: 1;
 
   formData = [
-    { for: "product_id", control: "select", type: null, 
-    label: "Product", placeholder: "Select Product", 
-    id: "product_id", control_name: "product_id", array: null },
-    { for: "inventory_status_id", control: "select", type: "null", 
-    label: "Inventory Status", placeholder: "Inventory Status", 
-    id: "inventory_status_id", control_name: "inventory_status_id", array: null },
+    { for: "product_id", control: "select", type: null, label: "Product", placeholder: "Select Product", id: "product_id", control_name: "product_id", array: null },
+    // { for: "inventory_status_id", control: "select", type: "null", label: "Inv Status", placeholder: "Inventory Status", id: "inventory_status_id", control_name: "inventory_status_id", array: null },
     { for: "quantity", control: "input", type: "number", label: "Quantity", placeholder: "Enter Quantity", id: "quantity", control_name: "quantity" },
-    { for: "location_id", control: "input", type: "hidden", label: "", placeholder: "Enter Quantity", id: "location_id", control_name: "location_id" }]
+    { for: "location_id", control: "input", type: "hidden", label: "", placeholder: "Enter Quantity", id: "location_id", control_name: "location_id" },
+    { for: "button", control: "button", type: "submit", label: "Action", placeholder: "Enter Quantity", id: "quantity", control_name: "quantity" },
 
+  ]
 
   customForm = this.fb.group({
 
     product_id: [''],
-    inventory_status_id: [''],
+    // inventory_status_id: [''],
     quantity: [''],
-    location_id: ['']    
+    location_id: ['']
   });
 
   constructor(private fb: FormBuilder, private httpService: HttpService) { }
