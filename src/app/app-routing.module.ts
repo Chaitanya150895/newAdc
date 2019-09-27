@@ -31,7 +31,7 @@ import { AddProductComponent } from './product/add-product/add-product.component
 import { EditProductComponent } from './product/edit-product/edit-product.component';
 import { ViewProductComponent } from './product/product-list/view-product/view-product.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
-import { BackroomInventoryComponent } from './backroom-inventory/backroom-inventory.component';
+import { StoreComponent } from './backroom-inventory/backroom-inventory.component';
 
 const routes: Routes = [
 
@@ -63,15 +63,13 @@ const routes: Routes = [
       { path: 'trailers', component: TrailerListComponent, canActivate: [NeedAuthGuard] },
       { path: 'trailers/add', component: AddTrailerComponent, canActivate: [NeedAuthGuard] },
       { path: 'trailers/edit:trailerId', component: EditTrailerComponent, canActivate: [NeedAuthGuard] },
-      { path: 'dashboard', component: BackroomInventoryComponent, canActivate: [NeedAuthGuard] },
+      { path: 'store', component: StoreComponent, canActivate: [NeedAuthGuard] },
 ], canActivate: [NeedAuthGuard]
   },
-
   {
     path: 'login',
     component: LoginPageComponent
   },
-
 ];
 
 @NgModule({

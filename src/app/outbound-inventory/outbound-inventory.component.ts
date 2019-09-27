@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from 'src/app/http.service';
- 
+
 @Component({
-  selector: 'app-backroom-inventory',
-  templateUrl: './backroom-inventory.component.html',
-  styleUrls: ['./backroom-inventory.component.css']
+  selector: 'app-outbound-inventory',
+  templateUrl: './outbound-inventory.component.html',
+  styleUrls: ['./outbound-inventory.component.css']
 })
-export class StoreComponent implements OnInit {
+export class OutboundInventoryComponent implements OnInit {
 
   PRODUCT_INDEX = 0;
   INVENTORY_STATUSES_INDEX: 1;

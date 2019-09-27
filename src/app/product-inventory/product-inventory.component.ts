@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/http.service';
 
 @Component({
-  selector: 'app-my-backroom-inventory',
-  templateUrl: './my-backroom-inventory.component.html',
-  styleUrls: ['./my-backroom-inventory.component.css']
+  selector: 'app-product-inventory',
+  templateUrl: './product-inventory.component.html',
+  styleUrls: ['./product-inventory.component.css']
 })
-export class MyBackroomInventoryComponent implements OnInit {
+
+export class ProductInventoryComponent implements OnInit {
   inventories = [];
   products = [];
   loading = false;
@@ -14,7 +15,6 @@ export class MyBackroomInventoryComponent implements OnInit {
     
     "Product",
     "Quantity",
-    
     "Action"
   ]
   constructor(private http: HttpService) { }
