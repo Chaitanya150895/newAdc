@@ -48,11 +48,13 @@ import { TrailerlistComponent } from './trailer/trailerlist/trailerlist.componen
 import { ViewTrailerComponent } from './trailer/trailerlist/view-trailer/view-trailer.component';
 import { CommonModule, DatePipe } from '@angular/common';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
-
 import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
-import { StoreComponent } from './backroom-inventory/backroom-inventory.component';
+import { StoreComponent } from './store/store.component';
 import { ProductInventoryComponent } from './product-inventory/product-inventory.component';
 import { OutboundInventoryComponent } from './outbound-inventory/outbound-inventory.component';
+import { BackroomInventoryComponent } from './backroom-inventory/backroom-inventory.component';
+import { DeliveryScheduleComponent } from './delivery-schedule/delivery-schedule.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -99,6 +101,8 @@ import { OutboundInventoryComponent } from './outbound-inventory/outbound-invent
     StoreComponent,
     ProductInventoryComponent,
     OutboundInventoryComponent,
+    BackroomInventoryComponent,
+    DeliveryScheduleComponent
   ],
   imports: [
     BrowserModule,

@@ -4,27 +4,25 @@
     </div>
     <form [formGroup]="customForm" (ngSubmit)="onSubmit()">
         <div class="box-body">
-
             <div class="row">
                 <div class="form-group col-md-3" *ngFor="let data of formData">
                     <label for="{{data.for}}">{{data.label}}</label>
                     <input *ngIf="data.control=='input'" type="{{data.type}}" class="form-control" id="{{data.id}}"
                         placeholder="{{data.placeholder}}" formControlName="{{data.control_name}}">
 
-                    <button *ngIf="data.control=='button'" type="{{data.type}}" class="form-control" id="{{data.id}}"
-                        formControlName="{{data.control_name}}"></button>
+                        <!-- <button *ngIf="data.control=='button'" type="{{data.type}}" class="form-control" id="{{data.id}}"
+                        formControlName="{{data.control_name}}"><i class="fa fa-plus" aria-hidden="true"></i></button> -->
 
                     <select *ngIf="data.control=='select'" class="form-control" id="{{data.id}}"
                         formControlName="{{data.control_name}}">
-                        <option *ngFor="let item of data.array" [value]="item.id">{{item.name}}</option>
+                        <option *ngFor="let item of data.array" [value]="item.id">{{item.name!=null? item.name:item.trailer_number}}</option>
                     </select>
                 </div>
             </div>
-
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
-            <button type="submit">Submit</button>
+            <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i></button>
         </div>
         {{customForm.value | json}}
     </form>

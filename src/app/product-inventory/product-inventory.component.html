@@ -14,7 +14,7 @@
                         <td>{{inventory.product.name}}</td>
                         <td>{{inventory.quantity}}</td>
                         <td>
-                            <a (click)="deleteLocation(inventory.id, inventoryId)"><i class="fa fa-trash"></i></a>
+                            <a (click)="onDelete(inventory.id, inventoryId)"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                 </tbody>

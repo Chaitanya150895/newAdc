@@ -32,7 +32,7 @@ export class NewOrderComponent implements OnInit {
     {for : "drop_off_time", type:"datetime",label:"DropOff Time",placeholder:"Enter DropOff Time", id:"drop_off_time",control_name:"drop_off_time"},
     {for : "order_status_id", control:"select" ,type:null,label:"Order Status",placeholder:"Select Order Status",id:"order_status_id",control_name:"order_status_id",array:null},
     {for : "comments",control:"input" , type:"text",label:"Comments",placeholder:"Enter Comments", id:"comments",control_name:"comments"},
-  ]
+  ] 
 
   customForm = this.fb.group({
     source_id: [''],

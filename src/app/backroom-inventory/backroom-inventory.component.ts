@@ -7,7 +7,7 @@ import { HttpService } from 'src/app/http.service';
   templateUrl: './backroom-inventory.component.html',
   styleUrls: ['./backroom-inventory.component.css']
 })
-export class StoreComponent implements OnInit {
+export class BackroomInventoryComponent implements OnInit {
 
   PRODUCT_INDEX = 0;
   INVENTORY_STATUSES_INDEX: 1;
@@ -27,7 +27,7 @@ export class StoreComponent implements OnInit {
     quantity: [''],
     location_id: ['']
   });
-
+ 
   constructor(private fb: FormBuilder, private httpService: HttpService) { }
 
   ngOnInit() {

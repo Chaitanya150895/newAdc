@@ -31,7 +31,8 @@ import { AddProductComponent } from './product/add-product/add-product.component
 import { EditProductComponent } from './product/edit-product/edit-product.component';
 import { ViewProductComponent } from './product/product-list/view-product/view-product.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
-import { StoreComponent } from './backroom-inventory/backroom-inventory.component';
+import { StoreComponent } from './store/store.component';
+import { OutboundInventoryComponent } from './outbound-inventory/outbound-inventory.component';
 
 const routes: Routes = [
 

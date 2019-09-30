@@ -26,7 +26,7 @@ export class ProductInventoryComponent implements OnInit {
       console.log(data);
       this.inventories = data['data'];
     });
-  }
+  } 
  onDelete(id, userId) {
     this.loading = true;
     this.http.deleteHttp("inventories/" + id + ".json").subscribe(data => {
