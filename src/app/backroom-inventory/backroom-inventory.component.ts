@@ -11,15 +11,14 @@ import { ProductInventoryComponent } from '../product-inventory/product-inventor
 export class BackroomInventoryComponent implements OnInit {
   @ViewChild('child',null) child:ProductInventoryComponent;
 
-
   PRODUCT_INDEX = 0;
-  INVENTORY_STATUSES_INDEX: 1;
+  INVENTORY_STATUSES_INDEX: 2;
 
   formData = [
     { for: "product_id", control: "select", type: null, label: "Product", placeholder: "Select Product", id: "product_id", control_name: "product_id", array: null },
     // { for: "inventory_status_id", control: "select", type: "null", label: "Inv Status", placeholder: "Inventory Status", id: "inventory_status_id", control_name: "inventory_status_id", array: null },
-    { for: "quantity", control: "input", type: "number", label: "Quantity", placeholder: "Enter Quantity", id: "quantity", control_name: "quantity" },
     { for: "location_id", control: "input", type: "hidden", label: "", placeholder: "Enter Quantity", id: "location_id", control_name: "location_id" },
+    { for: "quantity", control: "input", type: "number", label: "Quantity", placeholder: "Enter Quantity", id: "quantity", control_name: "quantity" },
     { for: "action", control: "button", type: "submit", label: "Action", placeholder: "button", id: "action", control_name: "action" },
 ]
 
@@ -27,8 +26,8 @@ export class BackroomInventoryComponent implements OnInit {
 
     product_id: [''],
     // inventory_status_id: [''],
-    quantity: [''],
-    location_id: ['35']
+    location_id: ['35'],
+    quantity: ['']    
   });
  
   constructor(private fb: FormBuilder, private httpService: HttpService) { }

@@ -17,7 +17,7 @@ export class OutboundInventoryComponent implements OnInit {
     { for: "product_id", control: "select", type: null, label: "Product", placeholder: "Select Product", id: "product_id", control_name: "product_id", array: null },
     // { for: "inventory_status_id", control: "select", type: "null", label: "Inv Status", placeholder: "Inventory Status", id: "inventory_status_id", control_name: "inventory_status_id", array: null },
     { for: "quantity", control: "input", type: "number", label: "Quantity", placeholder: "Enter Quantity", id: "quantity", control_name: "quantity" },
-    { for: "location_id", control: "input", type: "hidden", label: "", placeholder: "Enter Quantity", id: "location_id", control_name: "location_id" },
+    // { for: "location_id", control: "input", type: "hidden", label: "", placeholder: "Enter Quantity", id: "location_id", control_name: "location_id" },
     { for: "action", control: "button", type: "submit", label: "Action", placeholder: "button", id: "action", control_name: "action" },
   ]
 
@@ -27,7 +27,7 @@ export class OutboundInventoryComponent implements OnInit {
     product_id: [''],
     // inventory_status_id: [''],
     quantity: [''],
-    location_id: ['']
+    location_id: ['35']
   });
 
   constructor(private fb: FormBuilder, private httpService: HttpService) { }

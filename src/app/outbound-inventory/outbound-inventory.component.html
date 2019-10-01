@@ -9,21 +9,20 @@
                     <label for="{{data.for}}">{{data.label}}</label>
                     <input *ngIf="data.control=='input'" type="{{data.type}}" class="form-control" id="{{data.id}}"
                         placeholder="{{data.placeholder}}" formControlName="{{data.control_name}}">
-
-                        <!-- <button *ngIf="data.control=='button'" type="{{data.type}}" class="form-control" id="{{data.id}}"
-                        formControlName="{{data.control_name}}"><i class="fa fa-plus" aria-hidden="true"></i></button> -->
-
                     <select *ngIf="data.control=='select'" class="form-control" id="{{data.id}}"
                         formControlName="{{data.control_name}}">
-                        <option *ngFor="let item of data.array" [value]="item.id">{{item.name!=null? item.name:item.trailer_number}}</option>
+                        <option *ngFor="let item of data.array" [value]="item.id">{{item.name ? item.name : item.trailer_number}}</option>
                     </select>
+                    <div *ngIf="data.control=='button'">
+                        <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    </div> 
                 </div>
             </div>
         </div>
         <!-- /.box-body -->
-        <div class="box-footer">
+        <!-- <div class="box-footer">
             <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i></button>
-        </div>
+        </div> -->
         {{customForm.value | json}}
     </form>
 </div>
