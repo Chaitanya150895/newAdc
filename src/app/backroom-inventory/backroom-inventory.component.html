@@ -4,7 +4,7 @@
     </div>
 
     <div class="box-header with-border">
-        <app-product-inventory></app-product-inventory>
+        <app-product-inventory #child></app-product-inventory>
     </div>
 
     <form [formGroup]="customForm" (ngSubmit)="onSubmit()">
@@ -16,11 +16,11 @@
                     <input *ngIf="data.control=='input'" type="{{data.type}}" class="form-control" id="{{data.id}}"
                         placeholder="{{data.placeholder}}" formControlName="{{data.control_name}}">
 
-                    <button *ngIf="data.control=='button'" type="{{data.type}}" class="form-control" id="{{data.id}}"
-                        formControlName="{{data.control_name}}"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                        <!-- <div class="box-footer">
+                    <!-- <button type="{{data.type}}"  id="{{data.id}}"
+                        formControlName="{{data.control_name}}"><i class="btn btn-success" aria-hidden="true"></i></button> -->
+                          <!-- <div class="box-footer"> 
                             <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                        </div> -->
+                        </div>  -->
 
 
                     <select *ngIf="data.control=='select'" type="submit" class="form-control" id="{{data.id}}"
@@ -28,8 +28,11 @@
                         <option *ngFor="let item of data.array" [value]="item.id">{{item.name}}</option>
                     </select>
                 </div>
+                
             </div>
-
+            <div class="box-footer"> 
+                <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            </div> 
         </div>
         <!-- /.box-body -->
         <div class="box-footer">

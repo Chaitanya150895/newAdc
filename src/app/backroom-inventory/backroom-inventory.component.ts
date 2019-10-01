@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from 'src/app/http.service';
+import { ProductInventoryComponent } from '../product-inventory/product-inventory.component';
  
 @Component({
   selector: 'app-backroom-inventory',
@@ -8,6 +9,8 @@ import { HttpService } from 'src/app/http.service';
   styleUrls: ['./backroom-inventory.component.css']
 })
 export class BackroomInventoryComponent implements OnInit {
+  @ViewChild('child',null) child:ProductInventoryComponent;
+
 
   PRODUCT_INDEX = 0;
   INVENTORY_STATUSES_INDEX: 1;
@@ -25,7 +28,7 @@ export class BackroomInventoryComponent implements OnInit {
     product_id: [''],
     // inventory_status_id: [''],
     quantity: [''],
-    location_id: ['']
+    location_id: ['35']
   });
  
   constructor(private fb: FormBuilder, private httpService: HttpService) { }
@@ -52,12 +55,14 @@ export class BackroomInventoryComponent implements OnInit {
     // TODO: Use EventEmitter with form value
     console.warn(this.customForm.value);
     console.log("submit :: loc:::" + this.customForm.value.location_id)
+    this.customForm.value.location_id = 35;
     this.httpService.postHttp("inventories.json", this.customForm.value)
       .pipe(
       ).subscribe(data => {
         console.log(data);
         this.customForm.reset();
 
+        this.child.reloadData();
       });
   }
 
