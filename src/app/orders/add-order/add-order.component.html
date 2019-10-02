@@ -38,9 +38,9 @@
                                     </option>
                                     <!-- <option *ngFor="let item of data.array" [value]="item.id">{{item.id}}</option> -->
                                 </select>
-                                <ejs-datetimepicker  *ngIf="data.type=='datetime'"
-                                    id="{{data.id}}" format="dd-MM-yyyy HH:mm a" placeholder="{{data.placeholder}}"
-                                    formControlName="{{data.control_name}}"></ejs-datetimepicker>
+                                <ejs-datetimepicker *ngIf="data.type=='datetime'" id="{{data.id}}"
+                                    placeholder="{{data.placeholder}}" formControlName="{{data.control_name}}">
+                                </ejs-datetimepicker>
                                 <div style="margin-top: 8px;"
                                     *ngIf="customForm.controls[data.control_name].invalid && (customForm.controls[data.control_name].dirty || customForm.controls[data.control_name].touched)"
                                     class="alert alert-danger">
@@ -80,14 +80,3 @@
                     <!-- /.box-body -->
                     <div class="box-footer">
                         <button type="submit">Submit</button>
-
-                        <button type="button" (click)="onUpdate()">update</button>
-                    </div>
-                    {{customForm.value | json}}
-                </form>
-            </div>
-
-
-        </div>
-    </div>
-</section>

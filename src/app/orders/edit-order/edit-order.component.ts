@@ -1,21 +1,15 @@
-import { Component,OnInit, AfterViewInit } from '@angular/core';
-import { FormBuilder, FormArray, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { HttpService } from 'src/app/http.service';
-import { DatePipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-
 import * as moment from 'moment'
 
-
-
-
 @Component({
-  selector: 'app-new-order',
-  templateUrl: './new-order.component.html',
-  styleUrls: ['./new-order.component.css'],
-
+  selector: 'app-edit-order',
+  templateUrl: './edit-order.component.html',
+  styleUrls: ['./edit-order.component.css']
 })
-export class NewOrderComponent implements OnInit {
+export class EditOrderComponent implements OnInit {
   SOURCE_INDEX= 0;
   DESTINATION_INDEX = 1;
   USER_INDEX = 2;
@@ -31,13 +25,14 @@ export class NewOrderComponent implements OnInit {
     {for : "product_id", control:"select" ,type:null,label:"Products",placeholder:"Select Product",id:"product_id",control_name:"product_id",array:null},
     {for : "quantity", control:"input" ,type:"number",label:"Quantity",placeholder:"Enter Quantity",id:"quantity",control_name:"quantity"},
     {for : "trailer_id", control:"select" ,type:null,label:"Trailer",placeholder:"Select Trailer",id:"trailer_id",control_name:"trailer_id",array:null},
-    {for : "pickup_time",type:"datetime",label:"Pickup Time",placeholder:"Enter Pickup Time", id:"pickup_time",control_name:"pickup_time"},
-    {for : "drop_off_time", type:"datetime",label:"DropOff Time",placeholder:"Enter DropOff Time", id:"drop_off_time",control_name:"drop_off_time"},
+    {for : "pickup_time" , type:"datetime",label:"Pickup Time",placeholder:"Enter Pickup Time", id:"pickup_time",control_name:"pickup_time"},
+    {for : "drop_off_time" , type:"datetime",label:"DropOff Time",placeholder:"Enter DropOff Time", id:"drop_off_time",control_name:"drop_off_time"},
     {for : "order_status_id", control:"select" ,type:null,label:"Order Status",placeholder:"Select Order Status",id:"order_status_id",control_name:"order_status_id",array:null},
     {for : "comments",control:"input" , type:"text",label:"Comments",placeholder:"Enter Comments", id:"comments",control_name:"comments"},
   ]
 
   customForm = this.fb.group({
+    id:[],
     source_id: [''],
     destination_id: [''],
     user_id: [''],
@@ -47,13 +42,10 @@ export class NewOrderComponent implements OnInit {
     pickup_time:[''],
     drop_off_time:[''],
    order_status_id: [''],
-   comments: [''],
-
+   comments: ['']
   });
 
-  constructor( private route: ActivatedRoute,private fb:FormBuilder,private httpService: HttpService, private datepipe: DatePipe) {
-
-  }
+  constructor(private fb:FormBuilder,private httpService: HttpService,private route:ActivatedRoute) {}
 
   ngOnInit() {
     this.httpService.getHttp("locations.json").subscribe(data => {
@@ -81,37 +73,33 @@ export class NewOrderComponent implements OnInit {
      this.formData[this.ORDER_STATUS_INDEX].array = ( data['data']);
     });
 
+    this.route.params.subscribe(params => {
+      let id = params['orderId']
+      //now get the data from locations api for based on id param
+      this.httpService.getHttp("orders/"+id+".json").subscribe(data => {
+        console.log(data);
+       let order = data['data'];
+
+       //now load the data inside the form
+       this.customForm.patchValue(order)
+
+      });
+    });
   }
 
+  onSubmit(){
 
-   onSubmit() {
     console.warn(this.customForm.value.pickup_time);
     let dt:Date = this.customForm.value.pickup_time;
     this.customForm.value.pickup_time = moment(this.customForm.value.pickup_time).format("YYYY-MM-DD HH:mm:ss");
     this.customForm.value.drop_off_time = moment(this.customForm.value.drop_off_time).format("YYYY-MM-DD HH:mm:ss");
     
-    
-
-    // TODO: Use EventEmitter with form value
-    this.route.paramMap.subscribe(params => {
-      let id = params.get('orderId.pickup_time');
-  this.datepipe.transform(id,'m/dd/yyyy hh:mm:ss');
-    });
-    this.httpService.postHttp("orders.json", this.customForm.value)
+    this.httpService.putHttp("orders/"+ this.customForm.value.id +".json", this.customForm.value)
     .pipe(
     ).subscribe(data => {
       console.log(data);
-
-      this.customForm.reset();
+     this.customForm.reset();
 
     });
-     // alert("Added Successfully!");
-  }
-
-
-
-
-
-
+ }
 }
-

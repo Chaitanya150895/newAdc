@@ -13,7 +13,7 @@ export class OrderListComponent implements OnInit {
   showMsg: boolean;
 
   tableHeaders = [
-    "Id",
+
     "Source",
     "Destination",
     "User",

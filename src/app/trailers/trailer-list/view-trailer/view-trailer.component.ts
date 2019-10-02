@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from 'src/app/http.service';
-
 @Component({
   selector: 'app-view-trailer',
   templateUrl: './view-trailer.component.html',
