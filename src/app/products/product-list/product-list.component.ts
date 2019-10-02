@@ -8,13 +8,13 @@ import { HttpService } from 'src/app/http.service';
 })
 export class ProductListComponent implements OnInit {
   products = [];
-  loading= false;
-tableHeaders = [
-  "Id",
-  "Name",
-  "Price"
-]
-  constructor(private httpService: HttpService ) { }
+  loading = false;
+  tableHeaders = [
+    "Id",
+    "Name",
+    "Price"
+  ]
+  constructor(private httpService: HttpService) { }
 
   ngOnInit() {
     this.loading = true;

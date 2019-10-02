@@ -21,10 +21,7 @@ import { EditTrailerComponent } from './trailers/edit-trailer/edit-trailer.compo
 import { AddInventoryComponent } from './inventory/add-inventory/add-inventory.component';
 import { EditInventoryComponent } from './inventory/edit-inventory/edit-inventory.component';
 import { ViewInventoryComponent } from './inventory/view-inventory/view-inventory.component';
-
-
-import { ForgotPasswordComponent } from './users/forgot-password/forgot-password.component';
-import { StatusComponent } from './status/status/status.component';
+import { ViewTrailerComponent } from './trailers/trailer-list/view-trailer/view-trailer.component';
 import { AddOrderComponent } from './orders/add-order/add-order.component';
 import { ViewOrderComponent } from './orders/order-list/view-order/view-order.component';
 import { EditOrderComponent } from './orders/edit-order/edit-order.component';
@@ -33,13 +30,17 @@ import { AddProductComponent } from './products/add-product/add-product.componen
 import { EditProductComponent } from './products/edit-product/edit-product.component';
 import { ViewProductComponent } from './products/product-list/view-product/view-product.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
-import { ViewTrailerComponent } from './trailers/trailer-list/view-trailer/view-trailer.component';
+import { StoreComponent } from './store/store.component';
+import { ForgotPasswordComponent } from './users/forgot-password/forgot-password.component';
 
 const routes: Routes = [
 
   // { path: "", component: DashboardComponent },
 { path:'',component:DashboardComponent,
   children: [
+
+
+
     { path: 'trailers', component: TrailerListComponent , canActivate:[NeedAuthGuard] },
     { path:'trailers/add', component: AddTrailerComponent,canActivate:[NeedAuthGuard]},
     { path: 'trailers/view/:trailerId', component: ViewTrailerComponent , canActivate:[NeedAuthGuard] },
@@ -50,7 +51,7 @@ const routes: Routes = [
     { path:'orders', component: OrderListComponent,canActivate:[NeedAuthGuard]},
     { path:'products/add', component: AddProductComponent,canActivate:[NeedAuthGuard]},
     { path: 'products/edit/:productId', component: EditProductComponent , canActivate:[NeedAuthGuard] },
-    { path:'products/view/:productId', component:ViewProductComponent,canActivate:[NeedAuthGuard] },
+    {path:'products/view/:productId', component:ViewProductComponent,canActivate:[NeedAuthGuard] },
     { path:'products', component: ProductListComponent,canActivate:[NeedAuthGuard]},
     { path: 'users', component: UserListComponent , canActivate:[NeedAuthGuard] },
     { path: 'users/add', component: AddUserComponent , canActivate:[NeedAuthGuard] },
@@ -65,6 +66,10 @@ const routes: Routes = [
     { path: 'inventories/add', component: AddInventoryComponent , canActivate:[NeedAuthGuard] },
     { path: 'inventories/edit/:inventoryId', component: EditInventoryComponent , canActivate:[NeedAuthGuard] },
     { path: 'inventories/view/:inventoryId', component: ViewInventoryComponent , canActivate:[NeedAuthGuard] },
+    { path: 'trailers', component: TrailerListComponent, canActivate:[NeedAuthGuard] },
+    { path: 'trailers/add', component: AddTrailerComponent, canActivate:[NeedAuthGuard] },
+    { path: 'trailers/edit:trailerId', component: EditTrailerComponent, canActivate:[NeedAuthGuard] },
+     { path: 'store', component: StoreComponent, canActivate: [NeedAuthGuard] },
   ],canActivate:[NeedAuthGuard]
 },
  

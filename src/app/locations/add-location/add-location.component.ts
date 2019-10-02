@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from 'src/app/http.service';
-
+  
 @Component({
   selector: 'app-add-location',
   templateUrl: './add-location.component.html',
@@ -32,10 +32,9 @@ formData = [
   {for : "location_number", control:"input" ,type:"text",label:"Location Number",placeholder:"Enter Location Number",id:"location_number",control_name:"location_number"},
   {for : "trailer_bays", control:"input" ,type:"number",label:"Trailer Bays",placeholder:"Enter Trailer Bays",id:"trailer_bays",control_name:"trailer_bays"},
   {for : "region", control:"select" ,type:null,label:"Region",placeholder:"Select Region",id:"region_id",control_name:"region_id",array:null},
-  {for : "location_type", control:"select" ,type:null,label:"Location Type",placeholder:"Select Location Type",id:"location_type_id",control_name:"location_type_id",array:null}
+  {for : "location_type", control:"select" ,type:null,label:"Location Type",placeholder:"Select Location Type",id:"location_type_id",control_name:"location_type_id",array:null},
+  {for : "zipcode", control:"input" ,type:"text",label:"Zipcode",placeholder:"Enter Zipcode",id:"zipcode",control_name:"zipcode"}
 ]
-
-  
 
   customForm = this.fb.group({
     name: ['',[Validators.required, Validators.minLength(4)]],
@@ -46,6 +45,7 @@ formData = [
     trailer_bays:[''],
     region_id:[''],
     location_type_id:[''],
+    zipcode: [''],
     schedules:this.fb.array([
     ])
   });

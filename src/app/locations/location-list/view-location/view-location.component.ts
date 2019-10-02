@@ -22,13 +22,11 @@ export class ViewLocationComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       let id = params.get('locationId');
 
-      this.http.getHttp("http://localhost/logistic_v1/api/locations/" + id + ".json").subscribe(data => {
+      this.http.getHttp("locations/" + id + ".json").subscribe(data => {
         this.loading = false;
         console.log(`${id}`);
 
         this.location = data['data'];
-
-        
 
         console.log(this.location);
         // this.locationForm.setValue(this.location);

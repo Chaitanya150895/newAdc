@@ -36,15 +36,20 @@ import { AddInventoryComponent } from './inventory/add-inventory/add-inventory.c
 import { EditInventoryComponent } from './inventory/edit-inventory/edit-inventory.component';
 import { ViewInventoryComponent } from './inventory/view-inventory/view-inventory.component';
 
+import { CommonModule, DatePipe } from '@angular/common';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
 import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { ForgotPasswordComponent } from './users/forgot-password/forgot-password.component';
+import { StatusComponent } from './status/status/status.component';
 import { DocksComponent } from './status/docks/docks.component';
 import { YardsComponent } from './status/yards/yards.component';
-import { StatusComponent } from './status/status/status.component';
-import { ViewTrailerComponent } from './trailers/trailer-list/view-trailer/view-trailer.component';
-import { CommonModule } from '@angular/common';
+import { StoreComponent } from './store/store.component';
+import { ProductInventoryComponent } from './product-inventory/product-inventory.component';
+import { OutboundInventoryComponent } from './outbound-inventory/outbound-inventory.component';
+import { BackroomInventoryComponent } from './backroom-inventory/backroom-inventory.component';
+import { DeliveryScheduleComponent } from './delivery-schedule/delivery-schedule.component';
+import { AddOrderComponent } from './orders/add-order/add-order.component';
 import { EditOrderComponent } from './orders/edit-order/edit-order.component';
 import { OrderListComponent } from './orders/order-list/order-list.component';
 import { ViewOrderComponent } from './orders/order-list/view-order/view-order.component';
@@ -52,7 +57,7 @@ import { AddProductComponent } from './products/add-product/add-product.componen
 import { EditProductComponent } from './products/edit-product/edit-product.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ViewProductComponent } from './products/product-list/view-product/view-product.component';
-import { AddOrderComponent } from './orders/add-order/add-order.component';
+import { ViewTrailerComponent } from './trailers/trailer-list/view-trailer/view-trailer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +84,6 @@ import { AddOrderComponent } from './orders/add-order/add-order.component';
     MainComponent,
     LoginPageComponent,
     AddLocationComponent,
-    ViewTrailerComponent,
     AddTrailerComponent,
     EditTrailerComponent,
     TrailerListComponent,
@@ -97,6 +101,13 @@ import { AddOrderComponent } from './orders/add-order/add-order.component';
     EditProductComponent,
     ProductListComponent,
     ViewProductComponent,
+    TrailerListComponent,
+    ViewTrailerComponent,
+    StoreComponent,
+    ProductInventoryComponent,
+    OutboundInventoryComponent,
+    BackroomInventoryComponent,
+    DeliveryScheduleComponent,
     AddOrderComponent
   ],
   imports: [

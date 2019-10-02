@@ -48,8 +48,6 @@ formData = [
     location_type_id:[''],
     schedules:this.fb.array([
     ])
-
-
   });
 
   constructor(private fb:FormBuilder, private httpService: HttpService, 
@@ -114,7 +112,7 @@ formData = [
      
    });
 
-   this.httpService.putHttp("http://localhost/logistic_v1/api/locations/"+ this.customForm.value.id +".json", this.customForm.value)
+   this.httpService.putHttp("locations/"+ this.customForm.value.id +".json", this.customForm.value)
      .pipe(
      ).subscribe(data => {
        console.log(data);

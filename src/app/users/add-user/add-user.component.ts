@@ -9,9 +9,8 @@ import { HttpService } from 'src/app/http.service';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
+
   LOCATION_INDEX = 6;
-  TYPE_INDEX: number = 7;
-  MENU_INDEX: number = 8;
 
   formData = [
     { for: "username", control: "input", type: "text", label: "Username", placeholder: "Enter username", id: "username", control_name: "username" },
