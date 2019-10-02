@@ -1,1 +1,50 @@
-<p>edit-inventory works!</p>
+<section class="content-header">
+    <h1>
+      Inventory
+      <small>Edit</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li>
+        <a href="#">Back</a>
+      </li>`
+    </ol>
+  </section>
+  
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="box box-primary">
+          <div class="box-header with-border">
+            <h3 class="box-title">Form</h3>
+          </div>
+          <!-- /.box-header -->
+          <!-- form start -->
+          <form [formGroup]="customForm" (ngSubmit)="onSubmit()">
+            <div class="box-body">
+  
+              <div class="form-group" *ngFor="let data of formData">
+                <label for="{{data.for}}">{{data.label}}</label>
+                <input *ngIf="data.control=='input'" type="{{data.type}}" class="form-control" id="{{data.id}}"
+                  placeholder="{{data.placeholder}}" formControlName="{{data.control_name}}">
+                <select *ngIf="data.control=='select'" class="form-control" id="{{data.id}}"
+                  formControlName="{{data.control_name}}">
+                  <option *ngFor="let item of data.array" [value]="item.id">{{item.name!=undefined? item.name:item.id}}</option>
+                </select>
+              </div> 
+            </div>
+  
+            <!-- /.box-body -->
+            <div class="box-footer">
+              <button type="submit">Submit</button>
+            </div>
+            {{customForm.value | json}}
+          </form>
+        </div>
+  
+  
+      </div>
+    </div>
+  </section>

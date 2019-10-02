@@ -13,7 +13,7 @@ import { InventoryListComponent } from './inventory/inventory-list/inventory-lis
 import { LoginComponent } from './users/login/login.component';
 import { LoginPageComponent } from './users/login-page/login-page.component';
 import { TrailerlistComponent } from './trailer/trailerlist/trailerlist.component';
-import { NewTrailerComponent} from './trailer/new-trailer/new-trailer.component';
+import { NewTrailerComponent } from './trailer/new-trailer/new-trailer.component';
 import { NeedAuthGuard } from './auth.guard';
 import { AddLocationComponent } from './locations/add-location/add-location.component';
 import { TrailerListComponent } from './trailers/trailer-list/trailer-list.component';
@@ -31,15 +31,14 @@ import { AddProductComponent } from './product/add-product/add-product.component
 import { EditProductComponent } from './product/edit-product/edit-product.component';
 import { ViewProductComponent } from './product/product-list/view-product/view-product.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
+import { ForgotPasswordComponent } from './users/forgot-password/forgot-password.component';
+import { StatusComponent } from './status/status/status.component';
 
 const routes: Routes = [
 
   // { path: "", component: DashboardComponent },
 { path:'',component:DashboardComponent,
   children: [
-
-
-
     { path: 'trailers', component: TrailerlistComponent , canActivate:[NeedAuthGuard] },
     { path:'trailers/add', component: NewTrailerComponent,canActivate:[NeedAuthGuard]},
     { path: 'trailers/view/:trailerId', component: ViewTrailerComponent , canActivate:[NeedAuthGuard] },
@@ -50,7 +49,7 @@ const routes: Routes = [
     { path:'orders', component: OrderListComponent,canActivate:[NeedAuthGuard]},
     { path:'products/add', component: AddProductComponent,canActivate:[NeedAuthGuard]},
     { path: 'products/edit/:productId', component: EditProductComponent , canActivate:[NeedAuthGuard] },
-    {path:'products/view/:productId', component:ViewProductComponent,canActivate:[NeedAuthGuard] },
+    { path:'products/view/:productId', component:ViewProductComponent,canActivate:[NeedAuthGuard] },
     { path:'products', component: ProductListComponent,canActivate:[NeedAuthGuard]},
     { path: 'users', component: UserListComponent , canActivate:[NeedAuthGuard] },
     { path: 'users/add', component: AddUserComponent , canActivate:[NeedAuthGuard] },
@@ -74,6 +73,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageComponent
+  },
+  {
+    path: 'forgot-password',
+    component: ForgotPasswordComponent
   },
 
 ];

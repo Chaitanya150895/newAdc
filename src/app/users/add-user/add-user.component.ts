@@ -9,9 +9,9 @@ import { HttpService } from 'src/app/http.service';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
-
-  TYPE_INDEX: number = 6;
-  MENU_INDEX: number = 7;
+  LOCATION_INDEX = 6;
+  TYPE_INDEX: number = 7;
+  MENU_INDEX: number = 8;
 
   formData = [
     { for: "username", control: "input", type: "text", label: "Username", placeholder: "Enter username", id: "username", control_name: "username" },
@@ -20,6 +20,8 @@ export class AddUserComponent implements OnInit {
     { for: "last_name", control: "input", type: "text", label: "Last Name", placeholder: "Enter Last Name", id: "last_name", control_name: "last_name" },
     { for: "email", control: "input", type: "text", label: "Email", placeholder: "Enter Email", id: "email", control_name: "email" },
     { for: "mobile", control: "input", type: "text", label: "Mobile Number", placeholder: "Enter Mobile Number", id: "mobile", control_name: "mobile" },
+    { for: "location_id", control: "select", type: "null", label: "Location", placeholder: "Select Location", id: "location_id", control_name: "location_id", array: null },
+
     // { for: "types", control: "checkbox", type: "checkbox", label: "Select Type", placeholder: "Select Type", id: "types", control_name: "types", array: null },
     // { for: "menus", control: "checkbox", type: "checkbox", label: "Select Menus", placeholder: "Select Menus", id: "menus", control_name: "menus", array: null },
 
@@ -32,6 +34,7 @@ export class AddUserComponent implements OnInit {
     last_name: [''],
     email: [''],
     mobile: [''],
+    location_id: [''],
     types: this.fb.array([]),
     menus: this.fb.array([])
   });
@@ -39,6 +42,11 @@ export class AddUserComponent implements OnInit {
   constructor(private fb: FormBuilder, private httpService: HttpService) { }
 
   ngOnInit() {
+    //load locations in combo
+    this.httpService.getHttp("locations.json").subscribe(data => {
+      console.log("location :: " + data);
+      this.formData[this.LOCATION_INDEX].array = (data['data']);
+    });
 
     //load types in combo
     this.httpService.getHttp("types.json").subscribe(data => {

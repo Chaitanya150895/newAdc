@@ -50,6 +50,10 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
 import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { ForgotPasswordComponent } from './users/forgot-password/forgot-password.component';
+import { DocksComponent } from './status/docks/docks.component';
+import { YardsComponent } from './status/yards/yards.component';
+import { StatusComponent } from './status/status/status.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,6 +97,10 @@ import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
     NewTrailerComponent,
     TrailerlistComponent,
     ViewTrailerComponent,
+    ForgotPasswordComponent,
+    StatusComponent,
+    DocksComponent,
+    YardsComponent,
   ],
   imports: [
     BrowserModule,

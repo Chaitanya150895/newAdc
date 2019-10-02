@@ -1,28 +1,11 @@
-<!-- <div class="card mt-5" style="margin:auto;width: 600px;">
-    <div class="card-body">
-      <h5 class="card-title">Login</h5>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text" class="form-control" id="email" placeholder="Email Address" [(ngModel)]="email">
-      </div>
-      <div class="form-group">
-        <label for="email">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Password" [(ngModel)]="password">
-      </div>
-      <button type="submit" class="btn btn-primary" (click)="tryLogin()">Login</button>
-    </div>
-  </div> -->
-
-
 <div class="logi-page">
   <div class="login-box">
     <div class="login-logo">
-      <a href="../../index2.html"><b>Admin</b>LTE</a>
+      <a href="../../index2.html">Login</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-      <p class="login-box-msg">Sign in to start your session</p>
-  
+      <!-- <p class="login-box-msg"><b>Electronic Inventory & Scheduling</b></p> -->
       
         <div class="form-group has-feedback">
           <input type="email" class="form-control" placeholder="Email" [(ngModel)]="email">
@@ -45,21 +28,11 @@
             <button type="submit" class="btn btn-primary btn-block btn-flat"  (click)="tryLogin()">Sign In</button>
           </div>
           <!-- /.col -->
-        </div>
-      
+        </div>     
   
-      <div class="social-auth-links text-center">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
-          Facebook</a>
-        <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
-          Google+</a>
-      </div>
       <!-- /.social-auth-links -->
   
-      <a href="#">I forgot my password</a><br>
-      <a href="register.html" class="text-center">Register a new membership</a>
-  
+      <a href="/forgot-password">I forgot my password</a>  
     </div>
     <!-- /.login-box-body -->
   </div>
