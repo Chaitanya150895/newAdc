@@ -12,8 +12,7 @@ import { ViewUserComponent } from './users/view-user/view-user.component';
 import { InventoryListComponent } from './inventory/inventory-list/inventory-list.component';
 import { LoginComponent } from './users/login/login.component';
 import { LoginPageComponent } from './users/login-page/login-page.component';
-import { TrailerlistComponent } from './trailer/trailerlist/trailerlist.component';
-import { NewTrailerComponent } from './trailer/new-trailer/new-trailer.component';
+
 import { NeedAuthGuard } from './auth.guard';
 import { AddLocationComponent } from './locations/add-location/add-location.component';
 import { TrailerListComponent } from './trailers/trailer-list/trailer-list.component';
@@ -22,28 +21,30 @@ import { EditTrailerComponent } from './trailers/edit-trailer/edit-trailer.compo
 import { AddInventoryComponent } from './inventory/add-inventory/add-inventory.component';
 import { EditInventoryComponent } from './inventory/edit-inventory/edit-inventory.component';
 import { ViewInventoryComponent } from './inventory/view-inventory/view-inventory.component';
-import { ViewTrailerComponent } from './trailer/trailerlist/view-trailer/view-trailer.component';
-import { NewOrderComponent } from './order/new-order/new-order.component';
-import { ViewOrderComponent } from './order/order-list/view-order/view-order.component';
-import { EditOrderComponent } from './order/edit-order/edit-order.component';
-import { OrderListComponent } from './order/order-list/order-list.component';
-import { AddProductComponent } from './product/add-product/add-product.component';
-import { EditProductComponent } from './product/edit-product/edit-product.component';
-import { ViewProductComponent } from './product/product-list/view-product/view-product.component';
-import { ProductListComponent } from './product/product-list/product-list.component';
+
+
 import { ForgotPasswordComponent } from './users/forgot-password/forgot-password.component';
 import { StatusComponent } from './status/status/status.component';
+import { AddOrderComponent } from './orders/add-order/add-order.component';
+import { ViewOrderComponent } from './orders/order-list/view-order/view-order.component';
+import { EditOrderComponent } from './orders/edit-order/edit-order.component';
+import { OrderListComponent } from './orders/order-list/order-list.component';
+import { AddProductComponent } from './products/add-product/add-product.component';
+import { EditProductComponent } from './products/edit-product/edit-product.component';
+import { ViewProductComponent } from './products/product-list/view-product/view-product.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
+import { ViewTrailerComponent } from './trailers/trailer-list/view-trailer/view-trailer.component';
 
 const routes: Routes = [
 
   // { path: "", component: DashboardComponent },
 { path:'',component:DashboardComponent,
   children: [
-    { path: 'trailers', component: TrailerlistComponent , canActivate:[NeedAuthGuard] },
-    { path:'trailers/add', component: NewTrailerComponent,canActivate:[NeedAuthGuard]},
+    { path: 'trailers', component: TrailerListComponent , canActivate:[NeedAuthGuard] },
+    { path:'trailers/add', component: AddTrailerComponent,canActivate:[NeedAuthGuard]},
     { path: 'trailers/view/:trailerId', component: ViewTrailerComponent , canActivate:[NeedAuthGuard] },
     { path: 'trailers/edit/:trailerId', component: EditTrailerComponent , canActivate:[NeedAuthGuard] },
-    { path:'orders/add', component: NewOrderComponent,canActivate:[NeedAuthGuard]},
+    { path:'orders/add', component: AddOrderComponent,canActivate:[NeedAuthGuard]},
     { path: 'orders/view/:orderId', component: ViewOrderComponent , canActivate:[NeedAuthGuard] },
     { path: 'orders/edit/:orderId', component: EditOrderComponent , canActivate:[NeedAuthGuard] },
     { path:'orders', component: OrderListComponent,canActivate:[NeedAuthGuard]},
@@ -64,9 +65,6 @@ const routes: Routes = [
     { path: 'inventories/add', component: AddInventoryComponent , canActivate:[NeedAuthGuard] },
     { path: 'inventories/edit/:inventoryId', component: EditInventoryComponent , canActivate:[NeedAuthGuard] },
     { path: 'inventories/view/:inventoryId', component: ViewInventoryComponent , canActivate:[NeedAuthGuard] },
-    { path: 'trailers', component: TrailerListComponent, canActivate:[NeedAuthGuard] },
-    { path: 'trailers/add', component: AddTrailerComponent, canActivate:[NeedAuthGuard] },
-    { path: 'trailers/edit:trailerId', component: EditTrailerComponent, canActivate:[NeedAuthGuard] },
   ],canActivate:[NeedAuthGuard]
 },
  

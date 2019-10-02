@@ -35,18 +35,7 @@ import { TrailerListComponent } from './trailers/trailer-list/trailer-list.compo
 import { AddInventoryComponent } from './inventory/add-inventory/add-inventory.component';
 import { EditInventoryComponent } from './inventory/edit-inventory/edit-inventory.component';
 import { ViewInventoryComponent } from './inventory/view-inventory/view-inventory.component';
-import { EditOrderComponent } from './order/edit-order/edit-order.component';
-import { NewOrderComponent } from './order/new-order/new-order.component';
-import { OrderListComponent } from './order/order-list/order-list.component';
-import { ViewOrderComponent } from './order/order-list/view-order/view-order.component';
-import { AddProductComponent } from './product/add-product/add-product.component';
-import { EditProductComponent } from './product/edit-product/edit-product.component';
-import { ProductListComponent } from './product/product-list/product-list.component';
-import { ViewProductComponent } from './product/product-list/view-product/view-product.component';
-import { NewTrailerComponent } from './trailer/new-trailer/new-trailer.component';
-import { TrailerlistComponent } from './trailer/trailerlist/trailerlist.component';
-import { ViewTrailerComponent } from './trailer/trailerlist/view-trailer/view-trailer.component';
-import { CommonModule, DatePipe } from '@angular/common';
+
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
 import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
@@ -54,6 +43,16 @@ import { ForgotPasswordComponent } from './users/forgot-password/forgot-password
 import { DocksComponent } from './status/docks/docks.component';
 import { YardsComponent } from './status/yards/yards.component';
 import { StatusComponent } from './status/status/status.component';
+import { ViewTrailerComponent } from './trailers/trailer-list/view-trailer/view-trailer.component';
+import { CommonModule } from '@angular/common';
+import { EditOrderComponent } from './orders/edit-order/edit-order.component';
+import { OrderListComponent } from './orders/order-list/order-list.component';
+import { ViewOrderComponent } from './orders/order-list/view-order/view-order.component';
+import { AddProductComponent } from './products/add-product/add-product.component';
+import { EditProductComponent } from './products/edit-product/edit-product.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
+import { ViewProductComponent } from './products/product-list/view-product/view-product.component';
+import { AddOrderComponent } from './orders/add-order/add-order.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,27 +79,25 @@ import { StatusComponent } from './status/status/status.component';
     MainComponent,
     LoginPageComponent,
     AddLocationComponent,
+    ViewTrailerComponent,
     AddTrailerComponent,
     EditTrailerComponent,
     TrailerListComponent,
     AddInventoryComponent,
     EditInventoryComponent,
     ViewInventoryComponent,
+    ForgotPasswordComponent,
+    StatusComponent,
+    DocksComponent,
+    YardsComponent,
     EditOrderComponent,
-    NewOrderComponent,
     OrderListComponent,
     ViewOrderComponent,
     AddProductComponent,
     EditProductComponent,
     ProductListComponent,
     ViewProductComponent,
-    NewTrailerComponent,
-    TrailerlistComponent,
-    ViewTrailerComponent,
-    ForgotPasswordComponent,
-    StatusComponent,
-    DocksComponent,
-    YardsComponent,
+    AddOrderComponent
   ],
   imports: [
     BrowserModule,
@@ -109,10 +106,10 @@ import { StatusComponent } from './status/status/status.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    DateTimePickerModule,
-    DropDownListModule
+    DropDownListModule,
+    DateTimePickerModule
   ],
-  providers: [DatePipe,NeedAuthGuard],
+  providers: [NeedAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
