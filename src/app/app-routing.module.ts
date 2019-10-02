@@ -23,10 +23,6 @@ import { AddInventoryComponent } from './inventory/add-inventory/add-inventory.c
 import { EditInventoryComponent } from './inventory/edit-inventory/edit-inventory.component';
 import { ViewInventoryComponent } from './inventory/view-inventory/view-inventory.component';
 import { ViewTrailerComponent } from './trailer/trailerlist/view-trailer/view-trailer.component';
-import { NewOrderComponent } from './order/new-order/new-order.component';
-import { ViewOrderComponent } from './order/order-list/view-order/view-order.component';
-import { EditOrderComponent } from './order/edit-order/edit-order.component';
-import { OrderListComponent } from './order/order-list/order-list.component';
 import { AddProductComponent } from './product/add-product/add-product.component';
 import { EditProductComponent } from './product/edit-product/edit-product.component';
 import { ViewProductComponent } from './product/product-list/view-product/view-product.component';
@@ -40,10 +36,6 @@ const routes: Routes = [
   {
     path: '', component: DashboardComponent,
     children: [
-      { path: 'orders/add', component: NewOrderComponent, canActivate: [NeedAuthGuard] },
-      { path: 'orders/view/:orderId', component: ViewOrderComponent, canActivate: [NeedAuthGuard] },
-      { path: 'orders/edit/:orderId', component: EditOrderComponent, canActivate: [NeedAuthGuard] },
-      { path: 'orders', component: OrderListComponent, canActivate: [NeedAuthGuard] },
       { path: 'products/add', component: AddProductComponent, canActivate: [NeedAuthGuard] },
       { path: 'products/edit/:productId', component: EditProductComponent, canActivate: [NeedAuthGuard] },
       { path: 'products/view/:productId', component: ViewProductComponent, canActivate: [NeedAuthGuard] },

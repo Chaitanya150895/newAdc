@@ -35,10 +35,6 @@ import { TrailerListComponent } from './trailers/trailer-list/trailer-list.compo
 import { AddInventoryComponent } from './inventory/add-inventory/add-inventory.component';
 import { EditInventoryComponent } from './inventory/edit-inventory/edit-inventory.component';
 import { ViewInventoryComponent } from './inventory/view-inventory/view-inventory.component';
-import { EditOrderComponent } from './order/edit-order/edit-order.component';
-import { NewOrderComponent } from './order/new-order/new-order.component';
-import { OrderListComponent } from './order/order-list/order-list.component';
-import { ViewOrderComponent } from './order/order-list/view-order/view-order.component';
 import { AddProductComponent } from './product/add-product/add-product.component';
 import { EditProductComponent } from './product/edit-product/edit-product.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
@@ -47,8 +43,6 @@ import { NewTrailerComponent } from './trailer/new-trailer/new-trailer.component
 import { TrailerlistComponent } from './trailer/trailerlist/trailerlist.component';
 import { ViewTrailerComponent } from './trailer/trailerlist/view-trailer/view-trailer.component';
 import { CommonModule, DatePipe } from '@angular/common';
-import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
-import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { StoreComponent } from './store/store.component';
 import { ProductInventoryComponent } from './product-inventory/product-inventory.component';
 import { OutboundInventoryComponent } from './outbound-inventory/outbound-inventory.component';
@@ -87,10 +81,6 @@ import { DeliveryScheduleComponent } from './delivery-schedule/delivery-schedule
     AddInventoryComponent,
     EditInventoryComponent,
     ViewInventoryComponent,
-    EditOrderComponent,
-    NewOrderComponent,
-    OrderListComponent,
-    ViewOrderComponent,
     AddProductComponent,
     EditProductComponent,
     ProductListComponent,
@@ -110,9 +100,7 @@ import { DeliveryScheduleComponent } from './delivery-schedule/delivery-schedule
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule,
-    DateTimePickerModule,
-    DropDownListModule
+    FormsModule
   ],
   providers: [DatePipe,NeedAuthGuard],
   bootstrap: [AppComponent]

@@ -16,7 +16,7 @@
                     <input *ngIf="data.control=='input'" type="{{data.type}}" class="form-control" id="{{data.id}}"
                         placeholder="{{data.placeholder}}" formControlName="{{data.control_name}}">
 
-                    <select style="width: 250px" *ngIf="data.control=='select'" type="undefined" class="form-control" id="{{data.id}}"
+                    <select style="width: 100%" *ngIf="data.control=='select'" type="undefined" class="form-control" id="{{data.id}}"
                         formControlName="{{data.control_name}}">
                         <option *ngFor="let item of data.array" [value]="item.id">{{item.name}}</option>
                     </select>
