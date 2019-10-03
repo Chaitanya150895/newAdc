@@ -15,7 +15,7 @@ export class ProductOrderComponent implements OnInit {
 
   tableHeaders = [
     "Trailer",
-    "Products",
+    "Product",
     "Quantity",
     "Action"
   ]
