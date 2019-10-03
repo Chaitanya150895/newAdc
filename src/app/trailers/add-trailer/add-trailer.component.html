@@ -1,4 +1,4 @@
-<section class="content-header">
+<!-- <section class="content-header">
     <h1>
         Trailer
         <small>Add</small>
@@ -8,21 +8,21 @@
             <a href="#">Back</a>
         </li>
     </ol>
-  </section>
+  </section> -->
   
   <!-- Main content -->
-  <section class="content">
-    <div class="row">
+  <!-- <section class="content">
+    <div class="row"> -->
         <!-- left column -->
-        <div class="col-md-12">
+        <!-- <div class="col-md-12"> -->
             <!-- general form elements -->
-            <div class="box box-primary">
+            <!-- <div class="box box-primary">
                 <div class="box-header with-border">
                     <h3 class="box-title">Form</h3>
-                </div>
+                </div> -->
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form [formGroup]="customForm" (ngSubmit)="onSubmit()">
+                <!-- <form [formGroup]="customForm" (ngSubmit)="onSubmit()">
                     <div class="box-body">
   
                         <div class="row">
@@ -47,9 +47,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- /.box-body -->
-                    <div class="box-footer">
+                    <!-- <div class="box-footer">
                         <button type="submit">Submit</button>
   
                         <button type="button" (click)="onUpdate()">update</button>
@@ -57,4 +57,51 @@
                     {{customForm.value | json}}
                 </form>
             </div>
-  
+   -->
+
+   <section class="content">
+    <div class="row">
+        <!-- left column -->
+ <div class="col-md-12 col-lg-12">
+   <div class="box box-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title">Trailers</h3>
+    </div>
+
+    <div class="box-header with-border">
+        <app-trailer-list #child></app-trailer-list>
+    </div>
+
+    <form [formGroup]="customForm" (ngSubmit)="onSubmit()">
+        <div class="box-body">
+
+            <div class="row">
+                <div class="form-group col-md-3" *ngFor="let data of formData">
+                    <label for="{{data.for}}">{{data.label}}</label>
+                    <input *ngIf="data.control=='input'" type="{{data.type}}" class="form-control" id="{{data.id}}"
+                        placeholder="{{data.placeholder}}" formControlName="{{data.control_name}}">
+
+                    <select style="width: 100%" *ngIf="data.control=='select'" type="undefined" class="form-control" id="{{data.id}}"
+                        formControlName="{{data.control_name}}">
+                        <option *ngFor="let item of data.array" [value]="item.id">{{item.name}}</option>
+                    </select>
+                    <div *ngIf="data.control=='button'">
+                        <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    </div>  
+                </div>
+                
+            </div>
+           
+        </div>
+        <!-- /.box-body -->
+        <!-- <div class="box-footer">
+            <button type="submit"><i class="fa fa-plus btn btn-success" aria-hidden="true"></i></button>
+        </div> -->
+        {{customForm.value | json}}
+    </form>
+</div>  
+</div>
+</div>
+</section>
+
+

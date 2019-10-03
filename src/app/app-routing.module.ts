@@ -17,11 +17,11 @@ import { NeedAuthGuard } from './auth.guard';
 import { AddLocationComponent } from './locations/add-location/add-location.component';
 import { TrailerListComponent } from './trailers/trailer-list/trailer-list.component';
 import { AddTrailerComponent } from './trailers/add-trailer/add-trailer.component';
-import { EditTrailerComponent } from './trailers/edit-trailer/edit-trailer.component';
+
 import { AddInventoryComponent } from './inventory/add-inventory/add-inventory.component';
 import { EditInventoryComponent } from './inventory/edit-inventory/edit-inventory.component';
 import { ViewInventoryComponent } from './inventory/view-inventory/view-inventory.component';
-import { ViewTrailerComponent } from './trailers/trailer-list/view-trailer/view-trailer.component';
+
 import { AddOrderComponent } from './orders/add-order/add-order.component';
 import { ViewOrderComponent } from './orders/order-list/view-order/view-order.component';
 import { EditOrderComponent } from './orders/edit-order/edit-order.component';
@@ -32,6 +32,7 @@ import { ViewProductComponent } from './products/product-list/view-product/view-
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { StoreComponent } from './store/store.component';
 import { ForgotPasswordComponent } from './users/forgot-password/forgot-password.component';
+import { TrailersComponent } from './trailers/trailers.component';
 
 const routes: Routes = [
 
@@ -41,10 +42,7 @@ const routes: Routes = [
 
 
 
-    { path: 'trailers', component: TrailerListComponent , canActivate:[NeedAuthGuard] },
-    { path:'trailers/add', component: AddTrailerComponent,canActivate:[NeedAuthGuard]},
-    { path: 'trailers/view/:trailerId', component: ViewTrailerComponent , canActivate:[NeedAuthGuard] },
-    { path: 'trailers/edit/:trailerId', component: EditTrailerComponent , canActivate:[NeedAuthGuard] },
+    { path: 'trailers', component: TrailersComponent , canActivate:[NeedAuthGuard] },
     { path:'orders/add', component: AddOrderComponent,canActivate:[NeedAuthGuard]},
     { path: 'orders/view/:orderId', component: ViewOrderComponent , canActivate:[NeedAuthGuard] },
     { path: 'orders/edit/:orderId', component: EditOrderComponent , canActivate:[NeedAuthGuard] },
@@ -66,9 +64,6 @@ const routes: Routes = [
     { path: 'inventories/add', component: AddInventoryComponent , canActivate:[NeedAuthGuard] },
     { path: 'inventories/edit/:inventoryId', component: EditInventoryComponent , canActivate:[NeedAuthGuard] },
     { path: 'inventories/view/:inventoryId', component: ViewInventoryComponent , canActivate:[NeedAuthGuard] },
-    { path: 'trailers', component: TrailerListComponent, canActivate:[NeedAuthGuard] },
-    { path: 'trailers/add', component: AddTrailerComponent, canActivate:[NeedAuthGuard] },
-    { path: 'trailers/edit:trailerId', component: EditTrailerComponent, canActivate:[NeedAuthGuard] },
      { path: 'store', component: StoreComponent, canActivate: [NeedAuthGuard] },
   ],canActivate:[NeedAuthGuard]
 },

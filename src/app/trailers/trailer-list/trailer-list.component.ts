@@ -20,6 +20,9 @@ export class TrailerListComponent implements OnInit {
 
   constructor( private httpService: HttpService) {
 
+ 
+  }
+  ngOnInit() {
     this.httpService.getHttp("trailers.json").subscribe( data => {
 
       console.log(data);
@@ -28,7 +31,13 @@ export class TrailerListComponent implements OnInit {
 
     });
   }
-  ngOnInit() {
+  reloadData(){
+    this.httpService.getHttp("trailers.json").subscribe( data => {
+
+      console.log(data);
+
+      this.trailers = data['data'];
+    });
   }
   deleteTrailer(id, trailerId) {
       this.httpService.deleteHttp("trailers/"+id+".json").subscribe(data => {

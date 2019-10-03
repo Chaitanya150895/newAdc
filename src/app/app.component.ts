@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+const TOKEN = 'TOKEN';
 @Component({
   selector: '[app-root]',
   templateUrl: './app.component.html',
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   isLogin = false;
   title = 'logistic-v1-angular';
+
+  isLogged() {
+    return localStorage.getItem(TOKEN) != null;
+  }
+
 }

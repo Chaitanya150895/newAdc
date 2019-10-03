@@ -58,6 +58,7 @@ import { EditProductComponent } from './products/edit-product/edit-product.compo
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ViewProductComponent } from './products/product-list/view-product/view-product.component';
 import { ViewTrailerComponent } from './trailers/trailer-list/view-trailer/view-trailer.component';
+import { TrailersComponent } from './trailers/trailers/trailers.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -108,7 +109,8 @@ import { ViewTrailerComponent } from './trailers/trailer-list/view-trailer/view-
     OutboundInventoryComponent,
     BackroomInventoryComponent,
     DeliveryScheduleComponent,
-    AddOrderComponent
+    AddOrderComponent,
+    TrailersComponent
   ],
   imports: [
     BrowserModule,
