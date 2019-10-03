@@ -80,6 +80,7 @@ import { DeliveryScheduleComponent } from './store/delivery-schedule/delivery-sc
 import { PipeTransformPipe } from './pipe-transform.pipe';
 import { ReplaceUnderscorePipe } from './replace-underscore.pipe';
 import { NeedAuthGuard } from './auth.guard';
+import { ProductOrderComponent } from './product-order/product-order.component';
 
 
 @NgModule({
@@ -151,7 +152,8 @@ import { NeedAuthGuard } from './auth.guard';
     //pipes
     PipeTransformPipe,
     ReplaceUnderscorePipe,
-    ReplaceUnderscorePipe
+    ReplaceUnderscorePipe,
+    ProductOrderComponent
   ],
   imports: [
     BrowserModule,

@@ -21,7 +21,7 @@ export class AddOrderComponent implements OnInit {
   ORDER_STATUS_INDEX =8;
   showMsg: boolean = false;
 
-  formData = [
+  formData = [ 
     {for : "source_id", control:"select" ,type:null,label:"Source",placeholder:"Select source",id:"source_id",control_name:"source_id",array:null},
     {for : "destination_id", control:"select" ,type:null,label:"Destination",placeholder:"Select Destination",id:"destination_id",control_name:"destination_id",array:null},
     {for : "user_id", control:"select" ,type:null,label:"User",placeholder:"Select User",id:"user_id",control_name:"user_id",array:null},

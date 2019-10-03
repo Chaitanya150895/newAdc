@@ -2,6 +2,11 @@
     <div class="box-header with-border">
         <h3 class="box-title">Outbound Inventory</h3>
     </div>
+
+    <div class="box-header with-border">
+        <app-product-order></app-product-order>
+    </div>
+
     <form [formGroup]="customForm" (ngSubmit)="onSubmit()">
         <div class="box-body">
             <div class="row">
@@ -11,11 +16,12 @@
                         placeholder="{{data.placeholder}}" formControlName="{{data.control_name}}">
                     <select *ngIf="data.control=='select'" class="form-control" id="{{data.id}}"
                         formControlName="{{data.control_name}}">
-                        <option *ngFor="let item of data.array" [value]="item.id">{{item.name ? item.name : item.trailer_number}}</option>
+                        <option *ngFor="let item of data.array" [value]="item.id">
+                            {{item.name ? item.name : item.trailer_number}}</option>
                     </select>
                     <div *ngIf="data.control=='button'">
                         <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                    </div> 
+                    </div>
                 </div>
             </div>
         </div>

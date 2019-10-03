@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from 'src/app/http.service';
+import { ActivatedRoute } from '@angular/router';
+import * as moment from 'moment'
+import { ProductOrderComponent } from 'src/app/product-order/product-order.component';
 
 @Component({
   selector: 'app-outbound-inventory',
@@ -10,12 +13,10 @@ import { HttpService } from 'src/app/http.service';
 export class OutboundInventoryComponent implements OnInit {
   TRAILER_INDEX = 0;
   PRODUCT_INDEX = 1;
-  INVENTORY_STATUSES_INDEX: 2;
 
   formData = [
     { for: "trailer_id", control: "select", type: null, label: "Trailer", placeholder: "Select Trailer", id: "trailer_id", control_name: "trailer_id", array: null },
     { for: "product_id", control: "select", type: null, label: "Product", placeholder: "Select Product", id: "product_id", control_name: "product_id", array: null },
-    // { for: "inventory_status_id", control: "select", type: "null", label: "Inv Status", placeholder: "Inventory Status", id: "inventory_status_id", control_name: "inventory_status_id", array: null },
     { for: "quantity", control: "input", type: "number", label: "Quantity", placeholder: "Enter Quantity", id: "quantity", control_name: "quantity" },
     // { for: "location_id", control: "input", type: "hidden", label: "", placeholder: "Enter Quantity", id: "location_id", control_name: "location_id" },
     { for: "action", control: "button", type: "submit", label: "Action", placeholder: "button", id: "action", control_name: "action" },
@@ -25,23 +26,22 @@ export class OutboundInventoryComponent implements OnInit {
 
     trailer_id: [''],
     product_id: [''],
-    // inventory_status_id: [''],
     quantity: [''],
     location_id: ['35']
   });
 
-  constructor(private fb: FormBuilder, private httpService: HttpService) { }
-
+  constructor(private route: ActivatedRoute,private fb:FormBuilder,private httpService: HttpService) { }
+  @ViewChild('child',null) child:ProductOrderComponent;
   ngOnInit() {
 
     this.httpService.getHttp("trailers.json").subscribe(data => {
-      console.log("trailer :: " + data);
-      this.formData[this.TRAILER_INDEX].array = (data['data']);
+      console.log(data);
+     this.formData[this.TRAILER_INDEX].array = ( data['data']);
     });
 
     this.httpService.getHttp("products.json").subscribe(data => {
-      console.log("product :: " + data);
-      this.formData[this.PRODUCT_INDEX].array = (data['data']);
+      console.log(data);
+     this.formData[this.PRODUCT_INDEX].array = ( data['data']);
     });
 
     // this.httpService.getHttp("inventory_statuses.json").subscribe(data => {
@@ -58,7 +58,7 @@ export class OutboundInventoryComponent implements OnInit {
     // TODO: Use EventEmitter with form value
     console.warn(this.customForm.value);
     console.log("submit :: loc:::" + this.customForm.value.location_id)
-    this.httpService.postHttp("inventories.json", this.customForm.value)
+    this.httpService.postHttp("orders.json", this.customForm.value)
       .pipe(
       ).subscribe(data => {
         console.log(data);
