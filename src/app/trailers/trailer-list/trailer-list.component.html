@@ -1,9 +1,10 @@
 <section class="content">
         <div class="row">
+                <!-- {{trailers | json }} -->
             <!-- left column -->
-     <div class="col-md-12 col-lg-12">
+     <div class="col-md-6 col-md-6">
        
-          <table  cellspacing="10" class="table table-hover">
+          <table class="table table-hover">
                 <thead>
                     <tr>
                         <th *ngFor="let header of tableHeaders">
@@ -12,17 +13,18 @@
                     </tr>
                 </thead>
                 <tbody>
+                  
                     <tr *ngFor="let trailer of trailers; let trailerId = index">
                         <td>{{trailer.trailer_number}}</td>
-                        <td>{{trailer.trailer_statuses_id}}</td>
+                        <td>{{trailer.trailer_status.name}}</td>
                         <td>
+
                          
                             <a (click)="deleteTrailer(trailer.id, trailerId)"><i class="fa fa-trash" ></i></a>
                         </td>
                     </tr>
                 </tbody>
             </table>
-            
         </div>
 
     </div>

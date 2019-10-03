@@ -16,7 +16,7 @@ export class AddTrailerComponent implements OnInit {
 
   
   formData = [
-    {for : "trailer_number",control:"input" , type:"text",label:"Trailer Number",placeholder:"Enter Trailer Number", id:"trailer_number",control_name:"trailer_number"},
+    {for : "trailer_number",control:"input" , type:"text",label:"Trailer Number",placeholder:"Enter Number", id:"trailer_number",control_name:"trailer_number"},
    {for : "trailer_statuses_id", control:"select" ,type:null,label:"trailer_statuses_id",placeholder:"Select trailer_statuses_id",id:"trailer_statuses_id",control_name:"trailer_statuses_id",array:null},
    { for: "action", control: "button", type: "submit", label: "Action", placeholder: "button", id: "action", control_name: "action" },
   ]
