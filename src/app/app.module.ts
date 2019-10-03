@@ -11,10 +11,10 @@ import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 
 
 //AdminLte
-import { MainHeaderComponent } from './main-header/main-header.component';
-import { MainSidebarComponent } from './main-sidebar/main-sidebar.component';
-import { MainFooterComponent } from './main-footer/main-footer.component';
-import { ContentWrapperComponent } from './content-wrapper/content-wrapper.component';
+import { MainHeaderComponent } from './home/main/main-header/main-header.component';
+import { MainSidebarComponent } from './home/main/main-sidebar/main-sidebar.component';
+import { MainFooterComponent } from './home/main/main-footer/main-footer.component';
+import { ContentWrapperComponent } from './home/main/content-wrapper/content-wrapper.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './home/main/main.component';
 
