@@ -20,12 +20,10 @@ import { MainComponent } from './home/main/main.component';
 
 
 //locations
-import { NewLocationComponent } from './locations/new-location/new-location.component';
 import { LocationListComponent } from './locations/location-list/location-list.component';
 import { EditLocationComponent } from './locations/edit-location/edit-location.component';
 import { ViewLocationComponent } from './locations/location-list/view-location/view-location.component';
 import { LocationComponent } from './locations/location.component';
-import { SchedulesComponent } from './locations/new-location/schedules/schedules.component';
 import { AddLocationComponent } from './locations/add-location/add-location.component';
 
 //users
@@ -98,12 +96,10 @@ import { ProductOrderComponent } from './product-order/product-order.component';
 
     //Locations
     LocationComponent,
-    NewLocationComponent,
     LocationListComponent,
     EditLocationComponent,
     ViewLocationComponent,
     AddLocationComponent,
-    SchedulesComponent,
     
     //Users
     UserListComponent,
