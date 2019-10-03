@@ -10,7 +10,6 @@ import { MainHeaderComponent } from './main-header/main-header.component';
 import { MainSidebarComponent } from './main-sidebar/main-sidebar.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
 import { LocationListComponent } from './locations/location-list/location-list.component';
-import { RouterModule } from '@angular/router';
 import { EditLocationComponent } from './locations/edit-location/edit-location.component';
 import { ViewLocationComponent } from './locations/location-list/view-location/view-location.component';
 import { PipeTransformPipe } from './pipe-transform.pipe';
@@ -36,7 +35,7 @@ import { AddInventoryComponent } from './inventory/add-inventory/add-inventory.c
 import { EditInventoryComponent } from './inventory/edit-inventory/edit-inventory.component';
 import { ViewInventoryComponent } from './inventory/view-inventory/view-inventory.component';
 
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
 import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
@@ -45,10 +44,10 @@ import { StatusComponent } from './status/status/status.component';
 import { DocksComponent } from './status/docks/docks.component';
 import { YardsComponent } from './status/yards/yards.component';
 import { StoreComponent } from './store/store.component';
-import { ProductInventoryComponent } from './product-inventory/product-inventory.component';
-import { OutboundInventoryComponent } from './outbound-inventory/outbound-inventory.component';
-import { BackroomInventoryComponent } from './backroom-inventory/backroom-inventory.component';
-import { DeliveryScheduleComponent } from './delivery-schedule/delivery-schedule.component';
+import { ProductInventoryComponent } from './store/product-inventory/product-inventory.component';
+import { OutboundInventoryComponent } from './store/outbound-inventory/outbound-inventory.component';
+import { BackroomInventoryComponent } from './store/backroom-inventory/backroom-inventory.component';
+import { DeliveryScheduleComponent } from './store/delivery-schedule/delivery-schedule.component';
 import { AddOrderComponent } from './orders/add-order/add-order.component';
 import { EditOrderComponent } from './orders/edit-order/edit-order.component';
 import { OrderListComponent } from './orders/order-list/order-list.component';
