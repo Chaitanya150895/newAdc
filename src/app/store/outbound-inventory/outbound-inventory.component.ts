@@ -3,7 +3,7 @@ import { FormBuilder, FormArray, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from 'src/app/http.service';
 import { ActivatedRoute } from '@angular/router';
 import * as moment from 'moment'
-import { ProductOrderComponent } from 'src/app/product-order/product-order.component';
+import { ProductOrderComponent } from 'src/app/store/product-order/product-order.component';
 
 @Component({
   selector: 'app-outbound-inventory',

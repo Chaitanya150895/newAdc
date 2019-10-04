@@ -72,13 +72,13 @@ import { ProductInventoryComponent } from './store/product-inventory/product-inv
 import { OutboundInventoryComponent } from './store/outbound-inventory/outbound-inventory.component';
 import { BackroomInventoryComponent } from './store/backroom-inventory/backroom-inventory.component';
 import { DeliveryScheduleComponent } from './store/delivery-schedule/delivery-schedule.component';
-
+import { ProductOrderComponent } from './store/product-order/product-order.component';
 
 //pipes
 import { PipeTransformPipe } from './pipe-transform.pipe';
 import { ReplaceUnderscorePipe } from './replace-underscore.pipe';
 import { NeedAuthGuard } from './auth.guard';
-import { ProductOrderComponent } from './product-order/product-order.component';
+
 
 
 @NgModule({

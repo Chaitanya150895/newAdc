@@ -54,20 +54,19 @@
               </tr>
             </thead>
             <tbody>
-
-
               <tr role="row" class="odd" *ngFor="let product of products; let productId = index">
-                <!-- <td class="sorting_1">{{location.id}}</td> -->
-                <td>{{product.name}}</td>
-                <td>{{product.price}}</td>
-
-                <td>
-                  <a [routerLink]="['/products/view/', product.id]"><i class="fa fa-eye"></i></a> |
-                  <a [routerLink]="['/products/edit/', product.id]"><i class="fa fa-edit"></i></a> |
-                  <a (click)="deleteProduct(product.id, productId)"><i class="fa fa-trash"></i></a>
-
-                </td>
+               <td>
+                <input type="text" [(ngModel)]="product.name" [disabled]="!product.isEditable"/>
+               </td>
+               <td>
+                <input type="text" [(ngModel)]="product.price" [disabled]="!product.isEditable"/>
+               </td>
+               <td>
+                <button (click)="product.isEditable=!product.isEditable" *ngIf="!product.isEditable">Edit</button>
+                <button *ngIf="product.isEditable" (click)=" save(productId)"></button>Save</button>
+             </td>
               </tr>
+              <!-- {{products | json}} -->
             </tbody>
           </table>
         </div>
@@ -81,3 +80,23 @@
     </div>
   </div>
 </section>
+
+<!-- <tr *ngFor="let p of products; let i = index">
+  <td><input type="checkbox"></td>
+  <td (click)="setCodeEdit(i)">
+    <span *ngIf="!p.canEditCode">{{p.code}}></span>
+    <input *ngIf="p.canEditCode" type="text" class="form-control"  />
+  </td>
+  <td>
+    <select class="form-control border-gray" id="codeType" 
+   [(ngModel)]="p.codeType.id" (change)="onCodeTypeChange(i, p.id)" 
+    [ngModelOptions]="{standalone: true}">
+   <option *ngFor="let type of codeTypes" [ngValue]="type.id">{{type.name}}
+     </option>
+    </select>
+   </td>
+   <td (click)="setDescEdit(i)">
+    <span *ngIf="!p.canEditDesc">{{p.description}}></span>
+    <input *ngIf="p.canEditDesc" type="text" class="form-control"  />
+  </td>
+  </tr> -->

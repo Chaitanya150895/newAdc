@@ -7,6 +7,8 @@ import { HttpService } from 'src/app/http.service';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
+
+
   formData = [
   {for : "name",control:"input" , type:"text",label:"Name",placeholder:"Enter Name", id:"name",control_name:"name"},
   {for : "price", control:"input" ,type:"text",label:"Price",placeholder:"Enter Price",id:"price",control_name:"price"},

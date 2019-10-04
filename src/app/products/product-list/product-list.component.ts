@@ -9,11 +9,14 @@ import { HttpService } from 'src/app/http.service';
 export class ProductListComponent implements OnInit {
   products = [];
   loading = false;
+  
   tableHeaders = [
-    "Id",
+    
     "Name",
-    "Price"
+    "Price",
+    "Action"
   ]
+  route: any;
   constructor(private httpService: HttpService) { }
 
   ngOnInit() {
@@ -26,5 +29,11 @@ export class ProductListComponent implements OnInit {
 
     });
   }
+ save(index){
+ 
+  console.log(this.products[index]);
+  
+
+ }
 
 }
