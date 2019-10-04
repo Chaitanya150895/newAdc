@@ -30,7 +30,15 @@ export class ProductListComponent implements OnInit {
     });
   }
  save(index){
- 
+   console.log("pallavi");
+ let product = this.products[index];
+
+  this.httpService.putHttp("products/"+product.id+".json",JSON.stringify(product)).subscribe(data => {
+    //this.loading = false;
+    console.log(data);
+    //this.products = data['data'];
+    product.isEditable = false;
+  });
   console.log(this.products[index]);
   
 

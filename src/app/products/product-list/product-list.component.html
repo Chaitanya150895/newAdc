@@ -63,7 +63,7 @@
                </td>
                <td>
                 <button (click)="product.isEditable=!product.isEditable" *ngIf="!product.isEditable">Edit</button>
-                <button *ngIf="product.isEditable" (click)=" save(productId)"></button>Save</button>
+                <button *ngIf="product.isEditable" (click)="save(productId)">Save</button>
              </td>
               </tr>
               <!-- {{products | json}} -->
