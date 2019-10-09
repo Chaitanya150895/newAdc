@@ -10,12 +10,10 @@ import { HttpService } from 'src/app/http.service';
 })
 export class UserListComponent implements OnInit {
   tableHeaders = [
-    "Id",
     "Username",
-    "Firstname",
-    "LastName",
+    "User",
+    "Location",
     "Email",
-    "Mobile Number",
     "Action"
   ]
 
@@ -36,8 +34,8 @@ export class UserListComponent implements OnInit {
   }
   deleteUser(id, userId) {
     this.loading = true;
-    this.http.deleteHttp("users/" + id + ".json").subscribe(data => {
-      console.log(data);
+    this.http.putHttp("users/" + id + ".json", JSON.stringify({ user_status_id: 3 })).subscribe(data => {
+      console.log("deleted : " + data);
       this.users.splice(userId, 1);
       this.loading = false;
     });

@@ -30,7 +30,7 @@ export class EditUserComponent implements OnInit {
     { for: "email", control: "input", type: "text", label: "Email", placeholder: "Enter Email", id: "email", control_name: "email" },
     { for: "mobile", control: "input", type: "text", label: "Mobile Number", placeholder: "Enter Mobile Number", id: "mobile", control_name: "mobile" },
     { for: "location_id", control: "select", type: "null", label: "Location", placeholder: "Select Location", id: "location_id", control_name: "location_id", array: null },
-    // { for: "types", control: "checkbox", type: "checkbox", label: "Select Type", placeholder: "Select Type", id: "types", control_name: "types", array: null },
+    { for: "types", control: "checkbox", type: "checkbox", label: "Select Type", placeholder: "Select Type", id: "types", control_name: "types", array: null },
 
   ]
 
@@ -41,7 +41,7 @@ export class EditUserComponent implements OnInit {
     first_name: [''],
     last_name: [''],
     email: [''],
-    mobile: [''],    
+    mobile: [''],
     location_id: [''],
     types: this.fb.array([]),
     menus: this.fb.array([])
@@ -122,16 +122,16 @@ export class EditUserComponent implements OnInit {
     });
     this.customForm.value.types = typeArray;
 
-     //Menu Array
-     let menuArray = [];
-     this.customForm.value.menus.forEach(element => {
-       if (element.check == true) {
-         menuArray.push(element);
-       }
-     });
-     let result_menu = menuArray.map(({ parent_id, id, name, check }) => ({ id, name, check }));
-     this.customForm.value.menus = result_menu;
-     console.warn(this.customForm.value);
+    //Menu Array
+    let menuArray = [];
+    this.customForm.value.menus.forEach(element => {
+      if (element.check == true) {
+        menuArray.push(element);
+      }
+    });
+    let result_menu = menuArray.map(({ parent_id, id, name, check }) => ({ id, name, check }));
+    this.customForm.value.menus = result_menu;
+    console.warn(this.customForm.value);
 
     this.httpService.putHttp("users/" + this.customForm.value.id + ".json", this.customForm.value)
       .pipe(
