@@ -34,22 +34,24 @@ export class ProductOrderComponent implements OnInit {
     });
   }
 
-  reloadData(){
+  reloadData() {
     this.loading = true;
-    this.http.getHttp("inventories.json").subscribe(data => {
+    console.log("reloadData");
+    this.httpService.getHttp("orders.json").subscribe(data => {
       this.loading = false;
       console.log(data);
       this.orders = data['data'];
     });
   }
 
-  deleteOrder(id, locationId) {
+
+  deleteOrder(id, orderId) {
     this.httpService.deleteHttp("orders/"+id+".json").subscribe(data => {
 
       console.log(data);
 
       // this.locations = data['data'];
-      this.orders.splice(locationId, 1);
+      this.orders.splice(orderId, 1);
       this.showMsg = true;
       this.loading = false;
     });

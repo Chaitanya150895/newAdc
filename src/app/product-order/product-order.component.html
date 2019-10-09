@@ -16,7 +16,7 @@
             <tr role="row" class="odd" *ngFor="let order of orders; let orderId = index">
               <!-- <td class="sorting_1">{{location.id}}</td> -->
               <td>{{order.trailer_id}}</td>
-              <td>{{order.product_id}}</td>
+              <td>{{order.product.name}}</td>
               <td>{{order.quantity}}</td>
               <td>
                 <a (click)="deleteOrder(order.id, orderId)"><i class="fa fa-trash"></i></a>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HttpService } from 'src/app/http.service';
 
-
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
