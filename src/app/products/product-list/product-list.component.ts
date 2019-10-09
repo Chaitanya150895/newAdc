@@ -9,11 +9,14 @@ import { HttpService } from 'src/app/http.service';
 export class ProductListComponent implements OnInit {
   products = [];
   loading = false;
+  
   tableHeaders = [
-    "Id",
+    
     "Name",
-    "Price"
+    "Price",
+    "Action"
   ]
+  route: any;
   constructor(private httpService: HttpService) { }
 
   ngOnInit() {
@@ -26,5 +29,19 @@ export class ProductListComponent implements OnInit {
 
     });
   }
+ save(index){
+   console.log("pallavi");
+ let product = this.products[index];
+
+  this.httpService.putHttp("products/"+product.id+".json",JSON.stringify(product)).subscribe(data => {
+    //this.loading = false;
+    console.log(data);
+    //this.products = data['data'];
+    product.isEditable = false;
+  });
+  console.log(this.products[index]);
+  
+
+ }
 
 }
