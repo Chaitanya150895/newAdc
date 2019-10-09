@@ -20,7 +20,6 @@ export class TrailerListComponent implements OnInit {
 
   constructor( private httpService: HttpService) {
 
- 
   }
   ngOnInit() {
     this.httpService.getHttp("trailers.json").subscribe( data => {

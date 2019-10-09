@@ -33,10 +33,8 @@ import { OrderListComponent } from './orders/order-list/order-list.component';
 
 
 //products
-import { AddProductComponent } from './products/add-product/add-product.component';
-import { EditProductComponent } from './products/edit-product/edit-product.component';
-import { ViewProductComponent } from './products/product-list/view-product/view-product.component';
-import { ProductListComponent } from './products/product-list/product-list.component';
+
+import { ProductsComponent } from './products/products.component';
 
 //stores
 import { StoreComponent } from './store/store.component';
@@ -62,10 +60,7 @@ const routes: Routes = [
     { path:'orders', component: OrderListComponent,canActivate:[NeedAuthGuard]},
 
     //products
-    { path:'products/add', component: AddProductComponent,canActivate:[NeedAuthGuard]},
-    { path: 'products/edit/:productId', component: EditProductComponent , canActivate:[NeedAuthGuard] },
-    {path:'products/view/:productId', component:ViewProductComponent,canActivate:[NeedAuthGuard] },
-    { path:'products', component: ProductListComponent,canActivate:[NeedAuthGuard]},
+    { path:'products', component: ProductsComponent,canActivate:[NeedAuthGuard]},
 
     //users
     { path: 'users', component: UserListComponent , canActivate:[NeedAuthGuard] },

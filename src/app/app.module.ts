@@ -44,9 +44,9 @@ import { ViewInventoryComponent } from './inventory/view-inventory/view-inventor
 
 //products
 import { AddProductComponent } from './products/add-product/add-product.component';
-import { EditProductComponent } from './products/edit-product/edit-product.component';
+import { ProductsComponent } from './products/products.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
-import { ViewProductComponent } from './products/product-list/view-product/view-product.component';
+
 
 
 //orders
@@ -78,6 +78,7 @@ import { ProductOrderComponent } from './store/product-order/product-order.compo
 import { PipeTransformPipe } from './pipe-transform.pipe';
 import { ReplaceUnderscorePipe } from './replace-underscore.pipe';
 import { NeedAuthGuard } from './auth.guard';
+
 
 
 
@@ -134,9 +135,9 @@ import { NeedAuthGuard } from './auth.guard';
 
     //Products
     AddProductComponent,
-    EditProductComponent,
     ProductListComponent,
-    ViewProductComponent,
+    ProductsComponent,
+ 
     
     //Stores
     StoreComponent,
@@ -149,7 +150,8 @@ import { NeedAuthGuard } from './auth.guard';
     PipeTransformPipe,
     ReplaceUnderscorePipe,
     ReplaceUnderscorePipe,
-    ProductOrderComponent
+    ProductOrderComponent,
+    
   ],
   imports: [
     BrowserModule,
