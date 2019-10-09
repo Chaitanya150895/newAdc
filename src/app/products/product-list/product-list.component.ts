@@ -17,6 +17,7 @@ export class ProductListComponent implements OnInit {
     "Action"
   ]
   route: any;
+  showMsg: boolean;
   constructor(private httpService: HttpService) { }
 
   ngOnInit() {
@@ -29,19 +30,43 @@ export class ProductListComponent implements OnInit {
 
     });
   }
+  reloadData(){
+    this.httpService.getHttp("products.json").subscribe( data => {
+
+      console.log(data);
+
+      this.products = data['data'];
+    });
+  }
+  setCodeEdit(index){
+    this.products.forEach(p => p.canEditCode = false)
+    this.products[index].canEditCode=true 
+ }
+//  onEnter(index){
+//    this.save(index);
+//  }
  save(index){
-   console.log("pallavi");
  let product = this.products[index];
 
   this.httpService.putHttp("products/"+product.id+".json",JSON.stringify(product)).subscribe(data => {
     //this.loading = false;
     console.log(data);
     //this.products = data['data'];
-    product.isEditable = false;
+    product.canEditCode = false;
   });
   console.log(this.products[index]);
-  
-
+ 
  }
+ deleteProduct(id, productId) {
+      this.httpService.deleteHttp("products/"+id+".json").subscribe(data => {
+
+      console.log(data);
+
+      // this.locations = data['data'];
+      this.products.splice(productId, 1);
+      this.showMsg = true;
+
+      });
+  }
 
 }

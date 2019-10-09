@@ -19,7 +19,7 @@ export class ProductInventoryComponent implements OnInit {
   ]
   constructor(private http: HttpService) { }
 
-  ngOnInit() {
+  ngOnInit() { 
     this.loading = true;
     this.http.getHttp("inventories.json").subscribe(data => {
       this.loading = false;

@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from 'src/app/http.service';
 import { ProductInventoryComponent } from '../product-inventory/product-inventory.component';
- 
+  
 @Component({
   selector: 'app-backroom-inventory',
   templateUrl: './backroom-inventory.component.html',

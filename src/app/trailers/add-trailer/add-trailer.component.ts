@@ -33,7 +33,7 @@ export class AddTrailerComponent implements OnInit {
   ngOnInit() {
     this.httpService.getHttp("trailer_statuses.json").subscribe(data => {
       console.log(data);
-    this.formData[this. TRAILER_STATUSES_INDEX].array = ( data['data']);
+    this.formData[this.TRAILER_STATUSES_INDEX].array = ( data['data']);
     // this.trailer_statuses = data['data'];
     });
 

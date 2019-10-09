@@ -11,6 +11,8 @@ import { ProductOrderComponent } from 'src/app/store/product-order/product-order
   styleUrls: ['./outbound-inventory.component.css']
 })
 export class OutboundInventoryComponent implements OnInit {
+  @ViewChild('child',null) child:ProductOrderComponent;
+
   TRAILER_INDEX = 0;
   PRODUCT_INDEX = 1;
 
@@ -31,7 +33,6 @@ export class OutboundInventoryComponent implements OnInit {
   });
 
   constructor(private route: ActivatedRoute,private fb:FormBuilder,private httpService: HttpService) { }
-  @ViewChild('child',null) child:ProductOrderComponent;
   ngOnInit() {
 
     this.httpService.getHttp("trailers.json").subscribe(data => {
@@ -63,6 +64,8 @@ export class OutboundInventoryComponent implements OnInit {
       ).subscribe(data => {
         console.log(data);
         this.customForm.reset();
+        
+        this.child.reloadData();
       });
   }
 }

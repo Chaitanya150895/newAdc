@@ -1,49 +1,8 @@
-<!-- Content Header (Page header) -->
-<section class="content-header">
-  <h1>
-    Products
-    <div class="pull-right"><a [routerLink]="['/products/add']" class="btn btn-success btn-ms">Add</a></div>
-  </h1>
-</section>
-
-<!-- <div class="list-container">
-    <dx-list 
-        #list
-        [dataSource]="products"
-        [height]="400"
-        [searchEnabled]="true"
-        searchExpr="Name"
-        searchMode="contains">
-            <div *dxTemplate="let data of 'item'">
-                <div>{{data.Name}}</div>
-            </div>
-    </dx-list>
-</div>
-<div class="options">
-    <div class="caption">Options</div>
-    <div class="option">
-        <span>Search mode</span>
-        <dx-select-box
-            #searchMode
-            [items]="['contains', 'startsWith']"
-            [(value)]="list.searchMode">
-        </dx-select-box>
-    </div>
-</div> -->
-
-<!-- Main content -->
 <section class="content">
   <div class="row">
-    <div class="col-xs-12">
-      <div class="box">
-        <div class="box-header">
-          <h3 class="box-title">List of Products</h3>
-          <div class="box-tools">
-
-          </div>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body table-responsive no-padding">
+        
+<div class="col-md-6 col-md-6">
+ 
           <table class="table table-hover">
             <thead>
               <tr>
@@ -55,48 +14,24 @@
             </thead>
             <tbody>
               <tr role="row" class="odd" *ngFor="let product of products; let productId = index">
-               <td>
-                <input type="text" [(ngModel)]="product.name" [disabled]="!product.isEditable"/>
+              
+               <td  (click)="setCodeEdit(productId)">
+                <span *ngIf="!product.canEditCode">{{product.name}}</span>
+                <input *ngIf="product.canEditCode" type="text" [(ngModel)]="product.name" (keyup.enter)="save(productId)" />
+               </td>
+               <td  (click)="setCodeEdit(productId)">
+                <span *ngIf="!product.canEditCode">{{product.price}}</span>
+                <input *ngIf="product.canEditCode" type="text" [(ngModel)]="product.price" (keyup.enter)="save(productId)" />
                </td>
                <td>
-                <input type="text" [(ngModel)]="product.price" [disabled]="!product.isEditable"/>
-               </td>
-               <td>
-                <button (click)="product.isEditable=!product.isEditable" *ngIf="!product.isEditable">Edit</button>
-                <button *ngIf="product.isEditable" (click)="save(productId)">Save</button>
-             </td>
+                <a (click)="deleteProduct(product.id, productId)"><i class="fa fa-trash" ></i></a>
+            </td>
               </tr>
               <!-- {{products | json}} -->
             </tbody>
           </table>
         </div>
-        <!-- /.box-body -->
-        <div class="box-footer clearfix">
-          <ul class="pagination pagination-sm no-margin pull-right">
-          </ul>
-        </div>
+       
       </div>
-      <!-- /.box -->
-    </div>
-  </div>
-</section>
 
-<!-- <tr *ngFor="let p of products; let i = index">
-  <td><input type="checkbox"></td>
-  <td (click)="setCodeEdit(i)">
-    <span *ngIf="!p.canEditCode">{{p.code}}></span>
-    <input *ngIf="p.canEditCode" type="text" class="form-control"  />
-  </td>
-  <td>
-    <select class="form-control border-gray" id="codeType" 
-   [(ngModel)]="p.codeType.id" (change)="onCodeTypeChange(i, p.id)" 
-    [ngModelOptions]="{standalone: true}">
-   <option *ngFor="let type of codeTypes" [ngValue]="type.id">{{type.name}}
-     </option>
-    </select>
-   </td>
-   <td (click)="setDescEdit(i)">
-    <span *ngIf="!p.canEditDesc">{{p.description}}></span>
-    <input *ngIf="p.canEditDesc" type="text" class="form-control"  />
-  </td>
-  </tr> -->
+</section>
