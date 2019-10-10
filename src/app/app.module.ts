@@ -78,6 +78,7 @@ import { ProductOrderComponent } from './store/product-order/product-order.compo
 import { PipeTransformPipe } from './pipe-transform.pipe';
 import { ReplaceUnderscorePipe } from './replace-underscore.pipe';
 import { NeedAuthGuard } from './auth.guard';
+import { ReceiveToInventoryComponent } from './status/receive-to-inventory/receive-to-inventory.component';
 
 
 
@@ -151,6 +152,7 @@ import { NeedAuthGuard } from './auth.guard';
     ReplaceUnderscorePipe,
     ReplaceUnderscorePipe,
     ProductOrderComponent,
+    ReceiveToInventoryComponent,
     
   ],
   imports: [

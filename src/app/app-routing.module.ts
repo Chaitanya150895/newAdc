@@ -45,6 +45,9 @@ import { TrailersComponent } from './trailers/trailers.component';
 //Pipes
 import { NeedAuthGuard } from './auth.guard';
 
+//status
+import { StatusComponent } from './status/status/status.component';
+ 
 const routes: Routes = [
 
   // { path: "", component: DashboardComponent },
@@ -83,6 +86,9 @@ const routes: Routes = [
 
     //stores
      { path: 'store', component: StoreComponent, canActivate: [NeedAuthGuard] },
+
+     //status
+     { path: 'status', component: StatusComponent, canActivate: [NeedAuthGuard] },
   ],canActivate:[NeedAuthGuard]
 },
  

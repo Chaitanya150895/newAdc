@@ -14,6 +14,8 @@ export class DocksComponent implements OnInit {
   customForm = new FormGroup({
     trailer_id: new FormControl(''),
   });
+  name: string;
+  orders: any;
   get trailer_id() { return this.customForm.get('trailer_id'); }
 
   constructor(private httpService: HttpService) { }
@@ -25,6 +27,11 @@ export class DocksComponent implements OnInit {
       console.log(data);
       this.bays = data['data'];
     });
+    this.httpService.getHttp("orders.json").subscribe(data => {
+      this.loading = false;
+      console.log(data);
+      this.orders = data['data'];
+    });
   }
   addTrailer(bayId) {
     this.httpService.putHttp("bays/" + bayId + ".json", this.customForm.value)
@@ -32,6 +39,10 @@ export class DocksComponent implements OnInit {
       ).subscribe(data => {
         console.log(data);
       });
+  }
+  UpdateButton(){
+    console.log();
+    this.name="vanita";
   }
 
 }
