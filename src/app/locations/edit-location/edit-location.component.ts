@@ -80,13 +80,9 @@ formData = [
       
        //now load the data inside the form
        this.customForm.patchValue(location)
-      
+
       });
     });
- 
-   
-
-
   }
 
   onUpdate(){
