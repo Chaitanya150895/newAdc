@@ -34,7 +34,7 @@ export class LoginPageComponent implements OnInit {
       "username":this.email,
       "password":this.password
     }
-    this.http.post("http://logistic.nagpurit.com/cakephp/logistic_v1/api/users/token.json", postData, httpOptions)
+    this.http.post("http://logistic.nagpurit.com/cakephp/api/users/token.json", postData, httpOptions)
     .pipe(
     ).subscribe(data => {
       console.log(data);
