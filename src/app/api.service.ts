@@ -13,7 +13,7 @@ export class ApiService {
   }
 
   login(email: string, password: string): Observable<LoginResultModel>{
-    return this.http.post<LoginResultModel>('http://localhost/logistic_v1/api/users/token.json', {
+    return this.http.post<LoginResultModel>('http://logistic.nagpurit.com/cakephp/logistic_v1/api/users/token.json', {
       username: email,
       password: password
     });

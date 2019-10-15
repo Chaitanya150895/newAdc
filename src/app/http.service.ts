@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class HttpService {
 
-   serverUrl:string =  "http://localhost/logistic_v1/api/";
+   serverUrl:string =  "http://logistic.nagpurit.com/cakephp/logistic_v1/api/";
 
   constructor(private http:HttpClient) { }
 
