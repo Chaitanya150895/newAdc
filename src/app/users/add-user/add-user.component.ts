@@ -107,7 +107,8 @@ export class AddUserComponent implements OnInit {
     this.httpService.postHttp("users.json", this.customForm.value)
       .pipe(
       ).subscribe(data => {
-        console.log(data);
+        console.log(data);        
+        this.customForm.reset();
       });
   }
 
