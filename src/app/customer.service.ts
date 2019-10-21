@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 
 const TOKEN = 'TOKEN';
 const LOCATION_ID='LOCATION_ID';
-
+ 
 @Injectable({
   providedIn: 'root'
 })

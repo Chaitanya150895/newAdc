@@ -12,7 +12,6 @@ export class ApiService {
   constructor(private http: HttpClient, private httpService: HttpService) {
 
   }
-
   login(email: string, password: string): Observable<LoginResultModel> {
 
     let url = this.httpService.serverUrl;

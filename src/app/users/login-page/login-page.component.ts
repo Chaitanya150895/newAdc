@@ -43,10 +43,7 @@ export class LoginPageComponent implements OnInit {
         console.log("=============>" + token)
         this.customer.setToken(token);
         this.router.navigateByUrl('/locations');
-
       });
-
-
-  }
+ }
 
 }

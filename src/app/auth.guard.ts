@@ -5,7 +5,7 @@ import {CustomerService} from './customer.service';
 
 @Injectable()
 export class NeedAuthGuard implements CanActivate {
-
+ 
   constructor(private customerService: CustomerService, private router: Router) {
   }
 
