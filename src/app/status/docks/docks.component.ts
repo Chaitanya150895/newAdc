@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpService } from 'src/app/http.service';
 import { FormGroup, FormControl } from '@angular/forms';
 
@@ -8,7 +8,6 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./docks.component.css']
 })
 export class DocksComponent implements OnInit {
-
   bays = [];
   loading = false;
   customForm = new FormGroup({
@@ -16,6 +15,8 @@ export class DocksComponent implements OnInit {
   });
   name: string;
   orders: any;
+  isTrailerActive: boolean;
+  data: any;
   get trailer_id() { return this.customForm.get('trailer_id'); }
 
   constructor(private httpService: HttpService) { }
@@ -33,16 +34,19 @@ export class DocksComponent implements OnInit {
       this.orders = data['data'];
     });
   }
-  addTrailer(bayId) {
+  
+  save(bayId) {
+    // alert(bayId);
     this.httpService.putHttp("bays/" + bayId + ".json", this.customForm.value)
       .pipe(
       ).subscribe(data => {
         console.log(data);
       });
   }
-  UpdateButton(){
+
+  UpdateButton() {
     console.log();
-    this.name="vanita";
+    this.name = "vanita";
   }
 
 }
