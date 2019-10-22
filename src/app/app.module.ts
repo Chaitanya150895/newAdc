@@ -106,10 +106,6 @@ import { AddToTrailersComponent } from './status/add-to-trailers/add-to-trailers
     AddLocationComponent,
     
     //Users
-    UserListComponent,
-    AddUserComponent,
-    EditUserComponent,
-    ViewUserComponent,
     LoginPageComponent,
     ForgotPasswordComponent,
 
@@ -152,7 +148,6 @@ import { AddToTrailersComponent } from './status/add-to-trailers/add-to-trailers
     //pipes
     PipeTransformPipe,
     ReplaceUnderscorePipe,
-    ReplaceUnderscorePipe,
     ProductOrderComponent,
     ReceiveToInventoryComponent,
     AddToTrailersComponent,
@@ -166,7 +161,7 @@ import { AddToTrailersComponent } from './status/add-to-trailers/add-to-trailers
     HttpClientModule,
     FormsModule,
     DropDownListModule,
-    DateTimePickerModule
+    DateTimePickerModule,
   ],
   providers: [NeedAuthGuard],
   bootstrap: [AppComponent]

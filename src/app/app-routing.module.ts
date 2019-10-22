@@ -47,51 +47,49 @@ import { NeedAuthGuard } from './auth.guard';
 
 //status
 import { StatusComponent } from './status/status/status.component';
- 
+
 const routes: Routes = [
 
   // { path: "", component: DashboardComponent },
-{ path:'',component:DashboardComponent,
-  children: [
-    //trailers
-    { path: 'trailers', component: TrailersComponent , canActivate:[NeedAuthGuard] },
+  {
+    path: '', component: DashboardComponent,
+    children: [
+      //trailers
+      { path: 'trailers', component: TrailersComponent, canActivate: [NeedAuthGuard] },
 
-    //orders
-    { path:'orders/add', component: AddOrderComponent,canActivate:[NeedAuthGuard]},
-    { path: 'orders/view/:orderId', component: ViewOrderComponent , canActivate:[NeedAuthGuard] },
-    { path: 'orders/edit/:orderId', component: EditOrderComponent , canActivate:[NeedAuthGuard] },
-    { path:'orders', component: OrderListComponent,canActivate:[NeedAuthGuard]},
+      //orders
+      { path: 'orders/add', component: AddOrderComponent, canActivate: [NeedAuthGuard] },
+      { path: 'orders/view/:orderId', component: ViewOrderComponent, canActivate: [NeedAuthGuard] },
+      { path: 'orders/edit/:orderId', component: EditOrderComponent, canActivate: [NeedAuthGuard] },
+      { path: 'orders', component: OrderListComponent, canActivate: [NeedAuthGuard] },
 
-    //products
-    { path:'products', component: ProductsComponent,canActivate:[NeedAuthGuard]},
+      //products
+      { path: 'products', component: ProductsComponent, canActivate: [NeedAuthGuard] },
 
-    //users
-    { path: 'users', component: UserListComponent , canActivate:[NeedAuthGuard] },
-    { path: 'users/add', component: AddUserComponent , canActivate:[NeedAuthGuard] },
-    { path: 'users/edit/:userId', component: EditUserComponent , canActivate:[NeedAuthGuard] },
-    { path: 'users/view/:userId', component: ViewUserComponent , canActivate:[NeedAuthGuard] },
+      //users
+      { path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
 
-    //locations
-    { path: 'locations/add', component: AddLocationComponent , canActivate:[NeedAuthGuard] },
-    { path: 'locations', component: LocationListComponent, canActivate:[NeedAuthGuard] },
-    { path: 'locations/edit/:locationId', component: EditLocationComponent , canActivate:[NeedAuthGuard] },
-    { path: 'locations', component: LocationListComponent, canActivate:[NeedAuthGuard] },
-    { path: 'locations/view/:locationId', component: ViewLocationComponent , canActivate:[NeedAuthGuard] },
+      //locations
+      { path: 'locations/add', component: AddLocationComponent, canActivate: [NeedAuthGuard] },
+      { path: 'locations', component: LocationListComponent, canActivate: [NeedAuthGuard] },
+      { path: 'locations/edit/:locationId', component: EditLocationComponent, canActivate: [NeedAuthGuard] },
+      { path: 'locations', component: LocationListComponent, canActivate: [NeedAuthGuard] },
+      { path: 'locations/view/:locationId', component: ViewLocationComponent, canActivate: [NeedAuthGuard] },
 
-    //Inventories
-    { path: 'inventories', component: InventoryListComponent , canActivate:[NeedAuthGuard] },
-    { path: 'inventories/add', component: AddInventoryComponent , canActivate:[NeedAuthGuard] },
-    { path: 'inventories/edit/:inventoryId', component: EditInventoryComponent , canActivate:[NeedAuthGuard] },
-    { path: 'inventories/view/:inventoryId', component: ViewInventoryComponent , canActivate:[NeedAuthGuard] },
+      //Inventories
+      { path: 'inventories', component: InventoryListComponent, canActivate: [NeedAuthGuard] },
+      { path: 'inventories/add', component: AddInventoryComponent, canActivate: [NeedAuthGuard] },
+      { path: 'inventories/edit/:inventoryId', component: EditInventoryComponent, canActivate: [NeedAuthGuard] },
+      { path: 'inventories/view/:inventoryId', component: ViewInventoryComponent, canActivate: [NeedAuthGuard] },
 
-    //stores
-     { path: 'store', component: StoreComponent, canActivate: [NeedAuthGuard] },
+      //stores
+      { path: 'store', component: StoreComponent, canActivate: [NeedAuthGuard] },
 
-     //status
-     { path: 'status', component: StatusComponent, canActivate: [NeedAuthGuard] },
-  ],canActivate:[NeedAuthGuard]
-},
- 
+      //status
+      { path: 'status', component: StatusComponent, canActivate: [NeedAuthGuard] },
+    ], canActivate: [NeedAuthGuard]
+  },
+
   {
     path: 'login',
     component: LoginPageComponent
@@ -100,6 +98,11 @@ const routes: Routes = [
     path: 'forgot-password',
     component: ForgotPasswordComponent
   },
+
+
+  // { path: 'inventory', loadChildren: () => import('./inventory/inventory.module').then(m => m.InventoryModule) },
+
+  // { path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
 
 ];
 
