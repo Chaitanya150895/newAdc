@@ -61,7 +61,7 @@ formData = [
     });
 
     //load location types in combo
-    this.httpService.getHttp("location_types.json").subscribe(data => {
+    this.httpService.getHttp("locationtypes.json").subscribe(data => {
       console.log(data);
      this.formData[this.LOCATION_TYPE_INDEX].array = ( data['data']);
     });
