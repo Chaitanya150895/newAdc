@@ -14,6 +14,7 @@ import { NeedAuthGuard } from '../auth.guard';
 import { AppComponent } from 'logistic-v1-angular/src/app/app.component';
 import { PipeTransformPipe } from '../pipe-transform.pipe';
 import { ReplaceUnderscorePipe } from '../replace-underscore.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -22,16 +23,12 @@ import { ReplaceUnderscorePipe } from '../replace-underscore.pipe';
     AddUserComponent,
     EditUserComponent,
     ViewUserComponent,
-    UserListComponent,
-  // ReplaceUnderscorePipe,
+    UserListComponent,    
   ],
   imports: [
     CommonModule,
-    UsersRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    FormsModule,
-    BrowserModule,  
+    UsersRoutingModule, 
+    SharedModule
   ],  
   providers: [NeedAuthGuard],
 })

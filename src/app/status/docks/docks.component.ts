@@ -16,7 +16,10 @@ export class DocksComponent implements OnInit {
   name: string;
   orders: any;
   isTrailerActive: boolean;
+  isUpdateDock: boolean;
   data: any;
+  id: number;
+
   get trailer_id() { return this.customForm.get('trailer_id'); }
 
   constructor(private httpService: HttpService) { }
@@ -44,9 +47,14 @@ export class DocksComponent implements OnInit {
       });
   }
 
-  UpdateButton() {
-    console.log();
-    this.name = "vanita";
+  updateButton(id) {
+    this.isUpdateDock = true;
+    this.id = id;
   }
+
+  // gotoTrailer(id) {
+  //   this.isTrailerActive = !this.isTrailerActive;
+  //   this.id = id;
+  // }
 
 }

@@ -20,17 +20,8 @@ import { MainComponent } from './home/main/main.component';
 
 
 //locations
-import { LocationListComponent } from './locations/location-list/location-list.component';
-import { EditLocationComponent } from './locations/edit-location/edit-location.component';
-import { ViewLocationComponent } from './locations/location-list/view-location/view-location.component';
-import { LocationComponent } from './locations/location.component';
-import { AddLocationComponent } from './locations/add-location/add-location.component';
 
 //users
-import { UserListComponent } from './users/user-list/user-list.component';
-import { AddUserComponent } from './users/add-user/add-user.component';
-import { EditUserComponent } from './users/edit-user/edit-user.component';
-import { ViewUserComponent } from './users/view-user/view-user.component';
 import { LoginPageComponent } from './users/login-page/login-page.component';
 import { ForgotPasswordComponent } from './users/forgot-password/forgot-password.component';
 
@@ -53,7 +44,7 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import { AddOrderComponent } from './orders/add-order/add-order.component';
 import { EditOrderComponent } from './orders/edit-order/edit-order.component';
 import { OrderListComponent } from './orders/order-list/order-list.component';
-import { ViewOrderComponent } from './orders/order-list/view-order/view-order.component';
+// import { ViewOrderComponent } from './orders/order-list/view-order/view-order.component';
 
 //trailers
 import { AddTrailerComponent } from './trailers/add-trailer/add-trailer.component';
@@ -76,10 +67,10 @@ import { ProductOrderComponent } from './store/product-order/product-order.compo
 
 //pipes
 import { PipeTransformPipe } from './pipe-transform.pipe';
-import { ReplaceUnderscorePipe } from './replace-underscore.pipe';
 import { NeedAuthGuard } from './auth.guard';
 import { ReceiveToInventoryComponent } from './status/receive-to-inventory/receive-to-inventory.component';
 import { AddToTrailersComponent } from './status/add-to-trailers/add-to-trailers.component';
+import { UpdateDocksComponent } from './status/update-docks/update-docks.component';
 
 
 
@@ -98,22 +89,13 @@ import { AddToTrailersComponent } from './status/add-to-trailers/add-to-trailers
     MainComponent,
     ContentWrapperComponent,
 
-    //Locations
-    LocationComponent,
-    LocationListComponent,
-    EditLocationComponent,
-    ViewLocationComponent,
-    AddLocationComponent,
+   
     
     //Users
     LoginPageComponent,
     ForgotPasswordComponent,
 
     //Inventories
-    InventoryListComponent,
-    AddInventoryComponent,
-    EditInventoryComponent,
-    ViewInventoryComponent,
 
     //Trailers
     AddTrailerComponent,
@@ -127,10 +109,6 @@ import { AddToTrailersComponent } from './status/add-to-trailers/add-to-trailers
     YardsComponent,
 
     //Orders
-    EditOrderComponent,
-    OrderListComponent,
-    ViewOrderComponent,
-    AddOrderComponent,
 
     //Products
     AddProductComponent,
@@ -147,10 +125,10 @@ import { AddToTrailersComponent } from './status/add-to-trailers/add-to-trailers
 
     //pipes
     PipeTransformPipe,
-    ReplaceUnderscorePipe,
     ProductOrderComponent,
     ReceiveToInventoryComponent,
     AddToTrailersComponent,
+    UpdateDocksComponent,
     
   ],
   imports: [

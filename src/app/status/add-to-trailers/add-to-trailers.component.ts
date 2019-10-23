@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AddToTrailersComponent implements OnInit {
   // id: any;
-  @Input('data')
+  @Input('btnId') public btnId;
   set data(data: any) {
     console.log(data);
     // this.id = data;

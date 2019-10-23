@@ -90,8 +90,7 @@
                             </div>
                             <div class="form-group">
                                 <label></label>
-                                <button data-toggle="modal" [attr.data-target]="'#UpdateModel'+bayId"
-                                    class="btn-primary" click='UpdateButton()'>Update</button>
+                                <button class="btn-primary" (click)='updateButton(bay.id)'>Update</button>
 
                             </div>
                         </form>
@@ -171,3 +170,10 @@
         </ul>
     </div>
 </div>
+
+<button (click)="gotoTrailer(btnId.id)" id="4" #btnId>Trailer</button>
+
+<!-- <app-add-to-trailers *ngIf="isTrailerActive" [btnId]="id"></app-add-to-trailers> -->
+
+<app-update-docks *ngIf="isUpdateDock" [dockId]="id"></app-update-docks>
+
