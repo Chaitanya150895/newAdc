@@ -11,7 +11,7 @@ import { ViewUserComponent } from './view-user/view-user.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NeedAuthGuard } from '../auth.guard';
-import { AppComponent } from 'logistic-v1-angular/src/app/app.component';
+import { AppComponent } from '../app.component';
 import { PipeTransformPipe } from '../pipe-transform.pipe';
 import { ReplaceUnderscorePipe } from '../replace-underscore.pipe';
 import { SharedModule } from '../shared/shared.module';
