@@ -56,9 +56,9 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default"
                                             data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary"
-                                            data-dismiss="modal" (click)="save(bay.id)">Add Trailer</button>
-                                        
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                            (click)="save(bay.id)">Add Trailer</button>
+
                                     </div>
                                 </div>
                             </div>
@@ -93,71 +93,13 @@
                                 <button class="btn-primary" (click)='updateButton(bay.id)'>Update</button>
 
                             </div>
-                        </form>
-                        <!-- <div *ngFor="let order of orders; let orderId = index" [attr.data-index]="orderId">
-                            <div class="modal fade" [attr.id]="'UpdateModel'+bayId" tabindex="-1" role="dialog"
-                                aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal"><span
-                                                    aria-hidden="true">&times;</span><span
-                                                    class="sr-only">Close</span></button>
-                                            <h4 class="modal-title" id="myModalLabel">
-                                                Goodwill Industries of Central Indiana, Inc</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form role="form" [formGroup]="customForm">
-                                                <div class="row">
-                                                    <div class="form-group col-md-6">
-                                                        <label>Trailer Number{{name}}</label>
-                                                        <input type="text" class="form-control" id="trailer_id"
-                                                            name="trailer_id" formControlName="trailer_id"
-                                                            value="{{order.trailer_id}}" />
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label>Date</label>
-                                                        <input type="text" class="form-control" id="trailer_id"
-                                                            name="trailer_id" formControlName="trailer_id"
-                                                            value="{{order.pickup_time | date}} {{order.pickup_time | date:'shortTime'}}" />
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="form-group col-md-6">
-                                                        <label>Item Ordered</label>
-                                                        <input type="text" class="form-control" id="trailer_id"
-                                                            name="trailer_id" formControlName="trailer_id"
-                                                            value="{{order.source_id}}" />
-                                                    </div>
-                                                    <div class="form-group col-md-3">
-                                                        <label>Qty Ordered</label>
-                                                        <input type="text" class="form-control" id="trailer_id"
-                                                            name="trailer_id" formControlName="trailer_id"
-                                                            value="{{order.quantity}}" />
-                                                    </div>
-                                                    <div class="form-group col-md-3">
-                                                        <label>Qty Sent</label>
-                                                        <input type="text" class="form-control" id="trailer_id"
-                                                            name="trailer_id" formControlName="trailer_id" />
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default"
-                                                data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" (click)="addTrailer(bay.id)">
-                                                Receive to Inventory</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
+                        </form>                      
                     </div>
                 </div>
 
             </ng-template>
-            <div class="text-center"><b>Bay {{bayId+1}}</b></div>
+            <div class="text-center"><b>Bay {{bayId+1}}</b>               
+            </div>
 
 
         </div>
@@ -170,10 +112,4 @@
         </ul>
     </div>
 </div>
-
-<button (click)="gotoTrailer(btnId.id)" id="4" #btnId>Trailer</button>
-
-<!-- <app-add-to-trailers *ngIf="isTrailerActive" [btnId]="id"></app-add-to-trailers> -->
-
 <app-update-docks *ngIf="isUpdateDock" [dockId]="id"></app-update-docks>
-

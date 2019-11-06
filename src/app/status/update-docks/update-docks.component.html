@@ -1,2 +1,48 @@
-<p>update-docks works!</p>
-<p>Id: {{dockId}}</p>
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Receive to Inventory</h3>
+        <div class="box-tools"></div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body table-responsive no-padding">
+        <div class="col-md-12">
+            <form role="form" [formGroup]="customForm">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>Trailer Number{{name}}</label>
+                        <input type="text" class="form-control" id="trailer_id" name="trailer_id"
+                            formControlName="trailer_id" value="{{order.trailer_id}}" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Date</label>
+                        <input type="text" class="form-control" id="trailer_id" name="trailer_id"
+                            formControlName="trailer_id"
+                            value="{{order.pickup_time | date}} {{order.pickup_time | date:'shortTime'}}" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>Item Ordered</label>
+                        <input type="text" class="form-control" id="trailer_id" name="trailer_id"
+                            formControlName="trailer_id" value="{{order.source_id}}" />
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Qty Ordered</label>
+                        <input type="text" class="form-control" id="trailer_id" name="trailer_id"
+                            formControlName="trailer_id" value="{{order.quantity}}" />
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Qty Sent</label>
+                        <input type="text" class="form-control" id="trailer_id" name="trailer_id"
+                            formControlName="trailer_id" />
+                    </div>
+                    <div class="form-group col-md-3">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" (click)="addTrailer(bay.id)">
+                            Receive to Inventory</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
