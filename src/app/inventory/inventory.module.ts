@@ -24,10 +24,6 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     InventoryRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    FormsModule,
-    BrowserModule,  
     SharedModule
   ]
 })
