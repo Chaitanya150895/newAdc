@@ -19,7 +19,7 @@ export class DocksComponent implements OnInit {
   isUpdateDock: boolean;
   data: any;
   id: number;
-
+  dockId:any;
   get trailer_id() { return this.customForm.get('trailer_id'); }
 
   constructor(private httpService: HttpService) { }
@@ -49,6 +49,7 @@ export class DocksComponent implements OnInit {
 
   updateButton(id) {
     this.isUpdateDock = true;
+    console.log(id);
     this.id = id;
   }
 

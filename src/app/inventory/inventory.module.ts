@@ -11,6 +11,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { SharedModule } from '../shared/shared.module';
+import { TransferComponent } from './transfer/transfer.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SharedModule } from '../shared/shared.module';
     InventoryListComponent,
     AddInventoryComponent,
     EditInventoryComponent,
-    ViewInventoryComponent
+    ViewInventoryComponent,
+    TransferComponent
   ],
   imports: [
     CommonModule,
