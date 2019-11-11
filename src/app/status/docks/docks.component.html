@@ -30,10 +30,14 @@
                                     </div>
                                     <div class="modal-body">
                                         <form role="form" [formGroup]="customForm">
-                                            <div class="form-group">
-                                                <label>Trailer Number</label>
-                                                <input type="text" class="form-control" id="trailer_id"
-                                                    name="trailer_id" formControlName="trailer_id" />
+                                            <div class="form-group" *ngFor="let data of formData">
+                                                <label for="{{data.for}}">{{data.label}}</label>
+                                                <select *ngIf="data.control=='select'" class="form-control"
+                                                    id="{{data.id}}" formControlName="{{data.control_name}}">
+                                                    <option *ngFor="let item of data.array" [value]="item.id">
+                                                        {{item.trailer_number}}
+                                                    </option>
+                                                </select>
                                             </div>
                                             <div class="form-group">
                                                 <label>Trailer is</label>
@@ -93,12 +97,12 @@
                                 <button class="btn-primary" (click)='updateButton(bay.id)'>Update</button>
 
                             </div>
-                        </form>                      
+                        </form>
                     </div>
                 </div>
 
             </ng-template>
-            <div class="text-center"><b>Bay {{bayId+1}}</b>               
+            <div class="text-center"><b>Bay {{bayId+1}}</b>
             </div>
 
 
