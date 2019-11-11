@@ -11,6 +11,9 @@ import { OrderListComponent } from './order-list/order-list.component';
 import { AddOrderComponent } from './add-order/add-order.component';
 import { ViewOrderComponent } from './order-list/view-order/view-order.component';
 import { EditOrderComponent } from './edit-order/edit-order.component';
+import { DateTimePicker } from '@syncfusion/ej2-calendars';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 
 
 @NgModule({
@@ -24,11 +27,11 @@ import { EditOrderComponent } from './edit-order/edit-order.component';
   imports: [
     CommonModule,
     OrdersRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    FormsModule,
-    BrowserModule,  
-    SharedModule
+     
+   
+    SharedModule,
+    DropDownListModule,
+    DateTimePickerModule
   ]
 })
 export class OrdersModule { }
