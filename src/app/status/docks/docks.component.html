@@ -1,0 +1,119 @@
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Loading Docks</h3>
+        <div class="box-tools"></div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body table-responsive no-padding">
+        <!-- box repeat -->
+        <div class="col-md-3" *ngFor="let bay of bays; let bayId = index" [attr.data-index]="bayId">
+            <div *ngIf="!bay.trailer_id;else addTrailer">
+                <div class="box box-primary box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Docks empty</h3>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <a href="" data-toggle="modal" [attr.data-target]="'#MyModal'+bayId">
+                            Add Trailer</a>
+                        <!-- Modal -->
+                        <div class="modal fade" [attr.id]="'MyModal'+bayId" tabindex="-1" role="dialog"
+                            aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span
+                                                aria-hidden="true">&times;</span><span
+                                                class="sr-only">Close</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Add Trailer To Dock</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form role="form" [formGroup]="customForm">
+                                            <div class="form-group" *ngFor="let data of formData">
+                                                <label for="{{data.for}}">{{data.label}}</label>
+                                                <select *ngIf="data.control=='select'" class="form-control"
+                                                    id="{{data.id}}" formControlName="{{data.control_name}}">
+                                                    <option *ngFor="let item of data.array" [value]="item.id">
+                                                        {{item.trailer_number}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Trailer is</label>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="empty" id="empty" value="Empty">
+                                                        Empty
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="unloaded" id="unloaded"
+                                                            value="unloaded">
+                                                        Needs to be Unloaded
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                            (click)="save(bay.id)">Add Trailer</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                    <!-- <div class="box-footer">
+                                        The footer of the box
+                                      </div> -->
+                    <!-- box-footer -->
+                </div>
+            </div>
+            <ng-template #addTrailer>
+                <div class="box box-primary box-solid">
+                    <div class="box-body">
+                        <form [formGroup]="customForm">
+                            <div class="form-group">
+                                <label>Trailer : {{bay.trailer_id}}
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Delivery : </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Driver : </label>
+                            </div>
+                            <div class="form-group">
+                                <label>Status : </label>
+                            </div>
+                            <div class="form-group">
+                                <label></label>
+                                <button class="btn-primary" (click)='updateButton(bay.id)'>Update</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </ng-template>
+            <div class="text-center"><b>Bay {{bayId+1}}</b>
+            </div>
+
+
+        </div>
+        <!-- /.box -->
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer clearfix">
+        <ul class="pagination pagination-sm no-margin pull-right">
+
+        </ul>
+    </div>
+</div>
+<app-update-docks *ngIf="isUpdateDock" [dockId]="id"></app-update-docks>

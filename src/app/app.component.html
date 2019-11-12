@@ -1,16 +1,5 @@
-<header class="main-header" app-main-header>
-</header>
-
-<aside class="main-sidebar" app-main-sidebar>
-</aside>
-
-<div class="content-wrapper" app-new-location>
-</div>
-
-<footer class="main-footer" app-main-footer>
-</footer>
-
-<aside class="control-sidebar control-sidebar-dark"  style="display: none;" app-control-sidebar>
-</aside>
-
-<div class="control-sidebar-bg"></div>
+<div *ngIf="isLogged() == false">
+    
+  </div>
+  
+<router-outlet></router-outlet>  

@@ -1,0 +1,37 @@
+<section class="content">
+  <div class="row">
+        
+<div class="col-md-6 col-md-6">
+ 
+          <table class="table table-hover">
+            <thead>
+              <tr>
+
+                <th *ngFor="let header of tableHeaders">
+                  {{header}}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr role="row" class="odd" *ngFor="let product of products; let productId = index">
+              
+               <td  (click)="setCodeEdit(productId)">
+                <span *ngIf="!product.canEditCode">{{product.name}}</span>
+                <input *ngIf="product.canEditCode" type="text" [(ngModel)]="product.name" (keyup.enter)="save(productId)" />
+               </td>
+               <td  (click)="setCodeEdit(productId)">
+                <span *ngIf="!product.canEditCode">{{product.price}}</span>
+                <input *ngIf="product.canEditCode" type="text" [(ngModel)]="product.price" (keyup.enter)="save(productId)" />
+               </td>
+               <td>
+                <a (click)="deleteProduct(product.id, productId)"><i class="fa fa-trash" ></i></a>
+            </td>
+              </tr>
+              <!-- {{products | json}} -->
+            </tbody>
+          </table>
+        </div>
+       
+      </div>
+
+</section>

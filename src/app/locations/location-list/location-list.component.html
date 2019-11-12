@@ -1,0 +1,78 @@
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+      Locations
+      <div class="pull-right"><a  class = "btn btn-success btn-ms">Add</a></div>
+  </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+      <div class="col-xs-12">
+          <div class="box">
+              <div class="box-header">
+                  <h3 class="box-title">List of Locations</h3>
+                  <div class="box-tools">
+
+                  </div>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <thead>
+                    <tr>
+
+                        <th *ngFor="let header of tableHeaders">
+                          {{header}}
+                        </th>    
+                      </tr>
+                    </thead>  
+                    <tbody>
+                      <tr  *ngFor="let location of locations; let locationId = index">
+                          <!-- <td class="sorting_1">{{location.id}}</td> -->
+                          <td>{{location.id}}</td>
+                          <td>{{location.name}}</td>
+                          <td>{{location.address}}</td>
+                          <td>{{location.city}}</td>
+                          <td>{{location.state}}</td>
+                          <td>{{location.zipcode}}</td>
+                          <td>{{location.location_number}}</td>
+                          <td>{{location.region.name}}</td>
+                          <td>{{location.trailer_bays | json}}</td>
+                          <td>{{location.location_type.name}}</td>
+                          <!-- <td>{{location.created}}</td>
+                          <td>{{location.modified}}</td> -->
+                           <td>
+                            <a [routerLink]="['/locations/view/', location.id]"><i class="fa fa-eye" ></i></a> |
+                            <a [routerLink]="['/locations/edit/', location.id]"><i class="fa fa-edit"></i></a> |
+                            <a (click)="deleteLocation(location.id, locationId)"><i class="fa fa-trash" ></i></a>
+                            
+                          </td> 
+                          <!-- <td>
+                              <div class="row">
+                              <div class="col-sm-4 col-xs-4 col-md-4"> <a [routerLink]="['/LocationList/view/', location.id]"><i class="fa fa-eye fa-2x"></i></a></div>
+                              <div class="col-sm-4 col-xs-4 col-md-4"> <a [routerLink]="['/LocationList/edit/', location.id]"><i class="fa fa-edit fa-2x"></i></a></div>
+                              <div class="col-sm-4 col-xs-4 col-md-4"> <a (click)="deleteLocation(location.id, locationId)"><i class="fa fa-trash fa-2x"></i></a></div>
+                               </div>
+                            </td> -->
+                        </tr>
+                      </tbody>
+                  </table>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer clearfix">
+                  <ul class="pagination pagination-sm no-margin pull-right">
+                  
+                  </ul>
+              </div>
+          </div>
+          <!-- /.box -->
+      </div>
+  </div>
+</section>
+<!-- /.content -->
+
+
+

@@ -1,0 +1,36 @@
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <!-- /.box-header -->
+      <div class="box-body table-responsive no-padding">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th *ngFor="let header of tableHeaders">
+                {{header}}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr role="row" class="odd" *ngFor="let order of orders; let orderId = index">
+              <!-- <td class="sorting_1">{{location.id}}</td> -->
+              <td>{{order.trailer_id}}</td>
+              <td>{{order.product.name}}</td>
+              <td>{{order.quantity}}</td>
+              <td>
+                <a (click)="deleteOrder(order.id, orderId)"><i class="fa fa-trash"></i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer clearfix">
+        <ul class="pagination pagination-sm no-margin pull-right">
+        </ul>
+      </div>
+      <!-- /.box -->
+    </div>
+  </div>
+</section>

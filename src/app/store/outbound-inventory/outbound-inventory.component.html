@@ -1,0 +1,34 @@
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title">Outbound Inventory</h3>
+    </div>
+
+    <div class="box-header with-border">
+        <app-product-order #child></app-product-order>
+    </div>
+
+    <form [formGroup]="customForm" (ngSubmit)="onSubmit()">
+        <div class="box-body">
+            <div class="row">
+                <div class="form-group col-md-3" *ngFor="let data of formData">
+                    <label for="{{data.for}}">{{data.label}}</label>
+                    <input *ngIf="data.control=='input'" type="{{data.type}}" class="form-control" id="{{data.id}}"
+                        placeholder="{{data.placeholder}}" formControlName="{{data.control_name}}">
+                    <select *ngIf="data.control=='select'" class="form-control" id="{{data.id}}"
+                        formControlName="{{data.control_name}}">
+                        <option *ngFor="let item of data.array" [value]="item.id">
+                            {{item.name ? item.name : item.trailer_number}}</option>
+                    </select>
+                    <div *ngIf="data.control=='button'">
+                        <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.box-body -->
+        <!-- <div class="box-footer">
+            <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i></button>
+        </div> -->
+        {{customForm.value | json}}
+    </form>
+</div>

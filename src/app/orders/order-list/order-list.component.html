@@ -1,0 +1,66 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+      Orders
+      <div class="pull-right"><a [routerLink]="['/orders/add']"  class = "btn btn-success btn-ms">Add</a></div>
+  </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+      <div class="col-xs-12">
+          <div class="box">
+              <div class="box-header">
+                  <h3 class="box-title">List of Orders</h3>
+                  <div class="box-tools">
+
+                  </div>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <thead>
+                    <tr>
+
+                        <th *ngFor="let header of tableHeaders">
+                          {{header}}
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+
+                <tr role="row" class="odd" *ngFor="let order of orders; let orderId = index">
+                  <!-- <td class="sorting_1">{{location.id}}</td> -->
+                  <td>{{order.source_id}}</td>
+                  <td>{{order.destination_id}}</td>
+                  <td>{{order.user_id}}</td>
+                  <td>{{order.product_id}}</td>
+                  <td>{{order.quantity}}</td>
+                  <td>{{order.trailer_id}}</td>
+                  <td>{{order.pickup_time}}</td>
+                  <td>{{order.drop_off_time}}</td>
+                  <td>{{order.order_status_id}}</td>
+                  <td>{{order.comments}}</td>
+                   <td>
+                    <a [routerLink]="['/orders/view/', order.id]"><i class="fa fa-eye" ></i></a> |
+                    <a [routerLink]="['/orders/edit/', order.id]"><i class="fa fa-edit"></i></a> |
+                    <a (click)="deleteOrder(order.id, orderId)"><i class="fa fa-trash" ></i></a>
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer clearfix">
+            <ul class="pagination pagination-sm no-margin pull-right">
+
+            </ul>
+        </div>
+    </div>
+    <!-- /.box -->
+</div>
+</div>
+</section>

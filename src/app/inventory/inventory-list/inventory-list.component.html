@@ -1,0 +1,62 @@
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Inventory List</h3>
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Inventories
+        <div class="pull-right"><a [routerLink]="['/inventories/add']" class="btn btn-success btn-ms">Add</a></div>
+    </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">List of Inventories</h3>
+                    <div class="box-tools">
+
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+
+                                <th *ngFor="let header of tableHeaders">
+                                    {{header}}
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let inventory of inventories; let inventoryId = index">
+                                <td>{{inventory.id}}</td>
+                                <td>{{inventory.location.name}}</td>
+                                <td>{{inventory.product.name}}</td>
+                                <td>{{inventory.quantity}}</td>
+                                <td>{{inventory.inventory_status.name}}</td>
+                                <td>
+                                    <!-- <a [routerLink]="['/inventories/view/', inventory.id]"><i class="fa fa-eye"></i></a> | -->
+                                    <a [routerLink]="['/inventories/edit/', inventory.id]"><i class="fa fa-edit"></i></a> |
+                                    <a (click)="deleteLocation(inventory.id, inventoryId)"><i class="fa fa-trash"></i></a>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer clearfix">
+                    <ul class="pagination pagination-sm no-margin pull-right">
+
+                    </ul>
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>
+<!-- /.content -->

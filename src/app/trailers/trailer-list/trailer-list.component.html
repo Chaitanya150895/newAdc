@@ -1,0 +1,40 @@
+<section class="content">
+        <div class="row">
+                <!-- {{trailers | json }} -->
+            <!-- left column -->
+     <div class="col-md-6 col-md-6">
+       
+          <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th *ngFor="let header of tableHeaders">
+                            {{header}}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                  
+                    <tr *ngFor="let trailer of trailers; let trailerId = index">
+                        
+                        <td  (click)="setCodeEdit(trailerId)">
+                            <span *ngIf="!trailer.canEditCode">{{trailer.trailer_number}}</span>
+                            <input *ngIf="trailer.canEditCode" type="text" [(ngModel)]="trailer.trailer_number" (keyup.enter)="save(trailerId)" />
+                           </td>
+                        <td  (click)="setCodeEdit(trailerId)">
+                            <span *ngIf="!trailer.canEditCode">{{trailer.trailer_status.name}}</span>
+                            <select *ngIf="trailer.canEditCode" type="undefined" [(ngModel)]="trailer.trailer_status.name"  >
+                            <option *ngFor="let status of trailer_statuses" [value]="status.name" >{{status.name}}</option></select>   
+                           </td>
+                           
+                        <td>
+                            <a (click)="deleteTrailer(trailer.id, trailerId)"><i class="fa fa-trash" ></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>
+       
+  
