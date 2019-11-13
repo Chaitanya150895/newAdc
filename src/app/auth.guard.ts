@@ -17,6 +17,7 @@ export class NeedAuthGuard implements CanActivate {
       return true;
     }
 
+
     this.router.navigateByUrl(
       this.router.createUrlTree(
         ['/login'], {

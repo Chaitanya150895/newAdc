@@ -4,8 +4,6 @@ import { HttpService } from 'src/app/http.service';
 import { ActivatedRoute } from '@angular/router';
 import * as moment from 'moment'
 
-
-
 @Component({
   selector: 'app-add-order',
   templateUrl: './add-order.component.html',

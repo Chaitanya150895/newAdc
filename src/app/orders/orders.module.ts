@@ -27,8 +27,6 @@ import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
   imports: [
     CommonModule,
     OrdersRoutingModule,
-     
-   
     SharedModule,
     DropDownListModule,
     DateTimePickerModule
